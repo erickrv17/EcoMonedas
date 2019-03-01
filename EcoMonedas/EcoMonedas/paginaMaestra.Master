@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="paginaMaestra.master.cs" Inherits="EcoMonedas.paginaMaestra" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Menu ID="Menu1" runat="server"
+            Orientation="Horizontal"
+            Width="100%"
+            CssClass="navbar navbar-expand-lg navbar-dark bg-primary"
+            DataSourceID="SiteMapDataSource1">
+            <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="20px" />
+
+            <StaticMenuStyle CssClass="navbar-nav mr-auto" />
+            <StaticSelectedStyle CssClass="active" />
+            <DynamicMenuStyle CssClass="dropdown-menu" />
+
+            <LevelMenuItemStyles>
+                <asp:MenuItemStyle CssClass="nav-item nav-link " />
+                <asp:MenuItemStyle CssClass="nav-item nav-link bg-primary" />
+            </LevelMenuItemStyles>
+        </asp:Menu>
+        <ol class="breadcrumb">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+          
+
+        </ol>
+        <asp:SiteMapDataSource runat="server"
+            ShowStartingNode="false"
+            ID="SiteMapDataSource1"></asp:SiteMapDataSource>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+    </div>
+    </form>
+</body>
+</html>
