@@ -75,18 +75,23 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Imagenes\AcercaDe.png" />
+    <Content Include="Imagenes\Banner1.png" />
+    <Content Include="Imagenes\Banner2.png" />
     <Content Include="Imagenes\Contactenos.png" />
     <Content Include="Imagenes\Cuenta.png" />
     <Content Include="Imagenes\FlechaAbajo.png" />
     <Content Include="Imagenes\HojaBreadC.png" />
+    <Content Include="Imagenes\IconoInfoC.png" />
     <Content Include="Imagenes\Inicio.png" />
     <Content Include="Imagenes\logo.png" />
     <Content Include="Imagenes\LogoP.png" />
     <Content Include="Imagenes\LogoT.png" />
     <Content Include="Imagenes\LogoTrans.png" />
     <Content Include="Inicio.aspx" />
+    <Content Include="InicioEM.aspx" />
     <Content Include="packages.config" />
     <Content Include="paginaMaestra.Master" />
+    <Content Include="Imagenes\IconoInfoR.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -152,6 +157,13 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InicioEM.aspx.cs">
+      <DependentUpon>InicioEM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InicioEM.aspx.designer.cs">
+      <DependentUpon>InicioEM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="paginaMaestra.Master.cs">
       <DependentUpon>paginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,6 +175,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Template\css\" />
+    <Folder Include="Template\img\" />
+    <Folder Include="Template\js\" />
+    <Folder Include="Template\mail\" />
+    <Folder Include="Template\scss\" />
+    <Folder Include="Template\vendor\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
