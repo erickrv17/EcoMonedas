@@ -12,10 +12,9 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BilleteraVirtual()
         {
-            Usuario = new HashSet<Usuario>();
+            Usuarios = new HashSet<Usuario>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         public int ClienteID { get; set; }
@@ -31,6 +30,6 @@ namespace Contexto
         public bool Estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

@@ -25,8 +25,9 @@ namespace Contexto
         [StringLength(50)]
         public string SegundoApellido { get; set; }
 
-        [Column(TypeName = "numeric")]
-        public decimal Telefono { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Telefono { get; set; }
 
         [Key]
         [Column(Order = 1)]

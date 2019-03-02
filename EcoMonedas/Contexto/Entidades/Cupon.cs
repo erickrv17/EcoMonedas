@@ -12,7 +12,7 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cupon()
         {
-            EncabezadoCupon = new HashSet<EncabezadoCupon>();
+            EncabezadoCupons = new HashSet<EncabezadoCupon>();
         }
 
         public int ID { get; set; }
@@ -33,6 +33,6 @@ namespace Contexto
         public int EcoMonedasNecesarias { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EncabezadoCupon> EncabezadoCupon { get; set; }
+        public virtual ICollection<EncabezadoCupon> EncabezadoCupons { get; set; }
     }
 }

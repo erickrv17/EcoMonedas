@@ -74,6 +74,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="detalleCentroAcopio.aspx" />
     <Content Include="Imagenes\AcercaDe.png" />
     <Content Include="Imagenes\Banner1.png" />
     <Content Include="Imagenes\Banner2.png" />
@@ -89,6 +90,7 @@
     <Content Include="Imagenes\LogoTrans.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioEM.aspx" />
+    <Content Include="listaCentrosAcopio.aspx" />
     <Content Include="packages.config" />
     <Content Include="paginaMaestra.Master" />
     <Content Include="Imagenes\IconoInfoR.png" />
@@ -150,6 +152,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="detalleCentroAcopio.aspx.cs">
+      <DependentUpon>detalleCentroAcopio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalleCentroAcopio.aspx.designer.cs">
+      <DependentUpon>detalleCentroAcopio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,6 +172,13 @@
     </Compile>
     <Compile Include="InicioEM.aspx.designer.cs">
       <DependentUpon>InicioEM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaCentrosAcopio.aspx.cs">
+      <DependentUpon>listaCentrosAcopio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaCentrosAcopio.aspx.designer.cs">
+      <DependentUpon>listaCentrosAcopio.aspx</DependentUpon>
     </Compile>
     <Compile Include="paginaMaestra.Master.cs">
       <DependentUpon>paginaMaestra.Master</DependentUpon>
@@ -183,6 +199,12 @@
     <Folder Include="Template\mail\" />
     <Folder Include="Template\scss\" />
     <Folder Include="Template\vendor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contexto\Contexto.csproj">
+      <Project>{7489c278-5140-47f7-aeda-5c18de04e351}</Project>
+      <Name>Contexto</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

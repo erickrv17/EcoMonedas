@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12B750CC-C2BD-4D58-AA04-2F044014C178}</ProjectGuid>
+    <ProjectGuid>{7489C278-5140-47F7-AEDA-5C18DE04E351}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contexto</RootNamespace>
@@ -55,23 +55,23 @@
     <Compile Include="Entidades\CentroAcopio.cs" />
     <Compile Include="Entidades\Cupon.cs" />
     <Compile Include="Entidades\DetalleCanje.cs" />
+    <Compile Include="EcoMonedasContext.cs" />
     <Compile Include="Entidades\EncabezadoCanje.cs" />
     <Compile Include="Entidades\EncabezadoCupon.cs" />
     <Compile Include="Entidades\Material.cs" />
-    <Compile Include="EcoMonedasContext.cs" />
+    <Compile Include="LN\CentroAcopioLN.cs" />
+    <Compile Include="LN\ProvinciaLN.cs" />
+    <Compile Include="LN\UsuarioLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entidades\Provincia.cs" />
     <Compile Include="Entidades\Rol.cs" />
-    <Compile Include="sysdiagrams.cs" />
     <Compile Include="Entidades\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="LN\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

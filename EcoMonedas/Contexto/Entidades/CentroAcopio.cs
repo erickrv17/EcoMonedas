@@ -12,8 +12,8 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CentroAcopio()
         {
-            EncabezadoCanje = new HashSet<EncabezadoCanje>();
-            Usuario = new HashSet<Usuario>();
+            EncabezadoCanjes = new HashSet<EncabezadoCanje>();
+            Usuarios = new HashSet<Usuario>();
         }
 
         public int ID { get; set; }
@@ -21,6 +21,9 @@ namespace Contexto
         [Required]
         [StringLength(50)]
         public string Nombre { get; set; }
+
+        [Required]
+        public string Imagen { get; set; }
 
         public int UsuarioID { get; set; }
 
@@ -38,9 +41,9 @@ namespace Contexto
         public virtual Provincia Provincia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EncabezadoCanje> EncabezadoCanje { get; set; }
+        public virtual ICollection<EncabezadoCanje> EncabezadoCanjes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

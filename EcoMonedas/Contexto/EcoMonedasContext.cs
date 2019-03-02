@@ -12,32 +12,31 @@ namespace Contexto
         {
         }
 
-        public virtual DbSet<BilleteraVirtual> BilleteraVirtual { get; set; }
-        public virtual DbSet<CentroAcopio> CentroAcopio { get; set; }
-        public virtual DbSet<Cupon> Cupon { get; set; }
-        public virtual DbSet<DetalleCanje> DetalleCanje { get; set; }
-        public virtual DbSet<EncabezadoCanje> EncabezadoCanje { get; set; }
-        public virtual DbSet<EncabezadoCupon> EncabezadoCupon { get; set; }
-        public virtual DbSet<Material> Material { get; set; }
-        public virtual DbSet<Provincia> Provincia { get; set; }
-        public virtual DbSet<Rol> Rol { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<BilleteraVirtual> BilleteraVirtuals { get; set; }
+        public virtual DbSet<CentroAcopio> CentroAcopios { get; set; }
+        public virtual DbSet<Cupon> Cupons { get; set; }
+        public virtual DbSet<DetalleCanje> DetalleCanjes { get; set; }
+        public virtual DbSet<EncabezadoCanje> EncabezadoCanjes { get; set; }
+        public virtual DbSet<EncabezadoCupon> EncabezadoCupons { get; set; }
+        public virtual DbSet<Material> Materials { get; set; }
+        public virtual DbSet<Provincia> Provincias { get; set; }
+        public virtual DbSet<Rol> Rols { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BilleteraVirtual>()
-                .HasMany(e => e.Usuario)
+                .HasMany(e => e.Usuarios)
                 .WithRequired(e => e.BilleteraVirtual)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<CentroAcopio>()
-                .HasMany(e => e.EncabezadoCanje)
+                .HasMany(e => e.EncabezadoCanjes)
                 .WithRequired(e => e.CentroAcopio)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<CentroAcopio>()
-                .HasMany(e => e.Usuario)
+                .HasMany(e => e.Usuarios)
                 .WithRequired(e => e.CentroAcopio)
                 .WillCascadeOnDelete(false);
 
@@ -46,38 +45,38 @@ namespace Contexto
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Cupon>()
-                .HasMany(e => e.EncabezadoCupon)
+                .HasMany(e => e.EncabezadoCupons)
                 .WithRequired(e => e.Cupon)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EncabezadoCanje>()
-                .HasMany(e => e.DetalleCanje)
+                .HasMany(e => e.DetalleCanjes)
                 .WithRequired(e => e.EncabezadoCanje)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EncabezadoCanje>()
-                .HasMany(e => e.Usuario)
+                .HasMany(e => e.Usuarios)
                 .WithRequired(e => e.EncabezadoCanje)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EncabezadoCupon>()
-                .HasMany(e => e.Usuario)
+                .HasMany(e => e.Usuarios)
                 .WithRequired(e => e.EncabezadoCupon)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Provincia>()
-                .HasMany(e => e.CentroAcopio)
+                .HasMany(e => e.CentroAcopios)
                 .WithRequired(e => e.Provincia)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Rol>()
-                .HasMany(e => e.Usuario)
+                .HasMany(e => e.Usuarios)
                 .WithRequired(e => e.Rol)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.Telefono)
-                .HasPrecision(18, 0);
+          
         }
+        public void FixEProviderServicesProblem() { var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance; }
+
     }
 }

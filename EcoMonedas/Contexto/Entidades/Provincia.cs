@@ -12,10 +12,9 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Provincia()
         {
-            CentroAcopio = new HashSet<CentroAcopio>();
+            CentroAcopios = new HashSet<CentroAcopio>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         [Required]
@@ -25,6 +24,6 @@ namespace Contexto
         public bool Estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CentroAcopio> CentroAcopio { get; set; }
+        public virtual ICollection<CentroAcopio> CentroAcopios { get; set; }
     }
 }

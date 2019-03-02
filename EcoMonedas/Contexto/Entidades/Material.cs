@@ -12,7 +12,7 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Material()
         {
-            DetalleCanje = new HashSet<DetalleCanje>();
+            DetalleCanjes = new HashSet<DetalleCanje>();
         }
 
         public int ID { get; set; }
@@ -21,9 +21,8 @@ namespace Contexto
         [StringLength(50)]
         public string Nombre { get; set; }
 
-        [Column(TypeName = "image")]
         [Required]
-        public byte[] Imagen { get; set; }
+        public string Imagen { get; set; }
 
         public int PrecioUnitario { get; set; }
 
@@ -34,6 +33,6 @@ namespace Contexto
         public bool Estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCanje> DetalleCanje { get; set; }
+        public virtual ICollection<DetalleCanje> DetalleCanjes { get; set; }
     }
 }
