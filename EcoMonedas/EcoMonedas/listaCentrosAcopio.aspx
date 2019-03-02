@@ -157,7 +157,7 @@
 
         <div class="copyright py-4 text-center text-white">
             <div class="container">
-                <asp:Label ID="copyright" runat="server" Text="<%$ AppSettings: copyright %>"></asp:Label>
+                <asp:Label ID="copyright" runat="server" Text="<%$ AppSettings: copyright %>"></asp:Label> 
             </div>
         </div>
            <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
