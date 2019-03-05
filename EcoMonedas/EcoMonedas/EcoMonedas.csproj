@@ -91,6 +91,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="InicioEM.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
+    <Content Include="MantenimientoCentrosAcopio.aspx" />
     <Content Include="packages.config" />
     <Content Include="paginaMaestra.Master" />
     <Content Include="Imagenes\IconoInfoR.png" />
@@ -140,12 +141,29 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Template\SB Admin\.travis.yml" />
+    <Content Include="Template\SB Admin\LICENSE" />
+    <Content Include="Template\SB Admin\package-lock.json" />
+    <Content Include="Template\SB Admin\package.json" />
+    <Content Include="Template\SB Admin\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Template\css\sb-admin.css" />
+    <Content Include="Template\css\sb-admin.min.css" />
+    <Content Include="Template\SB Admin\.gitignore" />
+    <Content Include="Template\SB Admin\404.html" />
+    <Content Include="Template\SB Admin\blank.html" />
+    <Content Include="Template\SB Admin\charts.html" />
+    <Content Include="Template\SB Admin\forgot-password.html" />
+    <Content Include="Template\SB Admin\gulpfile.js" />
+    <Content Include="Template\SB Admin\index.html" />
+    <Content Include="Template\SB Admin\login.html" />
+    <Content Include="Template\SB Admin\register.html" />
+    <Content Include="Template\SB Admin\tables.html" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +198,13 @@
     <Compile Include="listaCentrosAcopio.aspx.designer.cs">
       <DependentUpon>listaCentrosAcopio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MantenimientoCentrosAcopio.aspx.cs">
+      <DependentUpon>MantenimientoCentrosAcopio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCentrosAcopio.aspx.designer.cs">
+      <DependentUpon>MantenimientoCentrosAcopio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="paginaMaestra.Master.cs">
       <DependentUpon>paginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,10 +218,13 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Template\css\" />
     <Folder Include="Template\img\" />
     <Folder Include="Template\js\" />
     <Folder Include="Template\mail\" />
+    <Folder Include="Template\SB Admin\css\" />
+    <Folder Include="Template\SB Admin\js\" />
+    <Folder Include="Template\SB Admin\scss\" />
+    <Folder Include="Template\SB Admin\vendor\" />
     <Folder Include="Template\scss\" />
     <Folder Include="Template\vendor\" />
   </ItemGroup>

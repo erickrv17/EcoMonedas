@@ -13,5 +13,10 @@ namespace EcoMonedas
         {
 
         }
+        protected void navbarColor01_MenuItemDataBound(object sender, MenuEventArgs e)
+        {
+            SiteMapNode smn = (SiteMapNode)e.Item.DataItem;
+            e.Item.ImageUrl = smn["image"];
+        }
     }
 }

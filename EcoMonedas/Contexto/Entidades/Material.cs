@@ -24,7 +24,8 @@ namespace Contexto
         [Required]
         public string Imagen { get; set; }
 
-        public int PrecioUnitario { get; set; }
+        [Column(TypeName = "money")]
+        public decimal PrecioUnitario { get; set; }
 
         [Required]
         [StringLength(50)]

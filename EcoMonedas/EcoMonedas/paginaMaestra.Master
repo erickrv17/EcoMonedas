@@ -6,28 +6,44 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+       <link href="Imagenes/LogoT.png" rel="icon" />
+    <link href="Template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="Template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+    <link href="Template/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <link href="Template/css/freelancer.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <asp:Menu ID="Menu1" runat="server"
-            Orientation="Horizontal"
-            Width="100%"
-            CssClass="navbar navbar-expand-lg navbar-dark bg-primary"
-            DataSourceID="SiteMapDataSource1">
-            <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="20px" />
-
-            <StaticMenuStyle CssClass="navbar-nav mr-auto" />
-            <StaticSelectedStyle CssClass="active" />
-            <DynamicMenuStyle CssClass="dropdown-menu" />
-
-            <LevelMenuItemStyles>
-                <asp:MenuItemStyle CssClass="nav-item nav-link " />
-                <asp:MenuItemStyle CssClass="nav-item nav-link bg-primary" />
-            </LevelMenuItemStyles>
-        </asp:Menu>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav" style="box-shadow: 0px 7px 0px -4px rgba(126,217,87,1);">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="InicioEM.aspx">
+                    <img src="Imagenes/LogoT.png" width="auto" height="60" /></a>
+                <button class="navbar-toggler navbar-toggler-right text-uppercase text-white rounded" style="background-color: #7ed957;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <asp:Menu runat="server" Orientation="Horizontal" CssClass="navbar-nav ml-auto" ID="navbarColor01" DataSourceID="SiteMapDataSource1" OnMenuItemDataBound="navbarColor01_MenuItemDataBound">
+                        <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="20px" />
+                        <StaticMenuStyle CssClass="nav-item mx-0 mx-lg-1" />
+                        <StaticSelectedStyle CssClass="active" />
+                        <DynamicMenuStyle CssClass="dropdown-menu" />
+                        <LevelMenuItemStyles>
+                            <asp:MenuItemStyle CssClass="nav-item mx-0 mx-lg-1" />
+                            <asp:MenuItemStyle CssClass="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" />
+                        </LevelMenuItemStyles>
+                    </asp:Menu>
+                </div>
+            </div>
+        </nav>
         <ol class="breadcrumb">
                 <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
           
@@ -43,5 +59,15 @@
         
     </div>
     </form>
+      <script src="Template/vendor/jquery/jquery.min.js"></script>
+    <script src="Template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="Template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="Template/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <script src="Template/js/jqBootstrapValidation.js"></script>
+    <script src="Template/js/contact_me.js"></script>
+
+    <script src="Template/js/freelancer.min.js"></script>
 </body>
 </html>
