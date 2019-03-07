@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Contexto
 {
-    class RolLN
+   public class RolLN
     {
         public static IQueryable ListaRol()
         {

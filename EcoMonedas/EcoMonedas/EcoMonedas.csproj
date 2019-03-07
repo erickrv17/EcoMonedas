@@ -92,6 +92,7 @@
     <Content Include="InicioEM.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
     <Content Include="MantenimientoCentrosAcopio.aspx" />
+    <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="packages.config" />
     <Content Include="paginaMaestra.Master" />
     <Content Include="Imagenes\IconoInfoR.png" />
@@ -189,6 +190,13 @@
     </Compile>
     <Compile Include="MantenimientoCentrosAcopio.aspx.designer.cs">
       <DependentUpon>MantenimientoCentrosAcopio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoUsuario.aspx.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoUsuario.aspx.designer.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="paginaMaestra.Master.cs">
       <DependentUpon>paginaMaestra.Master</DependentUpon>

@@ -64,6 +64,10 @@ namespace Contexto
                 .WithRequired(e => e.EncabezadoCupon)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Material>()
+                .Property(e => e.PrecioUnitario)
+                .HasPrecision(19, 4);
+
             modelBuilder.Entity<Provincia>()
                 .HasMany(e => e.CentroAcopios)
                 .WithRequired(e => e.Provincia)
@@ -73,8 +77,6 @@ namespace Contexto
                 .HasMany(e => e.Usuarios)
                 .WithRequired(e => e.Rol)
                 .WillCascadeOnDelete(false);
-
-          
         }
         public void FixEProviderServicesProblem() { var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance; }
 

@@ -22,8 +22,7 @@ namespace Contexto
         [Column(TypeName = "date")]
         public DateTime Fecha { get; set; }
 
-
-        public bool? Estado { get; set; }
+        public bool Estado { get; set; }
 
         public int CuponID { get; set; }
 

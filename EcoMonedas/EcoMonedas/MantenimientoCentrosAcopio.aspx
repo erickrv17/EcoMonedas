@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/paginaMaestra.Master" CodeBehind="MantenimientoCentrosAcopio.aspx.cs" Inherits="EcoMonedas.MantenimientoCentrosAcopio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/paginaMaestraAdministrador.Master" CodeBehind="MantenimientoCentrosAcopio.aspx.cs" Inherits="EcoMonedas.MantenimientoCentrosAcopio" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -25,12 +25,12 @@
 
                         <div class="form-group">
                             <label for="exampleSelect1">Administrador del Centro de acopio</label>                           
-                            <asp:DropDownList ID="DDLAdmiCentro" CssClass="form-control" runat="server" ItemType="Contexto.Usuario" DataTextField="CategoriaNombre" DataValueField="DDLAdmiCentro">
+                            <asp:DropDownList ID="DDLAdmiCentro" CssClass="form-control" runat="server" ItemType="Contexto.Usuario" SelectMethod="listaUsuarios" DataTextField="Nombre" DataValueField="ID">
                             </asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <label for="exampleSelect1">Provincia</label>                            
-                            <asp:DropDownList ID="DDLProvincia" CssClass="form-control" runat="server" ItemType="Contexto.Provincia"  DataTextField="CategoriaNombre" DataValueField="DDLProvincia">
+                            <asp:DropDownList ID="DDLProvincia" CssClass="form-control" runat="server" ItemType="Contexto.Provincia" SelectMethod="listaProvincias"  DataTextField="Nombre" DataValueField="ID">
                             </asp:DropDownList>
                         </div>
                         <div class="form-group">
@@ -54,7 +54,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*La imagen es requerida." ControlToValidate="archivoImagen" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                         <asp:HiddenField ID="hfCentroID" runat="server" Value="" />
-                        <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-primary" Text="Registrar" />
+                        <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-primary" Text="Registrar" OnClick="btnRegistrar_Click1" />
 
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                 <h3>Listado Centros de acopio
                 </h3>
                 <div class="table-responsive">
-                   <asp:GridView ID="grvListado" CssClass="table table-light table-hover" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="CentroID" >  
+                   <asp:GridView ID="grvListado" CssClass="table table-light table-hover" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="CentroID" OnSelectedIndexChanged="grvListado_SelectedIndexChanged" >  
                         <Columns>
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                          </Columns>

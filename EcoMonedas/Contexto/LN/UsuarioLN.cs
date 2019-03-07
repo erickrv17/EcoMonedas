@@ -22,8 +22,9 @@ namespace Contexto
             string segundoApellido,
             string telefono,
             string correoElectronico,
+            string password,
             string direccion,
-            int rolID,
+            string rolID,
             bool estado,
             string id = "")
         {
@@ -43,6 +44,7 @@ namespace Contexto
             miUsuario.SegundoApellido = segundoApellido;
             miUsuario.Telefono = telefono;
             miUsuario.CorreoElectronico = correoElectronico;
+            miUsuario.password = password;
             miUsuario.Direccion = direccion;
             miUsuario.RolID = Convert.ToInt32(rolID);
             miUsuario.Estado = estado;

@@ -35,6 +35,10 @@ namespace Contexto
         public string CorreoElectronico { get; set; }
 
         [Required]
+        [StringLength(50)]
+        public string password { get; set; }
+
+        [Required]
         [StringLength(100)]
         public string Direccion { get; set; }
 

@@ -58,12 +58,12 @@
     <Compile Include="EcoMonedasContext.cs" />
     <Compile Include="Entidades\EncabezadoCanje.cs" />
     <Compile Include="Entidades\EncabezadoCupon.cs" />
-    <Compile Include="Entidades\Material.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />
     <Compile Include="LN\RolLN.cs" />
     <Compile Include="LN\UsuarioLN.cs" />
+    <Compile Include="Entidades\Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entidades\Provincia.cs" />
     <Compile Include="Entidades\Rol.cs" />

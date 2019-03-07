@@ -8,12 +8,12 @@ using System.Web.UI.WebControls;
 
 namespace EcoMonedas
 {
-    public partial class MantenimientoCentrosAcopio : System.Web.UI.Page
+    public partial class MantenimientoUsuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             string accionProducto = Request.QueryString["accion"];
-            if (accionProducto == "guardado") 
+            if (accionProducto == "guardado")
             {
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Producto guardado satisfactoriamente!";
@@ -21,17 +21,17 @@ namespace EcoMonedas
             }
             cargarGrid();
         }
-     
+
         private void cargarGrid()
         {
-            IEnumerable<CentroAcopio> lista = (IEnumerable<CentroAcopio>)CentroAcopioLN.ListaCentrosAcopio();
+            IEnumerable<Usuario> lista = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios();
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
 
         //protected void cvNombre_ServerValidate(object source, ServerValidateEventArgs args)
         //{
-           
+
         //    args.IsValid = (args.Value.Length >= 3);
         //}
 
@@ -45,7 +45,7 @@ namespace EcoMonedas
                 String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
                 for (int i = 0; i < allowedExtensions.Length; i++)
                 {
-                    if (fileExtension == allowedExtensions[i]) 
+                    if (fileExtension == allowedExtensions[i])
                     {
                         archivoOK = true;
                     }
@@ -56,30 +56,30 @@ namespace EcoMonedas
             {
                 try
                 {
-                    
+
                     archivoImagen.PostedFile.SaveAs(path + archivoImagen.FileName);
-                 
+
                     archivoImagen.PostedFile.SaveAs(path + "Thumbs/" + archivoImagen.FileName);
                 }
                 catch (Exception ex)
                 {
-                  
+
                     lblMensaje.Visible = true;
                     lblMensaje.Text = ex.Message;
 
                 }
-             
-                CentroAcopioLN centros = new CentroAcopioLN();
-                bool confirmacion = centros.GuardarCentroAcopio(txtNombre.Text, DDLAdmiCentro.SelectedValue, DDLProvincia.SelectedValue, archivoImagen.FileName, txtDireccion.Text, CheckBox1.Checked,txtCorreo.Text,  hfCentroID.Value);
+
+                UsuarioLN usuarios = new UsuarioLN();
+                bool confirmacion = usuarios.GuardarUsuario(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtTelefono.Text, txtCorreo.Text, txtPassword.Text, txtDireccion.Text,DDLRol.SelectedValue,CheckBox1.Checked,hfUsuarioID.Value);
 
                 if (confirmacion)
                 {
-                    this.Response.Redirect("MantenimientoCentrosAcopio.aspx?accion=guardado");
+                    this.Response.Redirect("MantenimientoUsuario.aspx?accion=guardado");
                 }
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puede guardar el centro de acopio";
+                    lblMensaje.Text = "No se puede guardar el usuario";
                 }
 
             }
@@ -89,28 +89,23 @@ namespace EcoMonedas
                 lblMensaje.Text = "La extension o la imagen no es válida";
 
             }
-          
+
         }
 
-        public IQueryable listaUsuarios()
+        public IQueryable listaRoles()
         {
-            return UsuarioLN.ListaUsuarios();
+            return RolLN.ListaRol();
         }
-        public IQueryable listaProvincias()
-        {
-            return ProvinciaLN.ListaProvincias();
-        }
-
+       
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
-            CentroAcopio centrAcopio = CentroAcopioLN.obtenerCentroAcopio(id);
+            Usuario usuario = UsuarioLN.obtenerUsuario(id);
             //Aqui se le indican los valores en las distintos controles del form
-            txtNombre.Text = centrAcopio.Nombre;
-          //  exampleSelect1.SelectedValue = centrAcopio.CategoriaID.ToString();
-         //   hfProductoID.Value = centrAcopio.ProductoID.ToString();
+            txtNombre.Text = usuario.Nombre;
+            //  exampleSelect1.SelectedValue = centrAcopio.CategoriaID.ToString();
+            //   hfProductoID.Value = centrAcopio.ProductoID.ToString();
             btnRegistrar.Text = "Actualizar";
         }
-
     }
 }
