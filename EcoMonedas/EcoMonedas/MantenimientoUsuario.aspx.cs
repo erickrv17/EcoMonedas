@@ -64,7 +64,7 @@ namespace EcoMonedas
         {
             String correo = (grvListado.DataKeys[grvListado.SelectedIndex].Values[0]).ToString();
             Usuario usuario = UsuarioLN.obtenerUsuario(correo);
-           txtNombre.Text = usuario.Nombre;
+            txtNombre.Text = usuario.Nombre;
             txtPrimerApellido.Text = usuario.PrimerApellido;
             txtSegundoApellido.Text = usuario.SegundoApellido;
             txtTelefono.Text = usuario.Telefono;
