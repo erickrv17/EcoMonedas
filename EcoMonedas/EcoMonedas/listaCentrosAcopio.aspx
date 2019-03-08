@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>EcoMonedas</title>
     <link href="Imagenes/LogoT.png" rel="icon" />
     <link href="Template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -43,65 +43,68 @@
             </div>
         </nav>
         <asp:SiteMapDataSource runat="server" ShowStartingNode="false" ID="SiteMapDataSource1"></asp:SiteMapDataSource>
-         <br/> <br/> <br/> <br/> <br/>
-           <div class="row">
-                <div class="container">
-                    <div class="col-lg-12 mx-auto">
-                
-    <asp:ListView ID="centroAcopioList" runat="server"
-        DataKeyNames="CentroAcopioID" GroupItemCount="3"
-        ItemType="Contexto.CentroAcopio" SelectMethod="GetCentrosAcopio">
-        <EmptyDataTemplate>
-            <%-- Plantilla si no hay datos --%>
-            <div class="row">
-                No hay datos
-                   <div class="row">
-        </EmptyDataTemplate>
-        <EmptyItemTemplate>
-            <%-- Plantilla para elemento o item vacío --%>
-            <%-- Si hay un item o registro que le falte algún valor --%>
-            <div class="col-lg-3">
-            </div>
-        </EmptyItemTemplate>
-        <GroupTemplate>
-            <%-- Plantilla de contenedor de grupo --%>
-            <div class="row">
-                <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
-            </div>
-        </GroupTemplate>
-        <ItemTemplate>
-            <%-- Plantilla del contenedor de item de datos --%>
-            <div class="col-lg-3">
-                <div class="card mb-3">
-                    <asp:HyperLink ID="HyperLink1"
-                        runat="server"
-                        CssClass="card-header"
-                        NavigateUrl='<%# Eval("ID", "~/detalleCentroAcopio.aspx?id={0}") %>'>
-                            <%#:Item.Nombre%>
-                    </asp:HyperLink>
-                     <asp:Image ID="Image1" ImageUrl='<%# Eval("imagen", "~/imagenes/Thumbs/{0}")%>'
-                        Height="200px" ImageAlign="Middle" runat="server" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="container">
+                <div class="col-lg-12 mx-auto">
 
-                    <div class="card-body">
-                        <p class="card-text"><b>Direcció :</b><%#Item.DireccionExacta%></p>
-                    </div>
-                    <div class="card-footer text-muted">
-                    </div>
+                    <asp:ListView ID="centroAcopioList" runat="server"
+                        DataKeyNames="CentroAcopioID" GroupItemCount="3"
+                        ItemType="Contexto.CentroAcopio" SelectMethod="GetCentrosAcopio">
+                        <EmptyDataTemplate>
+                            <%-- Plantilla si no hay datos --%>
+                            <div class="row">
+                                No hay datos
+                   <div class="row">
+                        </EmptyDataTemplate>
+                        <EmptyItemTemplate>
+                            <%-- Plantilla para elemento o item vacío --%>
+                            <%-- Si hay un item o registro que le falte algún valor --%>
+                            <div class="col-lg-3">
+                            </div>
+                        </EmptyItemTemplate>
+                        <GroupTemplate>
+                            <%-- Plantilla de contenedor de grupo --%>
+                            <div class="row">
+                                <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                            </div>
+                        </GroupTemplate>
+                        <ItemTemplate>
+                            <%-- Plantilla del contenedor de item de datos --%>
+                            <div class="col-lg-3">
+                                <div class="card mb-3">
+                                    <asp:HyperLink ID="HyperLink1"
+                                        runat="server"
+                                        CssClass="card-header"
+                                        NavigateUrl='<%# Eval("ID", "~/detalleCentroAcopio.aspx?id={0}") %>'>
+                            <%#:Item.Nombre%>
+                                    </asp:HyperLink>
+                                    <asp:Image ID="Image1" ImageUrl='<%# Eval("imagen", "~/imagenes/Thumbs/{0}")%>'
+                                        Height="200px" ImageAlign="Middle" runat="server" />
+
+                                    <div class="card-body">
+                                        <p class="card-text"><b>Direcció :</b><%#Item.DireccionExacta%></p>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                    </div>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <%-- Plantilla de contenedor raíz --%>
+                            <div class="container">
+                                <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
+                            </div>
+                        </LayoutTemplate>
+                    </asp:ListView>
+
                 </div>
             </div>
-        </ItemTemplate>
-        <LayoutTemplate>
-            <%-- Plantilla de contenedor raíz --%>
-            <div class="container">
-                <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
-            </div>
-        </LayoutTemplate>
-    </asp:ListView>
-
-   </div> </div></div>
-                    
-       
-            
+        </div>
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
@@ -109,7 +112,7 @@
                         <h4 class="text-uppercase mb-4">Location</h4>
                         <p class="lead mb-0">
                             2215 John Daniel Drive
-            <br>
+                                <br />
                             Clark, MO 65243
                         </p>
                     </div>
@@ -153,14 +156,14 @@
                 </div>
             </div>
         </footer>
-                
+
 
         <div class="copyright py-4 text-center text-white">
             <div class="container">
-                <asp:Label ID="copyright" runat="server" Text="<%$ AppSettings: copyright %>"></asp:Label> 
+                <asp:Label ID="copyright" runat="server" Text="<%$ AppSettings: copyright %>"></asp:Label>
             </div>
         </div>
-           <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
         <div class="scroll-to-top d-lg-none position-fixed ">
             <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
                 <i class="fa fa-chevron-up"></i>
@@ -168,7 +171,7 @@
         </div>
 
     </form>
-   
+
     <script src="Template/vendor/jquery/jquery.min.js"></script>
     <script src="Template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

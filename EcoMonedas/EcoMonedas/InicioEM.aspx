@@ -66,32 +66,62 @@
             </div>
         </header>
         <div class="container-fluid">
-            <div class="row col-lg-12 col-md-12 col-sm-12">
-                <div class="col-lg-2 col-md-1 col-sm-1"></div>
-                <div class="col-lg-3 col-md-4 col-sm-10">
-                    <a href="#">
-                        <img src="Imagenes/IconoInfoC.png" width="300" height="300" /></a>
+            <div class="row">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="table-responsive-sm col-lg-8">
+                        <table class="table">
+                            <tr>
+                                <th style="text-align: center" colspan="2"><b>¿Qué es y cómo funciona EcoMonedas?</b></th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center">Nuestro Propósito</th>
+                                <th style="text-align: center">Nuestra Propuesta</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: justify;">ecolones® es la primera ecomoneda virtual que da valor 
+                            a la sostenibilidad en Costa Rica. Se otorga a cambio de los materiales valorizables que llevás 
+                            a reciclar, mediante un sistema de incentivos en el que podés canjearlos por descuentos en 
+                            productos y servicios sostenibles. De esta forma aportás a la cultura del reciclaje y juntos 
+                            impulsamos una economía verde, circular y solidaria en Costa Rica que además apoya a empresas y 
+                            emprendimientos nacionales que ofrecen productos sostenibles y saludables.</td>
+
+                                <td style="text-align: justify;">Los materiales reciclables,  ahora tienen + valor.
+                            ¿Cómo funciona? A través de un sistema de incentivos que promuevan el reciclaje y 
+                            propicien el cambio de hábitos de consumo en los individuos y comunidades; lo anterior, 
+                            gracias a la responsabilidad compartida que asumen las empresas privadas.</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-2"></div>
                 </div>
-                <div class="col-lg-2 col-md-2"></div>
-                <div class="col-lg-3 col-md-4 col-sm-10">
-                    <a href="#">
-                        <img src="Imagenes/IconoInfoR.png" width="300" height="300" /></a>
+
+                <div class="row col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-2 col-md-1 col-sm-1"></div>
+                    <div class="col-lg-3 col-md-4 col-sm-10">
+                        <a href="#">
+                            <img src="Imagenes/IconoInfoC.png" width="300" height="300" /></a>
+                    </div>
+                    <div class="col-lg-2 col-md-2"></div>
+                    <div class="col-lg-3 col-md-4 col-sm-10">
+                        <a href="#">
+                            <img src="Imagenes/IconoInfoR.png" width="300" height="300" /></a>
+                    </div>
+                    <div class="col-lg-2 col-md-1 col-sm-1"></div>
                 </div>
-                <div class="col-lg-2 col-md-1 col-sm-1"></div>
             </div>
-        </div>
         <section id="contact">
             <div class="container">
-                <h2  class="text-center text-uppercase text-secondary mb-0" style="color: black;">Contactenos
+                <h2 class="text-center text-uppercase text-secondary mb-0" style="color: black;">Contactenos
                 </h2>
-                <hr class="mb-5" style="color:#7ed957;"/>
+                <hr class="mb-5" style="color: #7ed957;" />
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <section id="contactForm">
                             <div class="form-group">
                                 <div class="form-group">
                                     <asp:Label ID="Label1" runat="server" Text="Nombre: "></asp:Label>
-                                    <asp:TextBox  class="form-control"  ID="txtNombre" runat="server"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="txtNombre" runat="server"></asp:TextBox>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -109,7 +139,7 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <br/>
+                            <br />
                             <div id="success"></div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
@@ -128,7 +158,7 @@
                         <h4 class="text-uppercase mb-4">Location</h4>
                         <p class="lead mb-0">
                             2215 John Daniel Drive
-            <br/>
+            <br />
                             Clark, MO 65243
                         </p>
                     </div>
