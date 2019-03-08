@@ -22,48 +22,61 @@ namespace Contexto
             string segundoApellido,
             string telefono,
             string correoElectronico,
-            string password,
+            string contrasenia,
             string direccion,
             string rolID,
-            bool estado,
-            string id = "")
+            bool estado
+           )
         {
 
             EcoMonedasContext db = new EcoMonedasContext();
-            var miUsuario = new Usuario();
-            int idUsuario = 0;
-            bool esNumero = int.TryParse(id, out idUsuario);
 
-            if (esNumero || idUsuario > 0)
-            {
-                //Buscar el centro a actualizar
-                miUsuario = db.Usuarios.Where(c => c.ID == idUsuario).First<Usuario>();
+            var miUsuario = obtenerUsuario(correoElectronico);
+
+            //int idUsuario = 0;
+            //bool esNumero = int.TryParse(correoElectronico, out idUsuario);
+
+            if (miUsuario==null)
+            {                
+                miUsuario = new Usuario();
+                miUsuario.Nombre = nombre;
+                miUsuario.PrimerApellido = primerApellido;
+                miUsuario.SegundoApellido = segundoApellido;
+                miUsuario.Telefono = telefono;
+                miUsuario.CorreoElectronico = correoElectronico;
+                miUsuario.contrasenia = contrasenia;
+                miUsuario.Direccion = direccion;
+                miUsuario.RolID = Convert.ToInt32(rolID);
+                miUsuario.Estado = estado;
+                if (!correoElectronico.Equals(""))
+                {
+
+                    db.Usuarios.Add(miUsuario);
+                }
             }
-            miUsuario.Nombre = nombre;
+            else
+            {
+             miUsuario = db.Usuarios.Where(p => p.CorreoElectronico == correoElectronico).First<Usuario>();
+             miUsuario.Nombre = nombre;
             miUsuario.PrimerApellido = primerApellido;
             miUsuario.SegundoApellido = segundoApellido;
             miUsuario.Telefono = telefono;
-            miUsuario.CorreoElectronico = correoElectronico;
-            miUsuario.password = password;
+            miUsuario.contrasenia = contrasenia;
             miUsuario.Direccion = direccion;
             miUsuario.RolID = Convert.ToInt32(rolID);
             miUsuario.Estado = estado;
-
-            if (id.Equals("") || !esNumero)
-            {
-
-                db.Usuarios.Add(miUsuario);
             }
+           
             //Siempre se guardan los datos
             db.SaveChanges();//Realiza el commit para el insert en la base de datos
 
             return true;
         }
 
-        public static Usuario obtenerUsuario(int id)
+        public static Usuario obtenerUsuario(string correo)
         {
             IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios();
-            Usuario usuario = listas.Where(x => x.ID == id).FirstOrDefault<Usuario>();
+            Usuario usuario = listas.Where(x => x.CorreoElectronico == correo).FirstOrDefault<Usuario>();
             return usuario;
         }
     }

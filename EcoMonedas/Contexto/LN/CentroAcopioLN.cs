@@ -39,7 +39,7 @@ namespace Contexto
                 miCentroAcopio = db.CentroAcopios.Where(c => c.ID == idCentroAcopio).First<CentroAcopio>();
             }
             miCentroAcopio.Nombre = nombre;
-            miCentroAcopio.UsuarioID = Convert.ToInt32(usuarioID);
+            miCentroAcopio.UsuarioID = usuarioID;
             miCentroAcopio.ProvinciaID = Convert.ToInt32(provinciaID);
             miCentroAcopio.Imagen = imagen;
             miCentroAcopio.DireccionExacta = direccionExacta;

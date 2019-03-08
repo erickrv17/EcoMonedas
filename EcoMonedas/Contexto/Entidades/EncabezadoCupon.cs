@@ -9,15 +9,11 @@ namespace Contexto
     [Table("EncabezadoCupon")]
     public partial class EncabezadoCupon
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EncabezadoCupon()
-        {
-            Usuarios = new HashSet<Usuario>();
-        }
-
         public int ID { get; set; }
 
-        public int ClienteID { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string ClienteID { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime Fecha { get; set; }
@@ -28,7 +24,6 @@ namespace Contexto
 
         public virtual Cupon Cupon { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

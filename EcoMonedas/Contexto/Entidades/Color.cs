@@ -6,33 +6,28 @@ namespace Contexto
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Material")]
-    public partial class Material
+    [Table("Color")]
+    public partial class Color
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Material()
+        public Color()
         {
-            DetalleCanjes = new HashSet<DetalleCanje>();
+            Materials = new HashSet<Material>();
         }
 
-        public int ID { get; set; }
+        [Key]
+        public int IdColor { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Nombre { get; set; }
 
-        [Required]
-        public string Imagen { get; set; }
-
-        public double PrecioUnitario { get; set; }
-
-        public int IdColor { get; set; }
-
         public bool Estado { get; set; }
 
-        public virtual Color Color { get; set; }
+        [StringLength(50)]
+        public string CodigoColor { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCanje> DetalleCanjes { get; set; }
+        public virtual ICollection<Material> Materials { get; set; }
     }
 }

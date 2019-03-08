@@ -9,9 +9,14 @@ namespace Contexto
     [Table("Usuario")]
     public partial class Usuario
     {
-        [Key]
-        [Column(Order = 0)]
-        public int ID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Usuario()
+        {
+            BilleteraVirtuals = new HashSet<BilleteraVirtual>();
+            CentroAcopios = new HashSet<CentroAcopio>();
+            EncabezadoCanjes = new HashSet<EncabezadoCanje>();
+            EncabezadoCupons = new HashSet<EncabezadoCupon>();
+        }
 
         [Required]
         [StringLength(50)]
@@ -30,13 +35,12 @@ namespace Contexto
         public string Telefono { get; set; }
 
         [Key]
-        [Column(Order = 1)]
         [StringLength(100)]
         public string CorreoElectronico { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string password { get; set; }
+        public string contrasenia { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -46,13 +50,17 @@ namespace Contexto
 
         public bool Estado { get; set; }
 
-        public virtual BilleteraVirtual BilleteraVirtual { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BilleteraVirtual> BilleteraVirtuals { get; set; }
 
-        public virtual CentroAcopio CentroAcopio { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CentroAcopio> CentroAcopios { get; set; }
 
-        public virtual EncabezadoCanje EncabezadoCanje { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EncabezadoCanje> EncabezadoCanjes { get; set; }
 
-        public virtual EncabezadoCupon EncabezadoCupon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EncabezadoCupon> EncabezadoCupons { get; set; }
 
         public virtual Rol Rol { get; set; }
     }

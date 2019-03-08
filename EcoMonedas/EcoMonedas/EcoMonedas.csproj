@@ -242,7 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contexto\Contexto.csproj">
-      <Project>{7489c278-5140-47f7-aeda-5c18de04e351}</Project>
+      <Project>{3827c768-4fbc-4f23-827d-2509ea65764b}</Project>
       <Name>Contexto</Name>
     </ProjectReference>
   </ItemGroup>

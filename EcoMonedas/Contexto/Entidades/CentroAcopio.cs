@@ -13,7 +13,6 @@ namespace Contexto
         public CentroAcopio()
         {
             EncabezadoCanjes = new HashSet<EncabezadoCanje>();
-            Usuarios = new HashSet<Usuario>();
         }
 
         public int ID { get; set; }
@@ -25,7 +24,9 @@ namespace Contexto
         [Required]
         public string Imagen { get; set; }
 
-        public int UsuarioID { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string UsuarioID { get; set; }
 
         public int ProvinciaID { get; set; }
 
@@ -40,10 +41,9 @@ namespace Contexto
 
         public virtual Provincia Provincia { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EncabezadoCanje> EncabezadoCanjes { get; set; }
+        public virtual Usuario Usuario { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<EncabezadoCanje> EncabezadoCanjes { get; set; }
     }
 }

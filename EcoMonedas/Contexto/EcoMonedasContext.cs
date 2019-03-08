@@ -14,6 +14,7 @@ namespace Contexto
 
         public virtual DbSet<BilleteraVirtual> BilleteraVirtuals { get; set; }
         public virtual DbSet<CentroAcopio> CentroAcopios { get; set; }
+        public virtual DbSet<Color> Colors { get; set; }
         public virtual DbSet<Cupon> Cupons { get; set; }
         public virtual DbSet<DetalleCanje> DetalleCanjes { get; set; }
         public virtual DbSet<EncabezadoCanje> EncabezadoCanjes { get; set; }
@@ -25,24 +26,15 @@ namespace Contexto
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BilleteraVirtual>()
-                .HasMany(e => e.Usuarios)
-                .WithRequired(e => e.BilleteraVirtual)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<CentroAcopio>()
                 .HasMany(e => e.EncabezadoCanjes)
                 .WithRequired(e => e.CentroAcopio)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<CentroAcopio>()
-                .HasMany(e => e.Usuarios)
-                .WithRequired(e => e.CentroAcopio)
+            modelBuilder.Entity<Color>()
+                .HasMany(e => e.Materials)
+                .WithRequired(e => e.Color)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Cupon>()
-                .Property(e => e.PrecioCanje)
-                .HasPrecision(19, 4);
 
             modelBuilder.Entity<Cupon>()
                 .HasMany(e => e.EncabezadoCupons)
@@ -54,20 +46,6 @@ namespace Contexto
                 .WithRequired(e => e.EncabezadoCanje)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<EncabezadoCanje>()
-                .HasMany(e => e.Usuarios)
-                .WithRequired(e => e.EncabezadoCanje)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<EncabezadoCupon>()
-                .HasMany(e => e.Usuarios)
-                .WithRequired(e => e.EncabezadoCupon)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Material>()
-                .Property(e => e.PrecioUnitario)
-                .HasPrecision(19, 4);
-
             modelBuilder.Entity<Provincia>()
                 .HasMany(e => e.CentroAcopios)
                 .WithRequired(e => e.Provincia)
@@ -77,8 +55,31 @@ namespace Contexto
                 .HasMany(e => e.Usuarios)
                 .WithRequired(e => e.Rol)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.BilleteraVirtuals)
+                .WithRequired(e => e.Usuario)
+                .HasForeignKey(e => e.ClienteID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.CentroAcopios)
+                .WithRequired(e => e.Usuario)
+                .HasForeignKey(e => e.UsuarioID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.EncabezadoCanjes)
+                .WithRequired(e => e.Usuario)
+                .HasForeignKey(e => e.ClienteID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.EncabezadoCupons)
+                .WithRequired(e => e.Usuario)
+                .HasForeignKey(e => e.ClienteID)
+                .WillCascadeOnDelete(false);
         }
         public void FixEProviderServicesProblem() { var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance; }
-
     }
 }

@@ -16,7 +16,7 @@ namespace EcoMonedas
             if (accionProducto == "guardado")
             {
                 lblMensaje.Visible = true;
-                lblMensaje.Text = "Producto guardado satisfactoriamente!";
+                lblMensaje.Text = "Usuario guardado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
             }
             cargarGrid();
@@ -37,40 +37,9 @@ namespace EcoMonedas
 
         protected void btnRegistrar_Click1(object sender, EventArgs e)
         {
-            Boolean archivoOK = false;
-            String path = Server.MapPath("~/Imagenes/");
-            if (archivoImagen.HasFile)
-            {
-                String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
-                String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
-                for (int i = 0; i < allowedExtensions.Length; i++)
-                {
-                    if (fileExtension == allowedExtensions[i])
-                    {
-                        archivoOK = true;
-                    }
-                }
-            }
-
-            if (archivoOK)
-            {
-                try
-                {
-
-                    archivoImagen.PostedFile.SaveAs(path + archivoImagen.FileName);
-
-                    archivoImagen.PostedFile.SaveAs(path + "Thumbs/" + archivoImagen.FileName);
-                }
-                catch (Exception ex)
-                {
-
-                    lblMensaje.Visible = true;
-                    lblMensaje.Text = ex.Message;
-
-                }
-
+        
                 UsuarioLN usuarios = new UsuarioLN();
-                bool confirmacion = usuarios.GuardarUsuario(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtTelefono.Text, txtCorreo.Text, txtPassword.Text, txtDireccion.Text,DDLRol.SelectedValue,CheckBox1.Checked,hfUsuarioID.Value);
+                bool confirmacion = usuarios.GuardarUsuario(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtTelefono.Text, txtCorreo.Text, txtPassword.Text, txtDireccion.Text,DDLRol.SelectedValue,CheckBox1.Checked);
 
                 if (confirmacion)
                 {
@@ -82,13 +51,7 @@ namespace EcoMonedas
                     lblMensaje.Text = "No se puede guardar el usuario";
                 }
 
-            }
-            else
-            {
-                lblMensaje.Visible = true;
-                lblMensaje.Text = "La extension o la imagen no es válida";
-
-            }
+          
 
         }
 
@@ -99,12 +62,16 @@ namespace EcoMonedas
        
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
-            Usuario usuario = UsuarioLN.obtenerUsuario(id);
-            //Aqui se le indican los valores en las distintos controles del form
-            txtNombre.Text = usuario.Nombre;
-            //  exampleSelect1.SelectedValue = centrAcopio.CategoriaID.ToString();
-            //   hfProductoID.Value = centrAcopio.ProductoID.ToString();
+            String correo = (grvListado.DataKeys[grvListado.SelectedIndex].Values[0]).ToString();
+            Usuario usuario = UsuarioLN.obtenerUsuario(correo);
+           txtNombre.Text = usuario.Nombre;
+            txtPrimerApellido.Text = usuario.PrimerApellido;
+            txtSegundoApellido.Text = usuario.SegundoApellido;
+            txtTelefono.Text = usuario.Telefono;
+            txtCorreo.Text = usuario.CorreoElectronico;
+            txtDireccion.Text = usuario.Direccion;
+            txtPassword.Text = usuario.contrasenia;
+            DDLRol.SelectedValue = usuario.RolID.ToString();
             btnRegistrar.Text = "Actualizar";
         }
     }

@@ -38,8 +38,8 @@ namespace Contexto
             }
             miMaterial.Nombre = nombre;
             miMaterial.Imagen =imagen;
-            miMaterial.PrecioUnitario = Convert.ToDecimal(precioUnitario);
-            miMaterial.Color = color;
+            miMaterial.PrecioUnitario = Convert.ToDouble(precioUnitario);
+            miMaterial.IdColor = Convert.ToInt32(color);
             miMaterial.Estado = estado;
            
             if (id.Equals("") || !esNumero)

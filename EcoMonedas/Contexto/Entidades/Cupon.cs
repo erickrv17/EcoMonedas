@@ -27,8 +27,7 @@ namespace Contexto
 
         public bool Estado { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal PrecioCanje { get; set; }
+        public double PrecioCanje { get; set; }
 
         public int EcoMonedasNecesarias { get; set; }
 

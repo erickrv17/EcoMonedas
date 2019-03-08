@@ -13,12 +13,13 @@ namespace Contexto
         public EncabezadoCanje()
         {
             DetalleCanjes = new HashSet<DetalleCanje>();
-            Usuarios = new HashSet<Usuario>();
         }
 
         public int ID { get; set; }
 
-        public int ClienteID { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string ClienteID { get; set; }
 
         public int CentroAcopioID { get; set; }
 
@@ -32,7 +33,6 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleCanje> DetalleCanjes { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }
