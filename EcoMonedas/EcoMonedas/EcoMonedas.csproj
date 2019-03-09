@@ -80,7 +80,9 @@
     <Content Include="Imagenes\Banner2.png" />
     <Content Include="Imagenes\Contactenos.png" />
     <Content Include="Imagenes\Cuenta.png" />
+    <Content Include="Imagenes\EditarPerfil.png" />
     <Content Include="Imagenes\FlechaAbajo.png" />
+    <Content Include="Imagenes\Funciones.png" />
     <Content Include="Imagenes\HojaBreadC.png" />
     <Content Include="Imagenes\IconoInfoC.png" />
     <Content Include="Imagenes\Inicio.png" />
@@ -97,6 +99,7 @@
     <Content Include="packages.config" />
     <Content Include="paginaMaestra.Master" />
     <Content Include="Imagenes\IconoInfoR.png" />
+    <Content Include="PrincipalAdministrador.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -218,6 +221,13 @@
     </Compile>
     <Compile Include="PaginaMaestraAdministrador.Master.designer.cs">
       <DependentUpon>PaginaMaestraAdministrador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalAdministrador.aspx.cs">
+      <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrincipalAdministrador.aspx.designer.cs">
+      <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
