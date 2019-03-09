@@ -59,7 +59,7 @@
                         <a class="collapse-item" href="MantenimientoUsuario.aspx">Usuarios</a>
                         <a class="collapse-item" href="MantenimientoCentrosAcopio.aspx">Centros de Acopio</a>
                         <a class="collapse-item" href="#">Materiales</a>
-                        <a class="collapse-item" href="#">Cupones</a>
+                        <a class="collapse-item" href="MantenimientoCupones.aspx">Cupones</a>
                     </div>
                 </div>
             </li>

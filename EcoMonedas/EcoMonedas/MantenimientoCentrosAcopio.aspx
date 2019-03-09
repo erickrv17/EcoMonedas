@@ -64,23 +64,34 @@
 
                         <div class="form-group">
                             <label for="exampleInputFile">Imagen</label>
+                            <asp:Image ID="Image1" CssClass="img-thumbnail" AlternateText="Imagen Material" runat="server" />                   
                             <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*La imagen es requerida." ControlToValidate="archivoImagen" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                ErrorMessage="*La imagen es requerida." 
+                                ControlToValidate="archivoImagen" 
+                                ForeColor="Red" 
+                                SetFocusOnError="true" 
+                                Display="Dynamic">
+                            </asp:RequiredFieldValidator>
                         </div>
                         <asp:HiddenField ID="hfCentroID" runat="server" Value="" />
                         <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-primary" Text="Registrar" OnClick="btnRegistrar_Click1" />
 
                     </div>
                 
-            <div class="col-lg-6 offset-lg-1">
+            <div class="col-lg-7 col-md-6 col-sm-12">
                 <h2>Listado Centros de acopio
                 </h2>
                 <div class="table-responsive">
-                   <asp:GridView ID="grvListado" CssClass="table table-light table-hover" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="CentroID" OnSelectedIndexChanged="grvListado_SelectedIndexChanged" >  
+                   <asp:GridView ID="grvListado" CssClass="table table-light table-hover" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="ID" OnSelectedIndexChanged="grvListado_SelectedIndexChanged" >  
                         <Columns>
-                            <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
+                              <asp:BoundField DataField="ID" HeaderText="Código"></asp:BoundField>                             
+                              <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
+                              <asp:BoundField DataField="Usuario.Nombre" HeaderText="Administrador"></asp:BoundField>
+                              <asp:BoundField DataField="Provincia.Nombre" HeaderText="Provincia"></asp:BoundField>
+                              <asp:BoundField DataField="Estado" dataformatstring="{0:Yes/No}" HeaderText="Estado"></asp:BoundField>
                          </Columns>
-                        <HeaderStyle CssClass="thead-dark" />
+                        <HeaderStyle CssClass="table-info" />
                     </asp:GridView>
                 </div>
             </div>

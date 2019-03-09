@@ -72,6 +72,7 @@ namespace EcoMonedas
             txtDireccion.Text = usuario.Direccion;
             txtPassword.Text = usuario.contrasenia;
             DDLRol.SelectedValue = usuario.RolID.ToString();
+            CheckBox1.Checked = usuario.Estado;
             btnRegistrar.Text = "Actualizar";
         }
     }

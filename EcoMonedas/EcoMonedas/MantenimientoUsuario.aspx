@@ -111,7 +111,7 @@
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                              <asp:BoundField DataField="PrimerApellido" HeaderText="Apellido"></asp:BoundField>
                              <asp:BoundField DataField="CorreoElectronico" HeaderText="Correo"></asp:BoundField>
-                             <asp:BoundField DataField="RolID" HeaderText="Rol"></asp:BoundField>
+                             <asp:BoundField DataField="Rol.Descripcion" HeaderText="Rol"></asp:BoundField>
                              <asp:BoundField DataField="Estado" HeaderText="Activo"></asp:BoundField>
                          </Columns>
                         <HeaderStyle CssClass="table-info" />

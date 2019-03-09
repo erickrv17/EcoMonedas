@@ -16,7 +16,7 @@ namespace EcoMonedas
             if (accionProducto == "guardado") 
             {
                 lblMensaje.Visible = true;
-                lblMensaje.Text = "Producto guardado satisfactoriamente!";
+                lblMensaje.Text = "Centro guardado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
             }
             cargarGrid();
@@ -107,8 +107,13 @@ namespace EcoMonedas
             CentroAcopio centrAcopio = CentroAcopioLN.obtenerCentroAcopio(id);
             //Aqui se le indican los valores en las distintos controles del form
             txtNombre.Text = centrAcopio.Nombre;
-          //  exampleSelect1.SelectedValue = centrAcopio.CategoriaID.ToString();
-         //   hfProductoID.Value = centrAcopio.ProductoID.ToString();
+            DDLAdmiCentro.SelectedValue = centrAcopio.UsuarioID;
+            DDLProvincia.SelectedValue = centrAcopio.ProvinciaID.ToString();
+            txtDireccion.Text = centrAcopio.DireccionExacta;
+            txtCorreo.Text = centrAcopio.Correo;
+            CheckBox1.Checked = centrAcopio.Estado;
+            Image1.ImageUrl = "~/Imagenes/" + centrAcopio.Imagen;
+            hfCentroID.Value = centrAcopio.ID.ToString();
             btnRegistrar.Text = "Actualizar";
         }
 

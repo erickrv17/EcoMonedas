@@ -94,6 +94,7 @@
     <Content Include="InicioEM.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
     <Content Include="MantenimientoCentrosAcopio.aspx" />
+    <Content Include="MantenimientoCupones.aspx" />
     <Content Include="MantenimientoMateriales.aspx" />
     <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="packages.config" />
@@ -193,6 +194,13 @@
     </Compile>
     <Compile Include="MantenimientoCentrosAcopio.aspx.designer.cs">
       <DependentUpon>MantenimientoCentrosAcopio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoCupones.aspx.cs">
+      <DependentUpon>MantenimientoCupones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCupones.aspx.designer.cs">
+      <DependentUpon>MantenimientoCupones.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoMateriales.aspx.cs">
       <DependentUpon>MantenimientoMateriales.aspx</DependentUpon>

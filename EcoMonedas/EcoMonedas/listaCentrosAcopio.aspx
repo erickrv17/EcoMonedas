@@ -47,13 +47,13 @@
         <br />
         <br />
         <br />
-        <br />
+        <br /> <br /> <br /> <br />
         <div class="row">
             <div class="container">
                 <div class="col-lg-12 mx-auto">
 
                     <asp:ListView ID="centroAcopioList" runat="server"
-                        DataKeyNames="CentroAcopioID" GroupItemCount="3"
+                        DataKeyNames="ID" GroupItemCount="3"
                         ItemType="Contexto.CentroAcopio" SelectMethod="GetCentrosAcopio">
                         <EmptyDataTemplate>
                             <%-- Plantilla si no hay datos --%>
@@ -83,11 +83,11 @@
                                         NavigateUrl='<%# Eval("ID", "~/detalleCentroAcopio.aspx?id={0}") %>'>
                             <%#:Item.Nombre%>
                                     </asp:HyperLink>
-                                    <asp:Image ID="Image1" ImageUrl='<%# Eval("imagen", "~/imagenes/Thumbs/{0}")%>'
+                                    <asp:Image ID="Image1" ImageUrl='<%# Eval("imagen", "~/imagenes/{0}")%>'
                                         Height="200px" ImageAlign="Middle" runat="server" />
 
                                     <div class="card-body">
-                                        <p class="card-text"><b>Direcció :</b><%#Item.DireccionExacta%></p>
+                                        <p class="card-text"><b>Dirección :</b><%#Item.DireccionExacta%></p>
                                     </div>
                                     <div class="card-footer text-muted">
                                     </div>
