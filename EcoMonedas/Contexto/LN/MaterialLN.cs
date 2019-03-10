@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Contexto
 {
-    class MaterialLN
+    public class MaterialLN
     {
         public static IQueryable ListaMateriales()
         {

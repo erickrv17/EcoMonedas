@@ -56,8 +56,16 @@
                         ControlToValidate="archivoImagen"
                         SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
+                <div class="row form-group">
+                    <label for="archivoImagen" class="control-label">Estado</label>
+                    <asp:CheckBox ID="chkEstado" runat="server" CssClass="form-check-input" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
+                        runat="server" Text="Imagen requerida"
+                        ControlToValidate="archivoImagen"
+                        SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                </div>
                 <div class="form-group row">
-                    <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+                    <asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
                 </div>
                 <asp:HiddenField ID="HiddenField1" runat="server" />
                 <!-- Registro -->
