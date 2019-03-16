@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EcoMonedas
 {
-    public partial class PruebaManteCe : System.Web.UI.Page
+    public partial class PrincipalAdminCentroA : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
