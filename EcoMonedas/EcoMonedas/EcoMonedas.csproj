@@ -94,6 +94,11 @@
     <Content Include="Imagenes\LogoTrans.png" />
     <Content Include="Imagenes\Mapa.png" />
     <Content Include="Imagenes\MapaCR.png" />
+    <Content Include="Imagenes\Patrocinadores\ffico.jpg" />
+    <Content Include="Imagenes\Patrocinadores\kolbi.jpg" />
+    <Content Include="Imagenes\Patrocinadores\numar.jpg" />
+    <Content Include="Imagenes\Patrocinadores\sardimar.jpg" />
+    <Content Include="Imagenes\Patrocinadores\sur.png" />
     <Content Include="Imagenes\Separador.png" />
     <Content Include="Imagenes\Separador2.png" />
     <Content Include="Inicio.aspx" />
