@@ -13,14 +13,22 @@ namespace EcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string accionProducto = Request.QueryString["accion"];
-            if (accionProducto == "guardado")
+            string accionMat = Request.QueryString["accion"];
+            if (accionMat == "guardar")
             {
                 lblMensaje.Visible = true;
-                lblMensaje.Text = "Material guardado satisfactoriamente!";
-                lblMensaje.CssClass = "alert alert-dismissible alert-success";
+                lblMensaje.Text = "Material Guardado Satisfactoriamente!";
             }
-            cargarGrid();
+            //Listado de libos
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            grvListado.DataSource = lista.ToList();
+            grvListado.DataBind();
+            ddlColor.AutoPostBack = true;
+        }
+
+        public IQueryable listaColores()
+        {
+            return ColorLN.ListaColors();
         }
 
         private void cargarGrid()
@@ -32,53 +40,66 @@ namespace EcoMonedas
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Boolean archivoOK = false;
-            //String path = Server.MapPath("~/Imagenes/");
-            //if (archivoImagen.HasFile)
-            //{
-            //    String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
-            //    String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
-            //    for (int i = 0; i < allowedExtensions.Length; i++)
-            //    {
-            //        if (fileExtension == allowedExtensions[i])
-            //        {
-            //            archivoOK = true;
-            //        }
-            //    }
-            //}
+            Boolean archivoOK = false;
+            String path = Server.MapPath("~/Imagenes/");
+            if (archivoImagen.HasFile)
+            {
+                String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
+                String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
+                for (int i = 0; i < allowedExtensions.Length; i++)
+                {
+                    if (fileExtension == allowedExtensions[i])
+                    {
+                        archivoOK = true;
+                    }
+                }
+            }
 
-            //if (archivoOK)
-            //{
-            //    try
-            //    {
-            //        archivoImagen.PostedFile.SaveAs(path + archivoImagen.FileName);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        lblMensaje.Visible = true;
-            //        lblMensaje.Text = ex.Message;
-            //    }
-                
-            //    bool confirmar = MaterialLN.GuardarMaterial(txtNombre.Text,archivoImagen.FileName,Convert.ToDecimal(txtPrecio.Text),ddlColor.SelectedValue, chkEstado.Checked, HiddenField1.Value);
-            //    if (confirmar)
-            //    {
+            if (archivoOK)
+            {
+                try
+                {
+                    archivoImagen.PostedFile.SaveAs(path + "Materiales/" + archivoImagen.FileName);
+                }
+                catch (Exception ex)
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = ex.Message;
 
-            //        // Recargar la pagina
-            //        string accion = (HiddenField1.Value == "" || HiddenField1.Value == "0") ? "nuevo" : "actu";
-            //        Response.Redirect("MantenimientoMateriales.aspx?accion=" + accion);
-            //    }
-            //    else
-            //    {
-            //        lblMensaje.Visible = true;
-            //        lblMensaje.Text = "No se puede agregar un nuevo Material a la BD";
-            //    }
-            //}
-            //else
-            //{
-
-            //    lblMensaje.Visible = true;
-            //    lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
-            //}
+                }
+                //Guardar el Producto con la imagen
+                MaterialLN mat = new MaterialLN();
+                bool confirmacionGuardado = mat.GuardarMaterial(txtNombre.Text, archivoImagen.FileName,txtPrecio.Text,ddlColor.SelectedValue,chkEstado.Checked, HiddenField1.Value); //SE GUARDA EL NOMBRE
+                if (confirmacionGuardado)
+                {
+                    Response.Redirect("MantenimientoMateriales.aspx?accion=guardar");// Esto se utiliza para enviar valores de pagina a pagina y se pueden enviar varias separadas por &, Esto lo recibe el metodo Load()
+                }
+                else
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "No se puede guardar un material con ese color ya que le pertenece a otro";
+                }
+            }else
+            {
+                if (Image1.ImageUrl!=null)
+                {
+                    MaterialLN mat = new MaterialLN();
+                    bool confirmacionGuardado = mat.GuardarMaterial(txtNombre.Text, Image1.ImageUrl, txtPrecio.Text, ddlColor.SelectedValue, chkEstado.Checked, HiddenField1.Value); //SE GUARDA EL NOMBRE
+                    if (confirmacionGuardado)
+                    {
+                        Response.Redirect("MantenimientoMateriales.aspx?accion=guardar");// Esto se utiliza para enviar valores de pagina a pagina y se pueden enviar varias separadas por &, Esto lo recibe el metodo Load()
+                    }
+                    else
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No se puede guardar un material con ese color ya que le pertenece a otro";
+                    }
+                }else
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "Imagen no válida";
+                }
+            }
         }
 
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,10 +108,37 @@ namespace EcoMonedas
             Material mat = MaterialLN.obtenerMaterial(id);
             ddlColor.SelectedValue = mat.IdColor.ToString();
             txtNombre.Text = mat.Nombre;
-            Image1.ImageUrl = "~/Imagenes/" + mat.Imagen;
+            Image1.ImageUrl = "~/Imagenes/Materiales/" + mat.Imagen;
+            ddlColor_DataBound(ddlColor, null);
+            chkEstado.Checked = mat.Estado;
             txtPrecio.Text = mat.PrecioUnitario.ToString();
             HiddenField1.Value = mat.ID.ToString();
             btnGuardar.Text = "Actualizar";
+
         }
+
+        protected void ddlColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PanelColor.BackColor = System.Drawing.ColorTranslator.FromHtml(ColorLN.obtenerColor(Convert.ToInt32(ddlColor.SelectedValue.ToString())).CodigoColor);
+        }
+
+        protected void ddlColor_DataBound(object sender, EventArgs e)
+        {
+            PanelColor.BackColor = System.Drawing.ColorTranslator.FromHtml(ColorLN.obtenerColor(Convert.ToInt32(ddlColor.SelectedValue.ToString())).CodigoColor);
+        }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtPrecio.Text = "";
+            ddlColor_DataBound(ddlColor.SelectedIndex=0, null);
+            Image1.ImageUrl = null;
+            chkEstado.Checked = true;
+        }
+
+        //protected void archivoImagen_Unload(object sender, EventArgs e)
+        //{
+        //    Image1.ImageUrl = archivoImagen.FileName;
+        //}
     }
 }

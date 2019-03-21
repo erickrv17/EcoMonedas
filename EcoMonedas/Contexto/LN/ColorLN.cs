@@ -8,7 +8,7 @@ namespace Contexto
 {
    public class ColorLN
     {
-        public static IQueryable ListaColor()
+        public static IQueryable ListaColors()
         {
             var db = new EcoMonedasContext();
             IQueryable query = db.Colors;
@@ -17,9 +17,9 @@ namespace Contexto
 
         public static Color obtenerColor(int id)
         {
-            IEnumerable<Color> listas = (IEnumerable<Color>)ColorLN.ListaColor();
-            Color color = listas.Where(x => x.IdColor == id).FirstOrDefault<Color>();
-            return color;
+            IEnumerable<Color> listaCol = (IEnumerable<Color>)ColorLN.ListaColors();
+            Color col = listaCol.Where(x => x.IdColor == id).First<Color>();
+            return col;
         }
     }
 }

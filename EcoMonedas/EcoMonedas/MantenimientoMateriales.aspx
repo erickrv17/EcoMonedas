@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdministrador.Master" AutoEventWireup="true" CodeBehind="MantenimientoMateriales.aspx.cs" Inherits="EcoMonedas.MantenimientoMateriales" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Content/checkboxes.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mb-2">
@@ -44,28 +45,50 @@
                 <div class="form-group row">
                     <label for="lblColor" class="control-label">Color</label>
                     <div class="input-group mb-3">
-                        <asp:DropDownList ID="ddlColor" CssClass="form-control" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlColor"  ItemType="Contexto.Color" SelectMethod="listaColores" DataTextField="Nombre" DataValueField="idColor" runat="server" OnSelectedIndexChanged="ddlColor_SelectedIndexChanged" OnDataBound="ddlColor_DataBound" CssClass="form-control">
+                        </asp:DropDownList>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:Panel ID="PanelColor" BorderColor="Black" BorderStyle="Outset" Width="50px" Height="39px" runat="server"></asp:Panel>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="ddlColor" EventName="SelectedIndexChanged" />
+                            </Triggers>
+                        </asp:UpdatePanel>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label for="archivoImagen" class="control-label">Imagen</label>
-                    <asp:Image ID="Image1" CssClass="form-control img-thumbnail" AlternateText="Imagen Material" runat="server" />
+                    <label for="archivoImagen" class="control-label">Imagen</label> 
+                    <asp:Image ID="Image1" CssClass="form-control img-thumbnail" Height="300px" AlternateText="Imagen Material" runat="server" />
+                    <%--<asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                               
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="archivoImagen" EventName="Unload" />
+                            </Triggers>
+                        </asp:UpdatePanel>--%>
+                    
                     <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator10"
                         runat="server" Text="Imagen requerida"
                         ControlToValidate="archivoImagen"
                         SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
+                <div class="row">
+                    <label class="control-label">Estado</label>
+                </div>
                 <div class="row form-group">
-                    <label for="archivoImagen" class="control-label">Estado</label>
-                    <asp:CheckBox ID="chkEstado" runat="server" CssClass="form-check-input" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
-                        runat="server" Text="Imagen requerida"
-                        ControlToValidate="archivoImagen"
-                        SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <label class="checkBoxEstado">
+                        Activo
+                        <asp:CheckBox runat="server" ID="chkEstado" />
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
                 <div class="form-group row">
                     <asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+                    <div class="col-1"></div>
+                    <asp:Button ID="btnLimpiar" CssClass="btn btn-primary" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
                 </div>
                 <asp:HiddenField ID="HiddenField1" runat="server" />
                 <!-- Registro -->
@@ -74,8 +97,11 @@
             <div class="col-lg-7 col-md-6 col-sm-12">
                 <!-- Listado -->
                 <h2>Listado Materiales</h2>
-                <asp:GridView ID="grvListado" runat="server" CssClass="table table-hover" GridLines="Both" AutoGenerateColumns="False" DataKeyNames="idMaterial" AutoGenerateSelectButton="true" OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
+                <asp:GridView ID="grvListado" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataKeyNames="ID" AutoGenerateSelectButton="true" OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
                     <Columns>
+                        <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
+                        <asp:BoundField DataField="PrecioUnitario" HeaderText="Precio Unitario"></asp:BoundField>
+                        <asp:BoundField DataField="Color.Nombre" HeaderText="Color"></asp:BoundField>
                     </Columns>
                     <HeaderStyle CssClass="table-info" />
                 </asp:GridView>

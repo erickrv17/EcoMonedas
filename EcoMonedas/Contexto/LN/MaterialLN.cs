@@ -16,16 +16,8 @@ namespace Contexto
             return query;
         }
 
-        public bool GuardarMaterial(
-            string nombre,
-            string imagen,
-            decimal precioUnitario,
-            string color,
-            bool estado,
-            
-            string id = "")
+        public bool GuardarMaterial(string nombre, string imagen, string precioUnitario, string color, bool estado, string id = "")
         {
-
             EcoMonedasContext db = new EcoMonedasContext();
             var miMaterial = new Material();
             int idMaterial = 0;
@@ -41,22 +33,32 @@ namespace Contexto
             miMaterial.PrecioUnitario = Convert.ToDouble(precioUnitario);
             miMaterial.IdColor = Convert.ToInt32(color);
             miMaterial.Estado = estado;
-           
-            if (id.Equals("") || !esNumero)
+            if (obtenerMaterialColor(miMaterial.IdColor)!=null)
             {
+                return false;
+            }else {
+                if (id.Equals("") || !esNumero)
+                {
+                    db.Materials.Add(miMaterial);
+                }
+                //Siempre se guardan los datos
+                db.SaveChanges();//Realiza el commit para el insert en la base de datos
 
-                db.Materials.Add(miMaterial);
+                return true;
             }
-            //Siempre se guardan los datos
-            db.SaveChanges();//Realiza el commit para el insert en la base de datos
-
-            return true;
         }
 
         public static Material obtenerMaterial(int id)
         {
             IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
             Material materiales = listas.Where(x => x.ID == id).FirstOrDefault<Material>();
+            return materiales;
+        }
+
+        public static Material obtenerMaterialColor(int idColor)
+        {
+            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            Material materiales = listas.Where(x => x.IdColor == idColor).FirstOrDefault<Material>();
             return materiales;
         }
     }

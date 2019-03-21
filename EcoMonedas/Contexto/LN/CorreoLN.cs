@@ -41,8 +41,7 @@ namespace Contexto
                 }
                 catch (Exception ex)
                 {
-
-                    return;
+                    throw ex;
 
                 }
             }
@@ -71,7 +70,7 @@ namespace Contexto
                 catch (Exception ex)
                 {
 
-                    return;
+                    throw ex;
 
                 }
 
@@ -104,7 +103,7 @@ namespace Contexto
                 catch (Exception ex)
                 {
 
-                    return;
+                    throw ex;
 
                 }
 
