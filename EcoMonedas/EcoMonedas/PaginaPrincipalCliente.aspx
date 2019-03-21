@@ -1,56 +1,45 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterCliente.Master" AutoEventWireup="true" CodeBehind="PaginaPrincipalCliente.aspx.cs" Inherits="EcoMonedas.PaginaPrincipalCliente" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <!-- ##### Top Feature Area End ##### -->
-
-    <!-- ##### Course Area Start ##### -->
-    <div class="academy-courses-area section-padding-100-0">
-        <div class="container">
-            <div class="row">
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-2">
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="fa fa-money"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>Billetera Virtual</h4>
-                            <p>En esta sección podrás revisar el saldo de tu cuenta de Eco-Monedas.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="fa fa-user-circle"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>Editar tu Perfil</h4>
-                            <p>En esta sección podrás revisar y cambiar tu información personal.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-2">
-                </div>
+    <!-- Single Course Area -->
+    <div class="col-12 col-sm-6 col-lg-2">
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+            <div class="course-icon">
+                <i class="fa fa-money"></i>
             </div>
-            <br />
-            <div class="row">
-                <div class="col-12">
-                    <img src="Imagenes/Separador.png" />
-                </div>
+            <div class="course-content">
+                <h4>Billetera Virtual</h4>
+                <p>En esta sección podrás revisar el saldo de tu cuenta de Eco-Monedas.</p>
             </div>
-            <br />
-            <br />
-            <br />
         </div>
     </div>
-
+    <!-- Single Course Area -->
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+            <div class="course-icon">
+                <i class="fa fa-user-circle"></i>
+            </div>
+            <div class="course-content">
+                <h4>Editar tu Perfil</h4>
+                <p>En esta sección podrás revisar y cambiar tu información personal.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Single Course Area -->
+    <div class="col-12 col-sm-6 col-lg-2">
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <img src="Imagenes/Separador.png" />
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
     <div id="Contactenos" class="testimonials-area section-padding-100" style="background-color: #7ed957;">
         <div class="container">
             <div class="row" id="contact">
@@ -83,23 +72,23 @@
                             <div class="row form-group">
                                 <div class="col-6">
                                     <label><b>Nombre:</b> </label>
-                                    <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:textbox id="txtNombre" cssclass="form-control" runat="server"></asp:textbox>
                                 </div>
                                 <div class="col-6">
                                     <label><b>Correo Electrónico:</b> </label>
-                                    <asp:TextBox ID="txtCorreo" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:textbox id="txtCorreo" cssclass="form-control" runat="server"></asp:textbox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label><b>Asunto:</b> </label>
-                                <asp:TextBox ID="txtAsunto" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:textbox id="txtAsunto" cssclass="form-control" runat="server"></asp:textbox>
                             </div>
                             <div class="form-group">
                                 <label><b>Mensaje:</b> </label>
-                                <asp:TextBox ID="txtMensaje" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:textbox id="txtMensaje" cssclass="form-control" textmode="MultiLine" runat="server"></asp:textbox>
                             </div>
                             <div class="text-center">
-                                <asp:Button ID="btnEnviar" runat="server" CssClass="btn btn-outline-dark" Text="Enviar" />
+                                <asp:button id="btnEnviar" runat="server" cssclass="btn btn-outline-dark" text="Enviar" />
                             </div>
                         </form>
                     </div>

@@ -68,7 +68,7 @@
                                     <li><a href="#">Billetera Virtual</a></li>
                                     <li><a href="#">Perfil Usuario</a></li>
                                     <li><a href="#Contactenos">Contactenos</a></li>
-                                    <li><a href="InicioE.aspx" style="color:#7ed957">Inicio de Eco-Monedas</a></li>
+                                    <li><a href="InicioE.aspx" style="color: #7ed957">Inicio de Eco-Monedas</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -84,9 +84,13 @@
             </div>
         </div>
     </header>
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
+    <div class="academy-courses-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
     </div>
     <footer class="footer-area">
         <div class="bottom-footer-area">
