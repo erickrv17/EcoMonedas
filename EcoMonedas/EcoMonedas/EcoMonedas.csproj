@@ -113,6 +113,7 @@
     <Content Include="paginaMaestra.Master" />
     <Content Include="Imagenes\IconoInfoR.png" />
     <Content Include="PaginaPrincipalCliente.aspx" />
+    <Content Include="PerfilCliente.aspx" />
     <Content Include="PrincipalAdminCentroA.aspx" />
     <Content Include="PrincipalAdministrador.aspx" />
     <Content Include="Registrarse.aspx" />
@@ -278,6 +279,13 @@
     </Compile>
     <Compile Include="PaginaPrincipalCliente.aspx.designer.cs">
       <DependentUpon>PaginaPrincipalCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilCliente.aspx.cs">
+      <DependentUpon>PerfilCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilCliente.aspx.designer.cs">
+      <DependentUpon>PerfilCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalAdminCentroA.aspx.cs">
       <DependentUpon>PrincipalAdminCentroA.aspx</DependentUpon>
