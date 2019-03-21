@@ -62,6 +62,7 @@
     <Compile Include="Entidades\Material.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\ColorLN.cs" />
+    <Compile Include="LN\CorreoLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />

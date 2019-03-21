@@ -115,6 +115,7 @@
     <Content Include="PaginaPrincipalCliente.aspx" />
     <Content Include="PrincipalAdminCentroA.aspx" />
     <Content Include="PrincipalAdministrador.aspx" />
+    <Content Include="Registrarse.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -172,6 +173,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="Template\TemplateInicio\style.css" />
+    <Content Include="Template\TemplateRegistro\css\cssRegistro.css" />
+    <Content Include="Template\TemplateRegistro\js\jsRegistro.js" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +294,13 @@
       <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

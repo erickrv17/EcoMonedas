@@ -8,8 +8,13 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>EcoMonedas</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="Imagenes/LogoTrans.png" rel="icon" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Template/TemplateRegistro/css/cssRegistro.css" rel="stylesheet" />
+    <script src="Template/TemplateRegistro/js/jsRegistro.js"></script>
     <link rel="stylesheet" href="Template/TemplateInicio/style.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -33,7 +38,7 @@
                                 </a>
                             </div>
                             <div class="login-content">
-                                <a href="#">Registrese / Ingrese</a>
+                                <a href="Registrarse.aspx">Registrese / Ingrese</a>
                             </div>
                         </div>
                     </div>
