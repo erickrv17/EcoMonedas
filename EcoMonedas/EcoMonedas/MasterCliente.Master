@@ -8,8 +8,6 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>EcoMonedas</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap" />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="Imagenes/LogoTrans.png" rel="icon" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -38,7 +36,7 @@
                                 </a>
                             </div>
                             <div class="login-content">
-                                <a href="Registrarse.aspx">Registrese / Ingrese</a>
+                                <a href="#VentanaLogin" data-toggle="modal">Registrese / Ingrese</a>
                             </div>
                         </div>
                     </div>
@@ -97,6 +95,115 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="VentanaLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" >
+        
+					<img class="img-circle" id="img_logo" src="Imagenes/LogoT.png" />
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Escribe tu correo y contraseña.</span>
+                            </div>
+				    		<input id="login_correo" class="form-control" type="text" placeholder="Correo electronico" />
+				    		<input id="login_password" class="form-control" type="password" placeholder="contraseña" />
+                           <br/>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <button type="submit"  class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+				    	    <div>
+                                <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Olvidaste tu contraseña?</button>
+                                <button id="login_register_btn" type="button" style="color: #7ed957"class="btn btn-link">registrate</button>
+                            </div>
+				        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">escribe tu e-mail.</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="Correo electronico" />
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" style="color: #7ed957"class="btn btn-link">Inicia sesion</button>
+                                <button id="lost_register_btn" type="button" style="color: #7ed957" class="btn btn-link">registrate</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Crea tu propia cuenta</span>
+                            </div>
+                             <br/>
+                            <label for="lblNombre" class="control-label">Nombre</label>                           
+		    				<input id="idNombre" class="form-control" type="text" placeholder="Nombe" />
+                               <br/>
+                            <label for="lblApellido1" class="control-label">Primer apellido</label>   
+                            <input id="idApellido1" class="form-control" type="text" placeholder="Primer apellido" />
+                               <br/>
+                            <label for="lblApellido2" class="control-label">Segundo apellido</label>                            
+                            <input id="idApellido2" class="form-control" type="text" placeholder="Segundo apellido" />
+                               <br/>
+                            <label for="lblTelefono" class="control-label">Telefono</label>                            
+                            <input id="idTelefono" class="form-control" type="text" placeholder="Telefono" />
+                               <br/>
+                            <label for="lblDireccion" class="control-label">Direccion exacta</label>                            
+                            <input id="idDireccion" class="form-control" type="text" placeholder="Dirección" />
+                               <br/>
+                           <label for="lblCorreo" class="control-label">Correo electronico</label> 
+                           <input id="idEmail" class="form-control" type="text" placeholder="E-Mail" />
+                                <br/>
+                           <label for="lblContrasenna" class="control-label">Contraseña</label>                           
+                           <input id="idPassword" class="form-control" type="password" placeholder="Contraseña" />
+                               <br/>
+                           <label for="lblConfirmarContrasenna" class="control-label">Confirmar contraseña</label>                           
+                           <input id="idConfirmPassword" class="form-control" type="password" placeholder="confirmar contraseña" />
+            			
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" style="color: #7ed957" class="btn btn-link">Log In</button>
+                                <button id="register_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Lost Password?</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+			</div>
+		</div>
+	</div>
     <footer class="footer-area">
         <div class="bottom-footer-area">
             <div class="container">
