@@ -102,7 +102,6 @@
     <Content Include="Imagenes\Patrocinadores\sur.png" />
     <Content Include="Imagenes\Separador.png" />
     <Content Include="Imagenes\Separador2.png" />
-    <Content Include="Inicio.aspx" />
     <Content Include="InicioE.aspx" />
     <Content Include="InicioEM.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
@@ -190,13 +189,6 @@
     </Compile>
     <Compile Include="detalleCentroAcopio.aspx.designer.cs">
       <DependentUpon>detalleCentroAcopio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioE.aspx.cs">
       <DependentUpon>InicioE.aspx</DependentUpon>

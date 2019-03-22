@@ -133,78 +133,42 @@
     <div class="academy-courses-area section-padding-100-0">
         <div class="container">
             <div class="row">
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="icon-info"></i>
+                <asp:ListView ID="listaMateriales" runat="server"
+                    DataKeyNames="ID" GroupItemCount="3"
+                    ItemType="Contexto.Material" SelectMethod="listadoMateriales">
+                    <EmptyDataTemplate>
+                        <div class="row">
+                            No hay datos
+                   <div class="row">
+                    </EmptyDataTemplate>
+                    <EmptyItemTemplate>
+                        <div class="col-lg-3">
                         </div>
-                        <div class="course-content">
-                            <h4>[Nombre del Material]</h4>
-                            <p>[Descripcion del Material]</p>
+                    </EmptyItemTemplate>
+                    <GroupTemplate>
+                        <div class="row">
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
                         </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="icon-info"></i>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                                <div class="">
+                                    <asp:Image ID="Image1" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle" runat="server" />
+                                </div>
+                                <div class="course-content">
+                                    <h4><%#:Item.Nombre%></h4>
+                                    <p><b>Precio Unitario &cent;</b><%#: String.Format("{0:N2}", Item.PrecioUnitario)%></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="course-content">
-                            <h4>[Nombre del Material]</h4>
-                            <p>[Descripcion del Material]</p>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <div class="container">
+                            <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
                         </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="icon-info"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>[Nombre del Material]</h4>
-                            <p>[Descripcion del Material]</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="icon-info"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>[Nombre del Material]</h4>
-                            <p>[Descripcion del Material]</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="icon-info"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>[Nombre del Material]</h4>
-                            <p>[Descripcion del Material]</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <i class="icon-info"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>[Nombre del Material]</h4>
-                            <p>[Descripcion del Material]</p>
-                        </div>
-                    </div>
-                </div>
+                    </LayoutTemplate>
+                </asp:ListView>
             </div>
             <br />
             <div class="row">

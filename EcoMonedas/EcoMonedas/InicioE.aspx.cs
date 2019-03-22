@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contexto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,11 @@ namespace EcoMonedas
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+        public IEnumerable<Material> listadoMateriales()
+        {
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            return lista;
         }
     }
 }

@@ -13,6 +13,15 @@ namespace EcoMonedas {
     public partial class InicioE {
         
         /// <summary>
+        /// Control listaMateriales.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView listaMateriales;
+        
+        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>
