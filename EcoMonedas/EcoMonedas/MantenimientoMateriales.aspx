@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/checkboxes.css" rel="stylesheet" />
+    <script src="Scripts/FiltroTablas.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mb-2">
@@ -45,7 +47,7 @@
                 <div class="form-group row">
                     <label for="lblColor" class="control-label">Color</label>
                     <div class="input-group mb-3">
-                        <asp:DropDownList ID="ddlColor"  ItemType="Contexto.Color" SelectMethod="listaColores" DataTextField="Nombre" DataValueField="idColor" runat="server" OnSelectedIndexChanged="ddlColor_SelectedIndexChanged" OnDataBound="ddlColor_DataBound" CssClass="form-control">
+                        <asp:DropDownList ID="ddlColor" ItemType="Contexto.Color" SelectMethod="listaColores" DataTextField="Nombre" DataValueField="idColor" runat="server" OnSelectedIndexChanged="ddlColor_SelectedIndexChanged" OnDataBound="ddlColor_DataBound" CssClass="form-control">
                         </asp:DropDownList>
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
@@ -58,7 +60,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label for="archivoImagen" class="control-label">Imagen</label> 
+                    <label for="archivoImagen" class="control-label">Imagen</label>
                     <asp:Image ID="Image1" CssClass="form-control img-thumbnail" Height="300px" AlternateText="Imagen Material" runat="server" />
                     <%--<asp:UpdatePanel ID="UpdatePanel2" runat="server">
                             <ContentTemplate>
@@ -68,12 +70,12 @@
                                 <asp:AsyncPostBackTrigger ControlID="archivoImagen" EventName="Unload" />
                             </Triggers>
                         </asp:UpdatePanel>--%>
-                    
+
                     <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator10"
                         runat="server" Text="Imagen requerida"
                         ControlToValidate="archivoImagen"
-                        SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        SetFocusOnError="true" ForeColor="Red" Display="Dynamic" Enabled="true"></asp:RequiredFieldValidator>
                 </div>
                 <div class="row">
                     <label class="control-label">Estado</label>
@@ -95,8 +97,14 @@
             </div>
 
             <div class="col-lg-7 col-md-6 col-sm-12">
-                <!-- Listado -->
                 <h2>Listado Materiales</h2>
+                <div class="input-group">
+                    <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+                    <input class="form-control" id="system-search" name="q" placeholder="Buscar..." required="required" />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
                 <asp:GridView ID="grvListado" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataKeyNames="ID" AutoGenerateSelectButton="true" OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
@@ -105,9 +113,7 @@
                     </Columns>
                     <HeaderStyle CssClass="table-info" />
                 </asp:GridView>
-                <!-- Listado -->
             </div>
-
         </div>
     </div>
 </asp:Content>

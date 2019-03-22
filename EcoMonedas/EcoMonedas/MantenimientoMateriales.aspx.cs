@@ -69,32 +69,46 @@ namespace EcoMonedas
                 }
                 //Guardar el Producto con la imagen
                 MaterialLN mat = new MaterialLN();
-                bool confirmacionGuardado = mat.GuardarMaterial(txtNombre.Text, archivoImagen.FileName,txtPrecio.Text,ddlColor.SelectedValue,chkEstado.Checked, HiddenField1.Value); //SE GUARDA EL NOMBRE
-                if (confirmacionGuardado)
-                {
-                    Response.Redirect("MantenimientoMateriales.aspx?accion=guardar");// Esto se utiliza para enviar valores de pagina a pagina y se pueden enviar varias separadas por &, Esto lo recibe el metodo Load()
-                }
-                else
+                string confirmacionGuardado = mat.GuardarMaterial(txtNombre.Text, archivoImagen.FileName,txtPrecio.Text,ddlColor.SelectedValue,chkEstado.Checked, HiddenField1.Value); //SE GUARDA EL NOMBRE
+                if (confirmacionGuardado=="ErrorColor")
                 {
                     lblMensaje.Visible = true;
                     lblMensaje.Text = "No se puede guardar un material con ese color ya que le pertenece a otro";
                 }
+                else
+                {
+                    if (confirmacionGuardado=="ErrorImagen")
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No se puede guardar un material con esta imagen ya que le pertenece a otro";
+                    }else {
+                         Response.Redirect("MantenimientoMateriales.aspx?accion=guardar");// Esto se utiliza para enviar valores de pagina a pagina y se pueden enviar varias separadas por &, Esto lo recibe el metodo Load()
+                    }
+                    }
             }else
             {
                 if (Image1.ImageUrl!=null)
                 {
                     MaterialLN mat = new MaterialLN();
-                    bool confirmacionGuardado = mat.GuardarMaterial(txtNombre.Text, Image1.ImageUrl, txtPrecio.Text, ddlColor.SelectedValue, chkEstado.Checked, HiddenField1.Value); //SE GUARDA EL NOMBRE
-                    if (confirmacionGuardado)
-                    {
-                        Response.Redirect("MantenimientoMateriales.aspx?accion=guardar");// Esto se utiliza para enviar valores de pagina a pagina y se pueden enviar varias separadas por &, Esto lo recibe el metodo Load()
-                    }
-                    else
+                    string confirmacionGuardado = mat.GuardarMaterial(txtNombre.Text, Image1.ImageUrl.Remove(0,22), txtPrecio.Text, ddlColor.SelectedValue, chkEstado.Checked, HiddenField1.Value); //SE GUARDA EL NOMBRE
+                    if (confirmacionGuardado == "ErrorColor")
                     {
                         lblMensaje.Visible = true;
                         lblMensaje.Text = "No se puede guardar un material con ese color ya que le pertenece a otro";
                     }
-                }else
+                    else
+                    {
+                        if (confirmacionGuardado == "ErrorImagen")
+                        {
+                            lblMensaje.Visible = true;
+                            lblMensaje.Text = "No se puede guardar un material con esta imagen ya que le pertenece a otro";
+                        }else
+                        {
+                            Response.Redirect("MantenimientoMateriales.aspx?accion=guardar");// Esto se utiliza para enviar valores de pagina a pagina y se pueden enviar varias separadas por &, Esto lo recibe el metodo Load()
+                        }
+                    }
+                }
+                else
                 {
                     lblMensaje.Visible = true;
                     lblMensaje.Text = "Imagen no válida";
@@ -114,7 +128,10 @@ namespace EcoMonedas
             txtPrecio.Text = mat.PrecioUnitario.ToString();
             HiddenField1.Value = mat.ID.ToString();
             btnGuardar.Text = "Actualizar";
-
+            if (HiddenField1!=null)
+            {
+                RequiredFieldValidator10.Enabled = false;
+            }
         }
 
         protected void ddlColor_SelectedIndexChanged(object sender, EventArgs e)

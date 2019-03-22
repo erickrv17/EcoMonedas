@@ -16,12 +16,13 @@ namespace Contexto
             return query;
         }
 
-        public bool GuardarMaterial(string nombre, string imagen, string precioUnitario, string color, bool estado, string id = "")
+        public string GuardarMaterial(string nombre, string imagen, string precioUnitario, string color, bool estado, string id = "")
         {
             EcoMonedasContext db = new EcoMonedasContext();
             var miMaterial = new Material();
             int idMaterial = 0;
             bool esNumero = int.TryParse(id, out idMaterial);
+            string mensaje = "";
 
             if (esNumero || idMaterial > 0)
             {
@@ -33,10 +34,15 @@ namespace Contexto
             miMaterial.PrecioUnitario = Convert.ToDouble(precioUnitario);
             miMaterial.IdColor = Convert.ToInt32(color);
             miMaterial.Estado = estado;
-            if (obtenerMaterialColor(miMaterial.IdColor)!=null)
+            if (obtenerMaterialColor(miMaterial.IdColor)!=null && obtenerMaterial(miMaterial.ID)==null)
             {
-                return false;
+                return mensaje="ErrorColor";
             }else {
+                if (obtenerMaterialImagen(miMaterial.Imagen)!=null && obtenerMaterial(miMaterial.ID) == null)
+                {
+                    return mensaje = "ErrorImagen";
+                }
+                else { 
                 if (id.Equals("") || !esNumero)
                 {
                     db.Materials.Add(miMaterial);
@@ -44,7 +50,8 @@ namespace Contexto
                 //Siempre se guardan los datos
                 db.SaveChanges();//Realiza el commit para el insert en la base de datos
 
-                return true;
+                return mensaje="";
+                }
             }
         }
 
@@ -59,6 +66,13 @@ namespace Contexto
         {
             IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
             Material materiales = listas.Where(x => x.IdColor == idColor).FirstOrDefault<Material>();
+            return materiales;
+        }
+
+        public static Material obtenerMaterialImagen(string imagen)
+        {
+            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            Material materiales = listas.Where(x => x.Imagen == imagen).FirstOrDefault<Material>();
             return materiales;
         }
     }

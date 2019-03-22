@@ -144,6 +144,7 @@
     <Content Include="MasterAdministradorCentros.Master" />
     <Content Include="MasterCliente.Master" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\FiltroTablas.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
