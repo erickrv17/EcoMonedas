@@ -122,8 +122,8 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <button type="submit"  class="btn btn-primary btn-lg btn-block">Login</button>
-                            </div>
+                            <asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Inicias Sesión" OnClick="btnIngresar_Click" />
+                              </div>
 				    	    <div>
                                 <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Olvidaste tu contraseña?</button>
                                 <button id="login_register_btn" type="button" style="color: #7ed957"class="btn btn-link">registrate</button>
