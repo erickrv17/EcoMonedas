@@ -75,5 +75,12 @@ namespace Contexto
             Material materiales = listas.Where(x => x.Imagen == imagen).FirstOrDefault<Material>();
             return materiales;
         }
+
+        public static Color obtenerColorPorID(int idColor)
+        {
+            IEnumerable<Color> listas = (IEnumerable<Color>)ColorLN.ListaColors();
+            Color col = listas.Where(x => x.IdColor == idColor ).FirstOrDefault<Color>();
+            return col;
+        }
     }
 }
