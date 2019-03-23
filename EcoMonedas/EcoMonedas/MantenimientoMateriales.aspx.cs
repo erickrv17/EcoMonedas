@@ -20,7 +20,7 @@ namespace EcoMonedas
                 lblMensaje.Text = "Material Guardado Satisfactoriamente!";
             }
             //Listado de libos
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
             ddlColor.AutoPostBack = true;
@@ -33,7 +33,7 @@ namespace EcoMonedas
 
         private void cargarGrid()
         {
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
@@ -119,7 +119,7 @@ namespace EcoMonedas
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
-            Material mat = MaterialLN.obtenerMaterial(id);
+            Material mat = MaterialLN.obtenerMaterialI(id);
             ddlColor.SelectedValue = mat.IdColor.ToString();
             txtNombre.Text = mat.Nombre;
             Image1.ImageUrl = "~/Imagenes/Materiales/" + mat.Imagen;

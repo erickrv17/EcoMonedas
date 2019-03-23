@@ -14,14 +14,17 @@ namespace EcoMonedas
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        //public IEnumerable<Material> listadoMateriales()
+        //{
+        //        IEnumerable<Material> lista = (IEnumerable<Material>) MaterialLN.ListaMateriales();
+        //        return lista;
+        //}
+
         public IEnumerable<Material> listadoMateriales()
         {
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            List<Material> lista = MaterialLN.obtenerListaMateriales().ToList();
             return lista;
-        }
-        public void aslk()
-        {
-           
         }
 
 

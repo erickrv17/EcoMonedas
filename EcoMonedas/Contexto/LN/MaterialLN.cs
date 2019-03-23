@@ -8,13 +8,20 @@ namespace Contexto
 {
     public class MaterialLN
     {
-        public static IQueryable ListaMateriales()
-        {
-            var db = new EcoMonedasContext();
-            IQueryable query = db.Materials;
+        //public static IQueryable ListaMateriales()
+        //{
+        //    var db = new EcoMonedasContext();
+        //    IQueryable query = db.Materials;
 
-            return query;
-        }
+        //    return query;
+        //}
+
+        //public static IEnumerable<Material> listaIEnumMat()
+        //{
+        //    IEnumerable<Material> lista = (IEnumerable<Material>)
+        //        MaterialLN.ListaMateriales();
+        //    return lista;
+        //}
 
         public string GuardarMaterial(string nombre, string imagen, string precioUnitario, string color, bool estado, string id = "")
         {
@@ -34,11 +41,11 @@ namespace Contexto
             miMaterial.PrecioUnitario = Convert.ToDouble(precioUnitario);
             miMaterial.IdColor = Convert.ToInt32(color);
             miMaterial.Estado = estado;
-            if (obtenerMaterialColor(miMaterial.IdColor)!=null && obtenerMaterial(miMaterial.ID)==null)
+            if (obtenerMaterialColor(miMaterial.IdColor)!=null && obtenerMaterialI(miMaterial.ID)==null)
             {
                 return mensaje="ErrorColor";
             }else {
-                if (obtenerMaterialImagen(miMaterial.Imagen)!=null && obtenerMaterial(miMaterial.ID) == null)
+                if (obtenerMaterialImagen(miMaterial.Imagen)!=null && obtenerMaterialI(miMaterial.ID) == null)
                 {
                     return mensaje = "ErrorImagen";
                 }
@@ -55,23 +62,45 @@ namespace Contexto
             }
         }
 
-        public static Material obtenerMaterial(int id)
+        public static IQueryable queryListaMateriales()
         {
-            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
-            Material materiales = listas.Where(x => x.ID == id).FirstOrDefault<Material>();
-            return materiales;
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Materials.Where(x=> x.Estado == true);
+            return query;
         }
+
+        public static IEnumerable<Material> obtenerListaMateriales()
+        {
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
+            return lista;
+        }
+
+        //REVISAR LOS ESTADOS SOLO ESTA MOSTRANDO LOS TRUE PERO FALTAN LOS DOS
+
+        public static Material obtenerMaterialI(int id)
+        {
+            var db = new EcoMonedasContext();
+            Material mat = db.Materials.Where(x => x.ID == id).FirstOrDefault<Material>();
+            return mat;
+        }
+
+        //public static Material obtenerMaterial(int id)
+        //{
+        //    IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+        //    Material materiales = listas.Where(x => x.ID == id).FirstOrDefault<Material>();
+        //    return materiales;
+        //}
 
         public static Material obtenerMaterialColor(int idColor)
         {
-            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
             Material materiales = listas.Where(x => x.IdColor == idColor).FirstOrDefault<Material>();
             return materiales;
         }
 
         public static Material obtenerMaterialImagen(string imagen)
         {
-            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.ListaMateriales();
+            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
             Material materiales = listas.Where(x => x.Imagen == imagen).FirstOrDefault<Material>();
             return materiales;
         }

@@ -100,7 +100,7 @@
                 <h2>Listado Materiales</h2>
                 <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
-                    <input class="form-control" id="system-search" name="q" placeholder="Buscar..." required="required" />
+                    <input class="form-control" id="system-search" name="q" placeholder="Buscar..."/>
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                     </span>

@@ -155,10 +155,11 @@
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div runat="server" class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="border-style: outset; box-shadow: 0 10px 10px;">
                                     <div class="">
-                                        <asp:Image ID="ImagenMat" runat="server"  ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle"/>
+                                        <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle"/>
                                     </div>
                                     <div class="course-content">
                                         <h4><%#:Item.Nombre%></h4>
+                                        <asp:TextBox runat="server" BorderStyle="Outset" BorderColor="Black" BackColor='<%# System.Drawing.ColorTranslator.FromHtml(Item.Color.CodigoColor) %>'></asp:TextBox>
                                         <p><b>Precio Unitario &cent;</b><%#: String.Format("{0:N2}", Item.PrecioUnitario)%></p>
                                     </div>
                                 </div>
