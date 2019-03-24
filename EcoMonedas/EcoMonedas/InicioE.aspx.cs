@@ -23,7 +23,7 @@ namespace EcoMonedas
 
         public IEnumerable<Material> listadoMateriales()
         {
-            List<Material> lista = MaterialLN.obtenerListaMateriales().ToList();
+            List<Material> lista = MaterialLN.obtenerListaMateriales(1).ToList();
             return lista;
         }
 

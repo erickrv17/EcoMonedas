@@ -62,16 +62,34 @@ namespace Contexto
             }
         }
 
-        public static IQueryable queryListaMateriales()
+        public static IQueryable queryListaMateriales(int estado)
         {
             var db = new EcoMonedasContext();
-            IQueryable query = db.Materials.Where(x=> x.Estado == true);
+            IQueryable query = db.Materials.Where(x=>x.Estado==true);
+            if (estado==0)
+            {
+                query = db.Materials.Where(x=> x.Estado == false);
+            }else
+            {
+                if (estado == 1)
+                {
+                     query = db.Materials.Where(x => x.Estado == true);
+                }
+                else
+                {
+                    if (estado == 0)
+                    {
+                        query = db.Materials.Where(x => x.Estado == false && x.Estado==true);
+                    }
+                }
+            }
+            
             return query;
         }
 
-        public static IEnumerable<Material> obtenerListaMateriales()
+        public static IEnumerable<Material> obtenerListaMateriales(int estado)
         {
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales(estado);
             return lista;
         }
 
@@ -93,14 +111,14 @@ namespace Contexto
 
         public static Material obtenerMaterialColor(int idColor)
         {
-            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
+            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.queryListaMateriales(2);
             Material materiales = listas.Where(x => x.IdColor == idColor).FirstOrDefault<Material>();
             return materiales;
         }
 
         public static Material obtenerMaterialImagen(string imagen)
         {
-            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
+            IEnumerable<Material> listas = (IEnumerable<Material>)MaterialLN.queryListaMateriales(2);
             Material materiales = listas.Where(x => x.Imagen == imagen).FirstOrDefault<Material>();
             return materiales;
         }

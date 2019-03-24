@@ -19,10 +19,7 @@ namespace EcoMonedas
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Material Guardado Satisfactoriamente!";
             }
-            //Listado de libos
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
-            grvListado.DataSource = lista.ToList();
-            grvListado.DataBind();
+            cargarGrid(2);
             ddlColor.AutoPostBack = true;
         }
 
@@ -31,9 +28,9 @@ namespace EcoMonedas
             return ColorLN.ListaColors();
         }
 
-        private void cargarGrid()
+        private void cargarGrid(int filtro)
         {
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales();
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales(filtro);
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
@@ -151,6 +148,11 @@ namespace EcoMonedas
             ddlColor_DataBound(ddlColor.SelectedIndex=0, null);
             Image1.ImageUrl = null;
             chkEstado.Checked = true;
+        }
+
+        protected void ddlFiltrosXEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
         }
 
         //protected void archivoImagen_Unload(object sender, EventArgs e)
