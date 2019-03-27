@@ -254,9 +254,9 @@ img {
 
 /* ScrollUp */
 #scrollUp {
-  background: #61ba6d;
-  background: -webkit-linear-gradient(to right, #61ba6d, #83c331);
-  background: linear-gradient(to right, #61ba6d, #83c331);
+  background: #7ed957;
+  background: -webkit-linear-gradient(to right, #7ed957, #7ed957);
+  background: linear-gradient(to right, #7ed957, #7ed957);
   border-radius: 0;
   bottom: 60px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);

@@ -153,7 +153,7 @@
                         </GroupTemplate>
                         <ItemTemplate>
                             <div class="col-12 col-sm-6 col-lg-4">
-                                <div runat="server" class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="border-style: outset; box-shadow: 0 10px 10px;">
+                                <div runat="server" class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="box-shadow: 0 10px 10px;">
                                     <div class="">
                                         <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle"/>
                                     </div>

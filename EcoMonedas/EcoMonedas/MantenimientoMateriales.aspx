@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/checkboxes.css" rel="stylesheet" />
-    <script src="Scripts/FiltroTablas.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<%--    <script src="Scripts/FiltroTablas.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mb-2">
@@ -106,7 +106,7 @@
                     </span>
                 </div>
                 <div class="row">
-                    <asp:DropDownList ID="ddlFiltrosXEstado" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlFiltrosXEstado_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlFiltrosXEstado" runat="server" OnSelectedIndexChanged="ddlFiltrosXEstado_SelectedIndexChanged" AutoPostBack="true">
                         <asp:ListItem Text="Todos" Value="2"></asp:ListItem>
                         <asp:ListItem Text="Activos" Value="1"></asp:ListItem>
                         <asp:ListItem Text="No Activos" Value="0"></asp:ListItem>

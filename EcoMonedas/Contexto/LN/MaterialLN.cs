@@ -77,9 +77,9 @@ namespace Contexto
                 }
                 else
                 {
-                    if (estado == 0)
+                    if (estado == 2)
                     {
-                        query = db.Materials.Where(x => x.Estado == false && x.Estado==true);
+                        query = db.Materials.Where(x => x.Estado == false || x.Estado==true);
                     }
                 }
             }

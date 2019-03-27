@@ -19,8 +19,11 @@ namespace EcoMonedas
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Material Guardado Satisfactoriamente!";
             }
-            cargarGrid(2);
-            ddlColor.AutoPostBack = true;
+            if (!IsPostBack)
+            {
+                cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
+                ddlColor.AutoPostBack = true;
+            }
         }
 
         public IQueryable listaColores()
@@ -129,6 +132,7 @@ namespace EcoMonedas
             {
                 RequiredFieldValidator10.Enabled = false;
             }
+            cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
         }
 
         protected void ddlColor_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,10 +158,5 @@ namespace EcoMonedas
         {
            cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
         }
-
-        //protected void archivoImagen_Unload(object sender, EventArgs e)
-        //{
-        //    Image1.ImageUrl = archivoImagen.FileName;
-        //}
     }
 }
