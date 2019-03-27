@@ -157,15 +157,6 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
         
         /// <summary>
-        /// Control ddlFiltrosXEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFiltrosXEstado;
-        
-        /// <summary>
         /// Control grvListado.
         /// </summary>
         /// <remarks>
@@ -173,5 +164,14 @@ namespace EcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvListado;
+        
+        /// <summary>
+        /// Control ddlFiltrosXEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFiltrosXEstado;
     }
 }

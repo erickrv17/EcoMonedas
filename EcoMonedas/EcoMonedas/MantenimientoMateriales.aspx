@@ -105,13 +105,6 @@
                         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                     </span>
                 </div>
-                <div class="row">
-                    <asp:DropDownList ID="ddlFiltrosXEstado" runat="server" OnSelectedIndexChanged="ddlFiltrosXEstado_SelectedIndexChanged" AutoPostBack="true">
-                        <asp:ListItem Text="Todos" Value="2"></asp:ListItem>
-                        <asp:ListItem Text="Activos" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="No Activos" Value="0"></asp:ListItem>
-                    </asp:DropDownList>
-                </div>
                 <asp:GridView ID="grvListado" runat="server" CssClass="table table-list-search" AutoGenerateColumns="False" DataKeyNames="ID" AutoGenerateSelectButton="true" OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
@@ -120,6 +113,14 @@
                     </Columns>
                     <HeaderStyle CssClass="table-info" />
                 </asp:GridView>
+                <div class="input-group">
+                    <div class="col-9"></div>
+                    <asp:DropDownList ID="ddlFiltrosXEstado" runat="server" CssClass="form-control col-3" OnSelectedIndexChanged="ddlFiltrosXEstado_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:ListItem Text="Todos" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="Activos" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="No Activos" Value="0"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
         </div>
     </div>
