@@ -19,12 +19,16 @@ namespace EcoMonedas
                 lblMensaje.Text = "Usuario guardado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
             }
-            cargarGrid();
+            if (!IsPostBack)
+            {
+                cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
+            //    DDLRol.AutoPostBack = true;
+            }
         }
 
-        private void cargarGrid()
+        private void cargarGrid(int filtro)
         {
-            IEnumerable<Usuario> lista = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios();
+            IEnumerable<Usuario> lista = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(filtro);
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
@@ -39,7 +43,17 @@ namespace EcoMonedas
         {
         
                 UsuarioLN usuarios = new UsuarioLN();
-                bool confirmacion = usuarios.GuardarUsuario(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtTelefono.Text, txtCorreo.Text, txtPassword.Text, txtDireccion.Text,DDLRol.SelectedValue,CheckBox1.Checked);
+                bool confirmacion = usuarios.GuardarUsuario(
+                    txtNombre.Text,
+                    txtPrimerApellido.Text, 
+                    txtSegundoApellido.Text,
+                    txtTelefono.Text, txtCorreo.Text, 
+                    "",
+                    txtDireccion.Text,
+                    "2", 
+                    chkEstado.Checked,
+                    chkDisponible.Checked
+                    );
 
                 if (confirmacion)
                 {
@@ -55,13 +69,17 @@ namespace EcoMonedas
 
         }
 
-        public IQueryable listaRoles()
-        {
-            return RolLN.ListaRol();
-        }
+        //public IQueryable listaRoles()
+        //{
+        //    return RolLN.ListaRol();
+        //}
        
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ddlFiltrosXEstado.SelectedItem.Value.Equals("3"))
+            {
+                return;
+            }
             String correo = (grvListado.DataKeys[grvListado.SelectedIndex].Values[0]).ToString();
             Usuario usuario = UsuarioLN.obtenerUsuario(correo);
             txtNombre.Text = usuario.Nombre;
@@ -70,10 +88,27 @@ namespace EcoMonedas
             txtTelefono.Text = usuario.Telefono;
             txtCorreo.Text = usuario.CorreoElectronico;
             txtDireccion.Text = usuario.Direccion;
-            txtPassword.Text = usuario.contrasenia;
-            DDLRol.SelectedValue = usuario.RolID.ToString();
-            CheckBox1.Checked = usuario.Estado;
+           
+            //DDLRol.SelectedValue = usuario.RolID.ToString();
+            chkEstado.Checked = usuario.Estado;
+            chkDisponible.Checked = usuario.Disponible;
             btnRegistrar.Text = "Actualizar";
+           
+        }
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+            txtDireccion.Text = "";
+            chkDisponible.Checked = true;
+            chkEstado.Checked = true;
+        }
+        protected void ddlFiltrosXEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/paginaMaestraAdministrador.Master" CodeBehind="MantenimientoUsuario.aspx.cs" Inherits="EcoMonedas.MantenimientoUsuario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <link href="Content/checkboxes.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   
@@ -73,49 +74,82 @@
                             <asp:TextBox ID="txtCorreo"  CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*El correo es requerido." ControlToValidate="txtCorreo" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
-                         <div class="form-group row">
-                            <label for="exampleTextarea">Contraseña</label>
-                            <asp:TextBox ID="txtPassword"  CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="*la contraseña es requerida." ControlToValidate="txtPassword" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
-                        </div>
+                        
                         
                          <div class="form-group row">
                             <label for="exampleTextarea">Direccion exacta</label>
                             <asp:TextBox ID="txtDireccion" TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*La dirección es requerida." ControlToValidate="txtDireccion" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
-                        <div class="form-group row">
+                       <%-- <div class="form-group row">
                             <label for="exampleSelect1">Rol</label>                           
                             <asp:DropDownList ID="DDLRol" CssClass="form-control" runat="server" ItemType="Contexto.Rol" SelectMethod="listaRoles" DataTextField="Descripcion" DataValueField="ID">
                             </asp:DropDownList>
+                        </div>--%>
+                         <div class="row">
+                        <label class="control-label">Disponibilidad</label>
+                      </div>
+                        <div class="row form-group">
+                            <label class="checkBoxEstado">
+                                Disponible
+                                <asp:CheckBox runat="server" ID="chkDisponible" />
+                                <span class="checkmark"></span>
+                            </label>
                         </div>
-                       
-                       <div class="checkbox">
-                            <asp:CheckBox ID="CheckBox1"  runat="server" />
-                           <label for="exampleTextarea">Activo </label>
-                       </div>
 
-                       
-                        <asp:HiddenField ID="hfUsuarioID" runat="server" Value="" />
+                      <div class="row">
+                        <label class="control-label">Estado</label>
+                      </div>
+                        <div class="row form-group">
+                            <label class="checkBoxEstado">
+                                Activo
+                                <asp:CheckBox runat="server" ID="chkEstado" />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+
+                         <div class="form-group row">
+                
                         <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-primary" Text="Registrar" OnClick="btnRegistrar_Click1" />
-
+                             <div class="col-1"></div>
+                        <button  type="reset"  class="btn btn-primary">Limpiar</button>
+                 
+                         </div> 
+                     <asp:HiddenField ID="hfUsuarioID" runat="server" Value="" />
+                      
                     </div>
             
                 
             
             <div class="col-lg-7 col-md-6 col-sm-12">
                 <h2>Listado Usuarios</h2>
+                 <div class="input-group">
+                    <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+                    <input class="form-control" id="system-search" name="q" placeholder="Buscar..."/>
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
                 <div class="table-responsive">
-                   <asp:GridView ID="grvListado" CssClass="table table-hover" GridLines="Both" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="CorreoElectronico" OnSelectedIndexChanged="grvListado_SelectedIndexChanged" >  
+                   <asp:GridView ID="grvListado" CssClass="table table-list-search" GridLines="Both" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="CorreoElectronico" OnSelectedIndexChanged="grvListado_SelectedIndexChanged" >  
                         <Columns>
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                              <asp:BoundField DataField="PrimerApellido" HeaderText="Apellido"></asp:BoundField>
                              <asp:BoundField DataField="CorreoElectronico" HeaderText="Correo"></asp:BoundField>
                              <asp:BoundField DataField="Rol.Descripcion" HeaderText="Rol"></asp:BoundField>
-                             <asp:BoundField DataField="Estado" HeaderText="Activo"></asp:BoundField>
+                             
                          </Columns>
                         <HeaderStyle CssClass="table-info" />
                     </asp:GridView>
+                    <div class="input-group">
+                    <div class="col-9"></div>
+                    <asp:DropDownList ID="ddlFiltrosXEstado" runat="server" CssClass="form-control col-3" OnSelectedIndexChanged="ddlFiltrosXEstado_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:ListItem Text="Todos" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="Activos" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="No Activos" Value="0"></asp:ListItem>
+                         <asp:ListItem Text="Clientes" Value="3"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
                 </div>
             </div>
         </div>

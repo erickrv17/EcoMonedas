@@ -19,12 +19,16 @@ namespace EcoMonedas
                 lblMensaje.Text = "Centro guardado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
             }
-            cargarGrid();
+            if (!IsPostBack)
+            {
+                cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
+               
+            }
         }
      
-        private void cargarGrid()
+        private void cargarGrid(int estado)
         {
-            IEnumerable<CentroAcopio> lista = (IEnumerable<CentroAcopio>)CentroAcopioLN.ListaCentrosAcopio();
+            IEnumerable<CentroAcopio> lista = (IEnumerable<CentroAcopio>)CentroAcopioLN.ListaCentrosAcopio(estado);
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
@@ -70,7 +74,7 @@ namespace EcoMonedas
                 }
              
                 CentroAcopioLN centros = new CentroAcopioLN();
-                bool confirmacion = centros.GuardarCentroAcopio(txtNombre.Text, DDLAdmiCentro.SelectedValue, DDLProvincia.SelectedValue, archivoImagen.FileName, txtDireccion.Text, CheckBox1.Checked,txtCorreo.Text,  hfCentroID.Value);
+                bool confirmacion = centros.GuardarCentroAcopio(txtNombre.Text, DDLAdmiCentro.SelectedValue, DDLProvincia.SelectedValue, archivoImagen.FileName, txtDireccion.Text, chkEstado.Checked,txtCorreo.Text,  hfCentroID.Value);
 
                 if (confirmacion)
                 {
@@ -94,7 +98,7 @@ namespace EcoMonedas
 
         public IQueryable listaUsuarios()
         {
-            return UsuarioLN.ListaUsuarios();
+            return UsuarioLN.ListaUsuariosDisponibles();
         }
         public IQueryable listaProvincias()
         {
@@ -111,10 +115,21 @@ namespace EcoMonedas
             DDLProvincia.SelectedValue = centrAcopio.ProvinciaID.ToString();
             txtDireccion.Text = centrAcopio.DireccionExacta;
             txtCorreo.Text = centrAcopio.Correo;
-            CheckBox1.Checked = centrAcopio.Estado;
+            chkEstado.Checked = centrAcopio.Estado;
             Image1.ImageUrl = "~/Imagenes/" + centrAcopio.Imagen;
             hfCentroID.Value = centrAcopio.ID.ToString();
             btnRegistrar.Text = "Actualizar";
+        }
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtCorreo.Text = "";
+            txtDireccion.Text = "";
+           chkEstado.Checked = true;
+        }
+        protected void ddlFiltrosXEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
         }
 
     }
