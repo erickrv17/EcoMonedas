@@ -22,7 +22,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="InicioEM.aspx">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="InicioE.aspx">
                 <div class="sidebar-brand-icon">
                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/LogoT.png" Width="75px" Height="35px" />
                 </div>
@@ -33,7 +33,7 @@
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="PrincipalAdministrador.aspx">
+                <a class="nav-link" href="PrincipalAdminCentroA.aspx">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Inicio</span></a>
             </li>
@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="canjeMateriales.aspx" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-coins"></i>
                     <span>Canje de Materiales</span>
                 </a>
@@ -86,7 +86,7 @@
                 Principal
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="InicioEM.aspx">
+                <a class="nav-link" href="InicioE.aspx">
                     <i class="fas fa-fw fa-home" style="color: black;"></i>
                     <span style="color: black;">Inicio Eco-Monedas</span></a>
             </li>
@@ -118,7 +118,7 @@
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <div class="input-group-append">
-                                <a class="btn" href="PrincipalAdministrador.aspx">
+                                <a class="btn" href="PrincipalAdminCentroA.aspx">
                                     <i class="fas fa-user"></i>
                                 </a>
                             </div>
@@ -154,8 +154,11 @@
                 <!-- End of Topbar -->
                 <div class="container-fluid">
                     <div>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
+                        <form runat="server">
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </form>
                     </div>
                 </div>
             </div>
