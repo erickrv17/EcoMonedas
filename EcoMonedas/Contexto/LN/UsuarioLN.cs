@@ -39,10 +39,18 @@ namespace Contexto
 
             return query;
         }
-        public static IQueryable ListaUsuariosDisponibles()
+        public static IQueryable ListaUsuariosDisponibles(String correoU)
         {
             var db = new EcoMonedasContext();
             IQueryable query = db.Usuarios.Where(x => x.Estado == true && x.Disponible == true && x.RolID == 2);
+            if(correoU==null)
+            {
+                query = db.Usuarios.Where(x => x.Estado == true && x.Disponible == true && x.RolID == 2);
+            }
+            else
+            {
+                query = db.Usuarios.Where(x => x.Disponible == true || x.CorreoElectronico == correoU && x.RolID == 2 && x.Estado == true);
+            }
             return query;
         }
 
@@ -106,7 +114,19 @@ namespace Contexto
 
             return true;
         }
-       
+        public void actaulizaUsuario(Usuario user)  {
+
+            EcoMonedasContext db = new EcoMonedasContext();
+
+            var miUsuario = user;
+            
+             miUsuario = db.Usuarios.Where(p => p.CorreoElectronico == user.CorreoElectronico).First<Usuario>();
+            miUsuario.Disponible = user.Disponible;
+            db.SaveChanges();
+
+        }
+
+
         public static Usuario obtenerUsuario(string correo)
         {
             IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(2);

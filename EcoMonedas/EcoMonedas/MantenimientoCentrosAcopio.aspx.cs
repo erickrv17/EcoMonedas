@@ -10,6 +10,7 @@ namespace EcoMonedas
 {
     public partial class MantenimientoCentrosAcopio : System.Web.UI.Page
     {
+        public String correoU { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             string accionProducto = Request.QueryString["accion"];
@@ -21,6 +22,7 @@ namespace EcoMonedas
             }
             if (!IsPostBack)
             {
+                listaUsuarios(correoU);
                 cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
                
             }
@@ -74,6 +76,7 @@ namespace EcoMonedas
                 }
              
                 CentroAcopioLN centros = new CentroAcopioLN();
+                
                 bool confirmacion = centros.GuardarCentroAcopio(txtNombre.Text, DDLAdmiCentro.SelectedValue, DDLProvincia.SelectedValue, archivoImagen.FileName, txtDireccion.Text, chkEstado.Checked,txtCorreo.Text,  hfCentroID.Value);
 
                 if (confirmacion)
@@ -96,10 +99,16 @@ namespace EcoMonedas
           
         }
 
-        public IQueryable listaUsuarios()
+        public IQueryable listaUsuarios(String correoU)
         {
-            return UsuarioLN.ListaUsuariosDisponibles();
+            return UsuarioLN.ListaUsuariosDisponibles(correoU);
+            
         }
+        //private void listaUsuarios(String correoU)
+        //{
+        //    DDLAdmiCentro.DataSource= UsuarioLN.ListaUsuariosDisponibles(correoU);
+           
+        //}
         public IQueryable listaProvincias()
         {
             return ProvinciaLN.ListaProvincias();
@@ -108,10 +117,13 @@ namespace EcoMonedas
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
+          
             CentroAcopio centrAcopio = CentroAcopioLN.obtenerCentroAcopio(id);
             //Aqui se le indican los valores en las distintos controles del form
             txtNombre.Text = centrAcopio.Nombre;
-            DDLAdmiCentro.SelectedValue = centrAcopio.UsuarioID;
+            correoU = centrAcopio.UsuarioID;
+            listaUsuarios(correoU);
+            //DDLAdmiCentro.SelectedValue = centrAcopio.UsuarioID;
             DDLProvincia.SelectedValue = centrAcopio.ProvinciaID.ToString();
             txtDireccion.Text = centrAcopio.DireccionExacta;
             txtCorreo.Text = centrAcopio.Correo;

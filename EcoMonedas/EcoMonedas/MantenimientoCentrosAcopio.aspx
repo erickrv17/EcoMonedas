@@ -37,7 +37,7 @@
                     <asp:DropDownList ID="DDLAdmiCentro" CssClass="form-control" runat="server"
                         ItemType="Contexto.Usuario"
                         SelectMethod="listaUsuarios"
-                        DataTextField="Nombre" DataValueField="CorreoElectronico">
+                        DataTextField="Nombre" DataValueField="CorreoElectronico" AutoPostBack="true">
                     </asp:DropDownList>
                 </div>
                 <div class="row form-group">

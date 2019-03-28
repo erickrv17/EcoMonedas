@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Contexto
 {
    public class CentroAcopioLN
@@ -45,18 +46,36 @@ namespace Contexto
             string correo,
             string id = "")
         {
+            UsuarioLN users = new UsuarioLN();
+            var miUsuario = UsuarioLN.obtenerUsuario(usuarioID);
+
 
             EcoMonedasContext db = new EcoMonedasContext();
             var miCentroAcopio = new CentroAcopio();
             int idCentroAcopio = 0;
             bool esNumero = int.TryParse(id, out idCentroAcopio);
 
-            if (esNumero || idCentroAcopio > 0)
+            if (esNumero || idCentroAcopio > 0 )
             {
                 //Buscar el centro a actualizar
                 miCentroAcopio = db.CentroAcopios.Where(c => c.ID == idCentroAcopio).First<CentroAcopio>();
+                if(miCentroAcopio.UsuarioID.Equals(miUsuario.CorreoElectronico))
+                {
+                    miCentroAcopio.UsuarioID = miUsuario.CorreoElectronico;
+                    miUsuario = UsuarioLN.obtenerUsuario(miCentroAcopio.UsuarioID);
+                }
+                else
+                {
+                    miUsuario = UsuarioLN.obtenerUsuario(miCentroAcopio.UsuarioID);
+
+                    miUsuario.Disponible = true;
+                    users.actaulizaUsuario(miUsuario);
+                    miUsuario = UsuarioLN.obtenerUsuario(usuarioID);
+                }
             }
             miCentroAcopio.Nombre = nombre;
+            miUsuario.Disponible = false;
+            users.actaulizaUsuario(miUsuario);
             miCentroAcopio.UsuarioID = usuarioID;
             miCentroAcopio.ProvinciaID = Convert.ToInt32(provinciaID);
             miCentroAcopio.Imagen = imagen;
