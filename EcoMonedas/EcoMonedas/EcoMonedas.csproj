@@ -50,6 +50,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -119,6 +120,8 @@
     <Content Include="PrincipalAdminCentroA.aspx" />
     <Content Include="PrincipalAdministrador.aspx" />
     <Content Include="Registrarse.aspx" />
+    <Content Include="ReporteMateriales.aspx" />
+    <Content Include="reporteMaterialesNombre.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -312,6 +315,20 @@
     <Compile Include="Registrarse.aspx.designer.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteMateriales.aspx.cs">
+      <DependentUpon>ReporteMateriales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMateriales.aspx.designer.cs">
+      <DependentUpon>ReporteMateriales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporteMaterialesNombre.aspx.cs">
+      <DependentUpon>reporteMaterialesNombre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporteMaterialesNombre.aspx.designer.cs">
+      <DependentUpon>reporteMaterialesNombre.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -352,6 +369,10 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\reporteMaterialNombre.rdlc" />
+    <EmbeddedResource Include="Reportes\reportePrueba.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

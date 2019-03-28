@@ -87,9 +87,22 @@ namespace Contexto
             return query;
         }
 
+        public static IQueryable queryListaMaterialesFiltro(string nombre)
+        {
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Materials.Where(x => x.Nombre==nombre);
+
+            return query;
+        }
+
         public static IEnumerable<Material> obtenerListaMateriales(int estado)
         {
             IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMateriales(estado);
+            return lista;
+        }
+        public static IEnumerable<Material> obtenerListaMaterialesFiltro(string nombre)
+        {
+            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.queryListaMaterialesFiltro(nombre);
             return lista;
         }
 
@@ -101,6 +114,7 @@ namespace Contexto
             Material mat = db.Materials.Where(x => x.ID == id).FirstOrDefault<Material>();
             return mat;
         }
+        
 
         //public static Material obtenerMaterial(int id)
         //{
