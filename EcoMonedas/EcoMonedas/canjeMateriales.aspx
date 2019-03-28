@@ -7,6 +7,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="container_inner default_template_holder clearfix page_container_inner">
+            <div class="row">
+                <div class="col-7">
+                    <label>Porfavor coloquese por encima del material a canjear y haga click en agregar si desea canjear dicho material</label>
+                </div>
+                <div class="col-5">
+                    <asp:Button ID="btnCanjear" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="Procesar →" />
+                </div>
+            </div>
             <div class="vc_row wpb_row section vc_row-fluid" style="padding-top: 0px; text-align: left;">
                 <div class=" full_section_inner clearfix">
                     <div class="vc_col-sm-12 wpb_column vc_column_container">
@@ -14,12 +22,12 @@
                             <div class="projects_holder_outer v3 portfolio_with_space portfolio_standard ">
                                 <div class="projects_holder clearfix v3 standard">
                                     <asp:ListView ID="listaMateriales" runat="server"
-                                        DataKeyNames="ID" GroupItemCount="3"
+                                        DataKeyNames="ID" GroupItemCount="2"
                                         ItemType="Contexto.Material" SelectMethod="listadoMateriales">
                                         <EmptyDataTemplate>
                                             <div class="row">
                                                 No hay datos
-                   <div class="row">
+                                            </div>
                                         </EmptyDataTemplate>
                                         <EmptyItemTemplate>
                                             <div class="col-lg-3">
@@ -35,7 +43,7 @@
                                                 <div class="image_holder">
                                                     <a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self"><span class="image">
                                                         <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle" CssClass="attachment-full wp-post-image" />
-                                                    </span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title='<%#:Item.Nombre%>' href="#">Agregar</a></span></span></span></span></span>
+                                                    </span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="btn btn-outline-dark lightbox qbutton small white" title='<%#:Item.Nombre%>' href="#">Agregar</a></span></span></span></span></span>
                                                 </div>
                                                 <div class="portfolio_description ">
                                                     <h5 class="portfolio_title"><a href="#" target="_self"><%#:Item.Nombre%></a></h5>

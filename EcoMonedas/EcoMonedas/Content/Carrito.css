@@ -138,7 +138,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #303030;
 }
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-    color: #1abc9c;
+    color: #7ed957;
 }
 a, p a {
     color: #303030;
@@ -2634,8 +2634,8 @@ input.qbutton {
     color: #fff;
 }
 .qbutton.white:hover {
-    background-color: #1abc9c;
-    border-color: #1abc9c;
+    background-color: #7ed957;
+    border-color: #000;
 }
 .qbutton.green {
     border-color: #1abc9c;
@@ -3567,7 +3567,7 @@ section.parallax_section_holder {
     width: 24.99%}
 .projects_holder.v3 .mix, .projects_holder.v3.hover_text .mix {
     width: 32%;
-    margin: 0 0 2.4%}
+    margin:10px 50px 20px 10px;}
 .projects_holder.v3.hover_text .mix {
     margin: 0 0 2.2%}
 .projects_holder.v3 .filler, .projects_holder.v3.hover_text .filler {

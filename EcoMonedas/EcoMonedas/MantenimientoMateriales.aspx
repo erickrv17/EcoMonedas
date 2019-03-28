@@ -2,8 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/checkboxes.css" rel="stylesheet" />
-<%--    <script src="Scripts/FiltroTablas.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mb-2">
@@ -100,7 +98,7 @@
                 <h2>Listado Materiales</h2>
                 <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
-                    <input class="form-control" id="system-search" name="q" placeholder="Buscar..."/>
+                    <input class="form-control" id="system-search" name="q" placeholder="Buscar..." />
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                     </span>
@@ -114,14 +112,17 @@
                     <HeaderStyle CssClass="table-info" />
                 </asp:GridView>
                 <div class="input-group">
-                    <div class="col-9"></div>
-                    <asp:DropDownList ID="ddlFiltrosXEstado" runat="server" CssClass="form-control col-3" OnSelectedIndexChanged="ddlFiltrosXEstado_SelectedIndexChanged" AutoPostBack="true">
-                        <asp:ListItem Text="Todos" Value="2"></asp:ListItem>
-                        <asp:ListItem Text="Activos" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="No Activos" Value="0"></asp:ListItem>
-                    </asp:DropDownList>
+                    <div class="col-lg-6 col-md-6"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <asp:DropDownList ID="ddlFiltrosXEstado" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlFiltrosXEstado_SelectedIndexChanged" AutoPostBack="true">
+                            <asp:ListItem Text="Todos" Value="2"></asp:ListItem>
+                            <asp:ListItem Text="Activos" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="No Activos" Value="0"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="Scripts/FiltroTablas.js"></script>
 </asp:Content>
