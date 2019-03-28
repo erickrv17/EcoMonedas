@@ -103,13 +103,13 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
-        /// Control CheckBox1.
+        /// Control chkEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox chkEstado;
         
         /// <summary>
         /// Control Image1.
@@ -139,15 +139,6 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// Control hfCentroID.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfCentroID;
-        
-        /// <summary>
         /// Control btnRegistrar.
         /// </summary>
         /// <remarks>
@@ -157,6 +148,15 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.Button btnRegistrar;
         
         /// <summary>
+        /// Control hfCentroID.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfCentroID;
+        
+        /// <summary>
         /// Control grvListado.
         /// </summary>
         /// <remarks>
@@ -164,5 +164,14 @@ namespace EcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvListado;
+        
+        /// <summary>
+        /// Control ddlFiltrosXEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFiltrosXEstado;
     }
 }

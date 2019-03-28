@@ -8,11 +8,41 @@ namespace Contexto
 {
   public class UsuarioLN
     {
-        public static IQueryable ListaUsuarios()
+        public static IQueryable ListaUsuarios(int estado)
         {
             var db = new EcoMonedasContext();
-            IQueryable query = db.Usuarios;
+            IQueryable query = db.Usuarios.Where(x => x.Estado == true);
+            if (estado == 0)
+            {
+                query = db.Usuarios.Where(x => x.Estado == false && x.RolID!=3);
+            }
+            else
+            {
+                if (estado == 1)
+                {
+                    query = db.Usuarios.Where(x => x.Estado == true && x.RolID != 3);
+                }
+                else
+                {
+                    if (estado == 2)
+                    {
+                        query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID != 3);
+                    }else
+                    {
+                        if (estado == 3)
+                        {
+                            query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID == 3);
+                        }
+                    }
+                }
+            }
 
+            return query;
+        }
+        public static IQueryable ListaUsuariosDisponibles()
+        {
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Usuarios.Where(x => x.Estado == true && x.Disponible == true && x.RolID == 2);
             return query;
         }
 
@@ -25,7 +55,8 @@ namespace Contexto
             string contrasenia,
             string direccion,
             string rolID,
-            bool estado
+            bool estado,
+            bool disponible
            )
         {
 
@@ -44,10 +75,11 @@ namespace Contexto
                 miUsuario.SegundoApellido = segundoApellido;
                 miUsuario.Telefono = telefono;
                 miUsuario.CorreoElectronico = correoElectronico;
-                miUsuario.contrasenia = contrasenia;
+                miUsuario.contrasenia = GenerarPassword();
                 miUsuario.Direccion = direccion;
                 miUsuario.RolID = Convert.ToInt32(rolID);
                 miUsuario.Estado = estado;
+                miUsuario.Disponible = disponible;
                 if (!correoElectronico.Equals(""))
                 {
 
@@ -65,19 +97,44 @@ namespace Contexto
             miUsuario.Direccion = direccion;
             miUsuario.RolID = Convert.ToInt32(rolID);
             miUsuario.Estado = estado;
+            miUsuario.Disponible = disponible;
+
             }
-           
+
             //Siempre se guardan los datos
             db.SaveChanges();//Realiza el commit para el insert en la base de datos
 
             return true;
         }
-
+       
         public static Usuario obtenerUsuario(string correo)
         {
-            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios();
+            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(2);
             Usuario usuario = listas.Where(x => x.CorreoElectronico == correo).FirstOrDefault<Usuario>();
             return usuario;
+        }
+        public static string GenerarPassword()
+        {
+            string contraseña = string.Empty;
+            string[] letras = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+                                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+            Random EleccionAleatoria = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                int LetraAleatoria = EleccionAleatoria.Next(0, 100);
+                int NumeroAleatorio = EleccionAleatoria.Next(0, 9);
+
+                if (LetraAleatoria < letras.Length)
+                {
+                    contraseña += letras[LetraAleatoria];
+                }
+                else
+                {
+                    contraseña += NumeroAleatorio.ToString();
+                }
+            }
+            return contraseña;
         }
     }
 }
