@@ -153,4 +153,5 @@
             </div>
         </div>
     </div>
+     <script src="Scripts/FiltroTablas.js"></script>
 </asp:Content>

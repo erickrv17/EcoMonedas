@@ -19,12 +19,16 @@ namespace EcoMonedas
                 lblMensaje.Text = "Cupon guardado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
             }
-            cargarGrid();
+            if (!IsPostBack)
+            {
+                cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
+                
+            }
         }
 
-        private void cargarGrid()
+        private void cargarGrid(int estado)
         {
-            IEnumerable<Cupon> lista = (IEnumerable<Cupon>)CuponLN.ListaCupones();
+            IEnumerable<Cupon> lista = (IEnumerable<Cupon>)CuponLN.ListaCupones(estado);
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
@@ -34,7 +38,7 @@ namespace EcoMonedas
         {
           
                 CuponLN cupones = new CuponLN();
-                bool confirmacion = cupones.GuardarCupon(txtNombre.Text, txtDescripcion.Text, CheckBox1.Checked, txtPrecioCanje.Text,  txtEcoMonedasNecesarias.Text, hfCuponID.Value);
+                bool confirmacion = cupones.GuardarCupon(txtNombre.Text, txtDescripcion.Text, chkEstado.Checked, txtPrecioCanje.Text,  txtEcoMonedasNecesarias.Text, hfCuponID.Value);
 
                 if (confirmacion)
                 {
@@ -61,9 +65,13 @@ namespace EcoMonedas
             txtDescripcion.Text = cupon.Descripcion;
             txtPrecioCanje.Text = cupon.PrecioCanje.ToString();
             txtEcoMonedasNecesarias.Text = cupon.EcoMonedasNecesarias.ToString();
-            CheckBox1.Checked = cupon.Estado;
+            chkEstado.Checked = cupon.Estado;
             hfCuponID.Value = cupon.ID.ToString();
             btnRegistrar.Text = "Actualizar";
+        }
+        protected void ddlFiltrosXEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
         }
 
     }

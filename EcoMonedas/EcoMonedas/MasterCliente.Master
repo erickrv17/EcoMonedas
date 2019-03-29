@@ -122,7 +122,7 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                            <asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Inicias Sesión" OnClick="btnIngresar_Click" />
+                            <button  class="btn btn-success" onclick="btnIngresar_Click" >Iniciar Sesión</button>
                               </div>
 				    	    <div>
                                 <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Olvidaste tu contraseña?</button>
@@ -137,16 +137,16 @@
     	    		    <div class="modal-body">
 		    				<div id="div-lost-msg">
                                 <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-lost-msg">escribe tu e-mail.</span>
+                                <span id="text-lost-msg">escribe tu e-mail de recuperación.</span>
                             </div>
 		    				<input id="lost_email" class="form-control" type="text" placeholder="Correo electronico" />
             			</div>
 		    		    <div class="modal-footer">
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                                <button type="submit" class="btn btn-success" onclick="btnEnviar_Click">Enviar</button>
                             </div>
                             <div>
-                                <button id="lost_login_btn" type="button" style="color: #7ed957"class="btn btn-link">Inicia sesion</button>
+                                <button id="lost_login_btn" type="button" style="color: #7ed957"class="btn btn-link">Iniciar Sesión</button>
                                 <button id="lost_register_btn" type="button" style="color: #7ed957" class="btn btn-link">registrate</button>
                             </div>
 		    		    </div>
@@ -188,11 +188,11 @@
             			</div>
 		    		    <div class="modal-footer">
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                                <button type="submit" class="btn btn-success" onclick="btnRegistra_Click">registrate</button>
                             </div>
                             <div>
-                                <button id="register_login_btn" type="button" style="color: #7ed957" class="btn btn-link">Log In</button>
-                                <button id="register_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Lost Password?</button>
+                                <button id="register_login_btn" type="button" style="color: #7ed957" class="btn btn-link">Iniciar Sesión</button>
+                                <button id="register_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Olvidaste tu contraseña?</button>
                             </div>
 		    		    </div>
                     </form>

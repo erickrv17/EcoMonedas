@@ -67,7 +67,6 @@ namespace Contexto
                 else
                 {
                     miUsuario = UsuarioLN.obtenerUsuario(miCentroAcopio.UsuarioID);
-
                     miUsuario.Disponible = true;
                     users.actaulizaUsuario(miUsuario);
                     miUsuario = UsuarioLN.obtenerUsuario(usuarioID);

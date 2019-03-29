@@ -9,10 +9,28 @@ namespace Contexto
     public class CuponLN
     {
 
-        public static IQueryable ListaCupones()
+        public static IQueryable ListaCupones(int estado)
         {
             var db = new EcoMonedasContext();
-            IQueryable query = db.Cupons;
+            IQueryable query = db.Cupons.Where(x => x.Estado == true);
+            if (estado == 0)
+            {
+                query = db.Cupons.Where(x => x.Estado == false);
+            }
+            else
+            {
+                if (estado == 1)
+                {
+                    query = db.Cupons.Where(x => x.Estado == true);
+                }
+                else
+                {
+                    if (estado == 2)
+                    {
+                        query = db.Cupons.Where(x => x.Estado == false || x.Estado == true);
+                    }
+                }
+            }
 
             return query;
         }
@@ -57,7 +75,7 @@ namespace Contexto
 
         public static Cupon obtenerCupon(int id)
         {
-            IEnumerable<Cupon> listas = (IEnumerable<Cupon>)CuponLN.ListaCupones();
+            IEnumerable<Cupon> listas = (IEnumerable<Cupon>)CuponLN.ListaCupones(2);
             Cupon miCupon = listas.Where(x => x.ID == id).FirstOrDefault<Cupon>();
             return miCupon;
         }

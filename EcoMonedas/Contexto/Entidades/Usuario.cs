@@ -48,9 +48,11 @@ namespace Contexto
 
         public int RolID { get; set; }
 
+        public bool Disponible { get; set; }
+
         public bool Estado { get; set; }
 
-        public bool Disponible { get; set; }
+     
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -120,4 +120,5 @@
         </div>
     </div>
     <link href="Content/checkboxes.css" rel="stylesheet" />
+     <script src="Scripts/FiltroTablas.js"></script>
 </asp:Content>

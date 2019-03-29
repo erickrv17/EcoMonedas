@@ -60,7 +60,6 @@ namespace Contexto
             string segundoApellido,
             string telefono,
             string correoElectronico,
-            string contrasenia,
             string direccion,
             string rolID,
             bool estado,
@@ -101,7 +100,6 @@ namespace Contexto
             miUsuario.PrimerApellido = primerApellido;
             miUsuario.SegundoApellido = segundoApellido;
             miUsuario.Telefono = telefono;
-            miUsuario.contrasenia = contrasenia;
             miUsuario.Direccion = direccion;
             miUsuario.RolID = Convert.ToInt32(rolID);
             miUsuario.Estado = estado;
@@ -109,8 +107,9 @@ namespace Contexto
 
             }
 
-            //Siempre se guardan los datos
-            db.SaveChanges();//Realiza el commit para el insert en la base de datos
+             db.SaveChanges();//Realiza el commit para el insert en la base de datos
+          
+            
 
             return true;
         }
