@@ -1,8 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/paginaMaestraAdministrador.Master" CodeBehind="MantenimientoCentrosAcopio.aspx.cs" Inherits="EcoMonedas.MantenimientoCentrosAcopio" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-      <link href="Content/checkboxes.css" rel="stylesheet" />
+      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -33,11 +32,10 @@
                 </div>
 
                 <div class="row form-group">
-                    <label for="exampleSelect1">Administrador del Centro de acopio</label>
+                    <label for="exampleSelect1">Administrador del Centro de Acopio</label>
                     <asp:DropDownList ID="DDLAdmiCentro" CssClass="form-control" runat="server"
                         ItemType="Contexto.Usuario"
-                        SelectMethod="listaUsuarios"
-                        DataTextField="Nombre" DataValueField="CorreoElectronico" AutoPostBack="true">
+                        DataTextField="Nombre" DataValueField="CorreoElectronico">
                     </asp:DropDownList>
                 </div>
                 <div class="row form-group">
@@ -121,4 +119,5 @@
             </div>
         </div>
     </div>
+    <link href="Content/checkboxes.css" rel="stylesheet" />
 </asp:Content>

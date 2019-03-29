@@ -49,7 +49,7 @@ namespace Contexto
             }
             else
             {
-                query = db.Usuarios.Where(x => x.Disponible == true || x.CorreoElectronico == correoU && x.RolID == 2 && x.Estado == true);
+                query = db.Usuarios.Where(x => x.Disponible == false && x.CorreoElectronico == correoU && x.RolID == 2 && x.Estado == true || x.Disponible==true && x.RolID==2 && x.Estado==true);
             }
             return query;
         }

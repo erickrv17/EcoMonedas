@@ -334,6 +334,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Imagenes\CentrosAcopio\" />
     <Folder Include="Imagenes\Materiales\" />
     <Folder Include="Template\css\" />
     <Folder Include="Template\img\" />

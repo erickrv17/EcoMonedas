@@ -10,11 +10,10 @@ namespace EcoMonedas
 {
     public partial class MantenimientoCentrosAcopio : System.Web.UI.Page
     {
-        public String correoU { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             string accionProducto = Request.QueryString["accion"];
-            if (accionProducto == "guardado") 
+            if (accionProducto == "guardado")
             {
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Centro guardado satisfactoriamente!";
@@ -22,12 +21,11 @@ namespace EcoMonedas
             }
             if (!IsPostBack)
             {
-                listaUsuarios(correoU);
                 cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
-               
+                listaUsuarios(null);
             }
         }
-     
+
         private void cargarGrid(int estado)
         {
             IEnumerable<CentroAcopio> lista = (IEnumerable<CentroAcopio>)CentroAcopioLN.ListaCentrosAcopio(estado);
@@ -37,7 +35,7 @@ namespace EcoMonedas
 
         //protected void cvNombre_ServerValidate(object source, ServerValidateEventArgs args)
         //{
-           
+
         //    args.IsValid = (args.Value.Length >= 3);
         //}
 
@@ -51,7 +49,7 @@ namespace EcoMonedas
                 String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
                 for (int i = 0; i < allowedExtensions.Length; i++)
                 {
-                    if (fileExtension == allowedExtensions[i]) 
+                    if (fileExtension == allowedExtensions[i])
                     {
                         archivoOK = true;
                     }
@@ -62,22 +60,19 @@ namespace EcoMonedas
             {
                 try
                 {
-                    
-                    archivoImagen.PostedFile.SaveAs(path + archivoImagen.FileName);
-                 
-                    archivoImagen.PostedFile.SaveAs(path + "Thumbs/" + archivoImagen.FileName);
+                    archivoImagen.PostedFile.SaveAs(path + "CentrosAcopio/" + archivoImagen.FileName);
                 }
                 catch (Exception ex)
                 {
-                  
+
                     lblMensaje.Visible = true;
                     lblMensaje.Text = ex.Message;
 
                 }
-             
+
                 CentroAcopioLN centros = new CentroAcopioLN();
-                
-                bool confirmacion = centros.GuardarCentroAcopio(txtNombre.Text, DDLAdmiCentro.SelectedValue, DDLProvincia.SelectedValue, archivoImagen.FileName, txtDireccion.Text, chkEstado.Checked,txtCorreo.Text,  hfCentroID.Value);
+
+                bool confirmacion = centros.GuardarCentroAcopio(txtNombre.Text, DDLAdmiCentro.SelectedValue, DDLProvincia.SelectedValue, archivoImagen.FileName, txtDireccion.Text, chkEstado.Checked, txtCorreo.Text, hfCentroID.Value);
 
                 if (confirmacion)
                 {
@@ -96,19 +91,16 @@ namespace EcoMonedas
                 lblMensaje.Text = "La extension o la imagen no es válida";
 
             }
-          
+
         }
 
-        public IQueryable listaUsuarios(String correoU)
+        public void listaUsuarios(String correoU)
         {
-            return UsuarioLN.ListaUsuariosDisponibles(correoU);
-            
+            IEnumerable<Usuario> lista= (IEnumerable<Usuario>)UsuarioLN.ListaUsuariosDisponibles(correoU);
+            DDLAdmiCentro.DataSource = lista.ToList();
+            DDLAdmiCentro.DataBind();
         }
-        //private void listaUsuarios(String correoU)
-        //{
-        //    DDLAdmiCentro.DataSource= UsuarioLN.ListaUsuariosDisponibles(correoU);
-           
-        //}
+
         public IQueryable listaProvincias()
         {
             return ProvinciaLN.ListaProvincias();
@@ -121,9 +113,7 @@ namespace EcoMonedas
             CentroAcopio centrAcopio = CentroAcopioLN.obtenerCentroAcopio(id);
             //Aqui se le indican los valores en las distintos controles del form
             txtNombre.Text = centrAcopio.Nombre;
-            correoU = centrAcopio.UsuarioID;
-            listaUsuarios(correoU);
-            //DDLAdmiCentro.SelectedValue = centrAcopio.UsuarioID;
+            listaUsuarios(centrAcopio.UsuarioID);
             DDLProvincia.SelectedValue = centrAcopio.ProvinciaID.ToString();
             txtDireccion.Text = centrAcopio.DireccionExacta;
             txtCorreo.Text = centrAcopio.Correo;
@@ -131,6 +121,7 @@ namespace EcoMonedas
             Image1.ImageUrl = "~/Imagenes/" + centrAcopio.Imagen;
             hfCentroID.Value = centrAcopio.ID.ToString();
             btnRegistrar.Text = "Actualizar";
+            
         }
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
