@@ -1,4 +1,5 @@
 ﻿using Contexto;
+using EcoMonedas.CarritoLN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,13 @@ namespace EcoMonedas
         {
             List<Material> lista = MaterialLN.obtenerListaMateriales(1).ToList();
             return lista;
+        }
+
+        protected void linkAgregar_Click(object sender, EventArgs e)
+        {
+            ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
+            int idMaterial = Convert.ToInt32(listaMateriales.DataKeys[fila.DataItemIndex].Values[0]);
+            Carrito.Instancia.AgregarItem(idMaterial);
         }
     }
 }

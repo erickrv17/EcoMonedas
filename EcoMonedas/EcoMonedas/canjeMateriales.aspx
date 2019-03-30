@@ -43,7 +43,7 @@
                                                 <div class="image_holder">
                                                     <a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self"><span class="image">
                                                         <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle" CssClass="attachment-full wp-post-image" />
-                                                    </span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="btn btn-outline-dark lightbox qbutton small white" title='<%#:Item.Nombre%>' href="#">Agregar</a></span></span></span></span></span>
+                                                    </span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><asp:LinkButton ID="linkAgregar" CssClass="btn btn-outline-dark lightbox qbutton small white" title='<%#:Item.Nombre%>' runat="server" OnClick="linkAgregar_Click">Agregar al carrito</asp:LinkButton></span></span></span></span></span>
                                                 </div>
                                                 <div class="portfolio_description ">
                                                     <h5 class="portfolio_title"><a href="#" target="_self"><%#:Item.Nombre%></a></h5>

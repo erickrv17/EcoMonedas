@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\BilleteraVirtual.cs" />
+    <Compile Include="Entidades\CarritoCanje.cs" />
     <Compile Include="Entidades\CentroAcopio.cs" />
     <Compile Include="Entidades\Color.cs" />
     <Compile Include="Entidades\Cupon.cs" />
