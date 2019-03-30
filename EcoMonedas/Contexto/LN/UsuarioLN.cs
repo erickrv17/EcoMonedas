@@ -8,6 +8,12 @@ namespace Contexto
 {
   public class UsuarioLN
     {
+        public static IQueryable Todos()
+        {
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Usuarios.Where(x => x.Estado == true);
+            return query;
+        }
         public static IQueryable ListaUsuarios(int estado)
         {
             var db = new EcoMonedasContext();
@@ -124,12 +130,29 @@ namespace Contexto
             db.SaveChanges();
 
         }
+        public void insertaUsuario(Usuario user)
+        {
+
+            EcoMonedasContext db = new EcoMonedasContext();
+            var miUsuario = user;
+            db.Usuarios.Add(miUsuario);
+            db.SaveChanges();
+
+        }
 
 
         public static Usuario obtenerUsuario(string correo)
         {
             IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(2);
             Usuario usuario = listas.Where(x => x.CorreoElectronico == correo).FirstOrDefault<Usuario>();
+            return usuario;
+        }
+
+        public static Usuario login(string correo, string contrasena)
+        {
+            Usuario usuario = null;
+            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.Todos();
+             usuario = listas.Where(x => x.CorreoElectronico == correo && x.contrasenia== contrasena).FirstOrDefault<Usuario>();
             return usuario;
         }
         public static string GenerarPassword()

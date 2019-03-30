@@ -68,7 +68,7 @@
                             <label style="text-align: center">¡Por este medio, puedes comunicarte con los Administradores del Programa Eco-Monedas!</label>
                         </div>
                         <br />
-                        <form runat="server" role="form" class="contactForm">
+                        <div runat="server" role="form" class="contactForm">
                             <div class="row form-group">
                                 <div class="col-6">
                                     <label><b>Nombre:</b> </label>
@@ -90,7 +90,7 @@
                             <div class="text-center">
                                 <asp:button id="btnEnviar" runat="server" cssclass="btn btn-outline-dark" text="Enviar" />
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
