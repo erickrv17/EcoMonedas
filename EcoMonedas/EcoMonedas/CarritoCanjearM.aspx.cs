@@ -1,4 +1,5 @@
 ﻿using Contexto.Entidades;
+using Contexto.LN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,18 +53,21 @@ namespace EcoMonedas
                 llenarListaCarrito();
             }
         }
-
+    
+        
+        //PARAMETROS REVISAR    
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
-            /*if (grvCarrito.Rows.Count >= 1)
+            if (grvCarrito.Rows.Count >= 1)
             {
-                if (OrdenCompraLN.registrarOrden(txtCliente.Text,
-                    CarritoLN.Carrito.Instancia.Items))
+                int centroID=000;
+                int clienteID=000;
+                if (EncabezadoCanjeLN.registrarEncabezado(CarritoLN.Carrito.Instancia.Items, centroID,clienteID))
                 {
                     CarritoLN.Carrito.Instancia.eliminarCarrito();
-                    Response.Redirect("listaOrdenesCompra.aspx?accion=registro");
+                    Response.Redirect("listaCanjesRealizadosA.aspx");
                 }
-            }*/
+            }
         }
 
         protected void btnCanjeM_Click(object sender, EventArgs e)

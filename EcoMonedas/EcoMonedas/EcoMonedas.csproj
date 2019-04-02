@@ -108,6 +108,7 @@
     <Content Include="Imagenes\Separador2.png" />
     <Content Include="InicioE.aspx" />
     <Content Include="InicioEM.aspx" />
+    <Content Include="listaCanjesRealizadosA.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
     <Content Include="MantenimientoCentrosAcopio.aspx" />
     <Content Include="MantenimientoCupones.aspx" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="InicioEM.aspx.designer.cs">
       <DependentUpon>InicioEM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaCanjesRealizadosA.aspx.cs">
+      <DependentUpon>listaCanjesRealizadosA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaCanjesRealizadosA.aspx.designer.cs">
+      <DependentUpon>listaCanjesRealizadosA.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaCentrosAcopio.aspx.cs">
       <DependentUpon>listaCentrosAcopio.aspx</DependentUpon>

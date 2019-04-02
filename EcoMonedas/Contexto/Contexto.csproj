@@ -66,6 +66,7 @@
     <Compile Include="LN\CorreoLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
+    <Compile Include="LN\EncabezadoCanjeLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />
     <Compile Include="LN\RolLN.cs" />
     <Compile Include="LN\UsuarioLN.cs" />
