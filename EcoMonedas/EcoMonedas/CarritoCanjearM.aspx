@@ -10,8 +10,16 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
+            <div class="row">
+                <div class="col-5">
+                    <asp:Button ID="btnCanjeM" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="← Canjear Materiales" OnClick="btnCanjeM_Click" />
+                </div>
+                <div class="col-7">
+                    <label>De click si desea devolverse a la página donde se muestran los materiales disponibles para canjear.</label>
+                </div>
+            </div>
             <ul class="list-group">
-                <li class="list-group-item list-group-item-success">Información del Canje</li>
+                <li class="list-group-item" style="background-color:#7ed957; color:white;">Información del Canje</li>
                 <li class="list-group-item">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
@@ -39,8 +47,8 @@
                                     <asp:BoundField DataField="subtotal" DataFormatString="&cent;{0:N2}" HeaderText="Subtotal"></asp:BoundField>
 
                                 </Columns>
-                                <HeaderStyle CssClass="table-primary" />
-                                <AlternatingRowStyle CssClass="table-secondary" />
+                                <HeaderStyle CssClass="table" BackColor="#7ed957" ForeColor="White" />
+                                <AlternatingRowStyle CssClass="table" />
                             </asp:GridView>
                             <div class="float-right">
                                 <strong>
@@ -54,15 +62,16 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </li>
-                <%--<li class="list-group-item">
+                <!--<li class="list-group-item">
                     <div class="alert alert-dismissible alert-warning">
-                      <h4 class="alert-heading">Subtotal</h4>
-                      <p class="mb-0">* El cálculo del subtotal de cada libro incluye el 1% de impuesto y el costo del transporte</p>
+                        <h4 class="alert-heading">Cantidad</h4>
+                        <p class="mb-0">* La Cantidad de Materiales es intercambiable en la casilla Cantidad, verifique las cantidades antes de procesar el canje.</p>
+                        <p class="mb-0">Gracias</p>
                     </div>
-                </li>--%>
+                </li>-->
                 <li class="list-group-item">
                     <asp:Button ID="btnCanjear" runat="server" ValidationGroup="ordenar"
-                        Text="Procesar Canje" OnClick="btnCanjear_Click" CssClass="btn btn-outline-info" />
+                        Text="Procesar Canje" OnClick="btnCanjear_Click" CssClass="btn btn-primary" />
                 </li>
             </ul>
         </div>

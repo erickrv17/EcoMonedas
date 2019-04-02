@@ -27,5 +27,10 @@ namespace EcoMonedas
             int idMaterial = Convert.ToInt32(listaMateriales.DataKeys[fila.DataItemIndex].Values[0]);
             Carrito.Instancia.AgregarItem(idMaterial);
         }
+
+        protected void btnCanjear_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CarritoCanjearM.aspx");
+        }
     }
 }

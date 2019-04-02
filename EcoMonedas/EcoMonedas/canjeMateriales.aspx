@@ -12,7 +12,7 @@
                     <label>Porfavor coloquese por encima del material a canjear y haga click en agregar si desea canjear dicho material</label>
                 </div>
                 <div class="col-5">
-                    <asp:Button ID="btnCanjear" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="Procesar →" />
+                    <asp:Button ID="btnCanjear" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="Procesar Canje →" OnClick="btnCanjear_Click" />
                 </div>
             </div>
             <div class="vc_row wpb_row section vc_row-fluid" style="padding-top: 0px; text-align: left;">

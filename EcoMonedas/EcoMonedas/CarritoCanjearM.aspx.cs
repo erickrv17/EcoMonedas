@@ -31,7 +31,6 @@ namespace EcoMonedas
             grvCarrito.DataBind();
             lblTotalUnidades.Text =CarritoLN.Carrito.Instancia.GetTotalUnidades().ToString();
             lblTotal.Text ="&cent;"+ String.Format("{0:N2}", CarritoLN.Carrito.Instancia.GetTotal());
-
         }
 
         protected void grvCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -65,6 +64,11 @@ namespace EcoMonedas
                     Response.Redirect("listaOrdenesCompra.aspx?accion=registro");
                 }
             }*/
+        }
+
+        protected void btnCanjeM_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("canjeMateriales.aspx");
         }
     }
 }
