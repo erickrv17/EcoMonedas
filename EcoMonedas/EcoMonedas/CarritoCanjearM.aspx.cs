@@ -16,6 +16,10 @@ namespace EcoMonedas
         protected void Page_Load(object sender, EventArgs e)
         {
             correoC = Request.QueryString["correoC"];
+            if (correoC == "" || correoC == null)
+            {
+                Response.Redirect("solicitudCorreoUCanje.aspx");
+            }
             if (!IsPostBack)
             {
                 llenarListaCarrito();

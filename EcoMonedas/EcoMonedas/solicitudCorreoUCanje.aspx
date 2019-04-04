@@ -16,19 +16,23 @@
                     <div class="row form-group" style="width:80%; margin-left:10%;">
                             <span class="input-group-text"><i class="fas fa-user" style="margin-right:10px;"></i><label style="margin-bottom:0rem;">Correo Administrador Centro:</label></span>
                             <asp:TextBox ID="txtCorreoU" CssClass="form-control input_user" runat="server"></asp:TextBox>
+                            <asp:Label ID="txtMECorreoU" runat="server" CssClass="form-text text-danger" Text=""></asp:Label>    
                     </div>
                     <div class="row form-group" style="width:80%; margin-left:10%;">
                             <span class="input-group-text" style="margin-bottom:0rem;"><i class="fas fa-key" style="margin-right:10px;"></i><label style="margin-bottom:0rem;">Contraseña Administrador Centro:</label></span>
                             <asp:TextBox ID="txtContraseniaU" TextMode="Password" CssClass="form-control input_pass" runat="server"></asp:TextBox>
+                            <asp:Label ID="txtMEContrase" runat="server" CssClass="form-text text-danger" Text=""></asp:Label>
                             <small id="adminAyuda" class="form-text text-light">Los datos anteriores se necesitan por motivos de seguridad del Sistema</small>
                     </div>
                     <hr />
                     <div class="row form-group" style="width:80%; margin-left:10%;">
                             <span class="input-group-text" style="margin-bottom:0rem;"><i class="fas fa-user-circle" style="margin-right:10px;"></i><label style="margin-bottom:0rem;">Correo Cliente:</label></span>
                             <asp:TextBox ID="txtCorreoCliente" CssClass="form-control input_pass" runat="server"></asp:TextBox>
+                            <asp:Label ID="txtMECorreoC" runat="server" CssClass="form-text text-danger" Text=""></asp:Label>
                             <small id="clienteAyuda" class="form-text text-light">Correo del cliente al que se le aplicará el siguiente Canje</small>
                     </div>
                     <hr />
+                    
                 </div>
                 <div class="d-flex justify-content-center mt-3 login_container">
                     <asp:Button ID="btnSiguiente" CssClass="btn login_btn" OnClick="btnSiguiente_Click" runat="server" Text="Continuar" />

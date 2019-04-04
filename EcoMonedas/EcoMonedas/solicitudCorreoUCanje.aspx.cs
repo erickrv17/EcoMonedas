@@ -17,9 +17,46 @@ namespace EcoMonedas
 
         protected void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (UsuarioLN.obtenerUsuario(txtCorreoCliente.Text)!=null)
+            try
             {
-                Response.Redirect("canjeMateriales.aspx?correoC="+txtCorreoCliente.Text);
+                txtMEContrase.Text = "";
+                txtMECorreoC.Text = "";
+                txtMECorreoU.Text = "";
+                if (((Usuario)Session["Usuario"]) != null)
+                {
+                    if (((Usuario)Session["Usuario"]).CorreoElectronico == txtCorreoU.Text || txtCorreoU.Text != "")
+                    {
+                        if (((Usuario)Session["Usuario"]).contrasenia == txtContraseniaU.Text || txtContraseniaU.Text != "")
+                        {
+                            if (UsuarioLN.obtenerUsuario(txtCorreoCliente.Text) != null || txtCorreoCliente.Text != "")
+                            {
+                                Response.Redirect("canjeMateriales.aspx?correoC="+txtCorreoCliente.Text);
+                            }
+                            else
+                            {
+                                txtMECorreoC.Text = "El Correo de Cliente no coincide con ningún cliente";
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            txtMEContrase.Text = "La Contraseñia no coincide con el del Administrador de Centro de Acopio";
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        txtMECorreoU.Text = "El Correo no coincide con el del Administrador de Centro de Acopio";
+                        return;
+                    }
+                }else
+                {
+                    txtMECorreoC.Text = "Antes de Introducir datos, Inicie Sesión como Administrador de Centro de Acopio";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

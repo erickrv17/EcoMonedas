@@ -22,6 +22,15 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtCorreoU;
         
         /// <summary>
+        /// Control txtMECorreoU.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtMECorreoU;
+        
+        /// <summary>
         /// Control txtContraseniaU.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtContraseniaU;
         
         /// <summary>
+        /// Control txtMEContrase.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtMEContrase;
+        
+        /// <summary>
         /// Control txtCorreoCliente.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace EcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreoCliente;
+        
+        /// <summary>
+        /// Control txtMECorreoC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtMECorreoC;
         
         /// <summary>
         /// Control btnSiguiente.
