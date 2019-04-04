@@ -49,9 +49,9 @@ namespace Contexto.LN
                 //Calculos que puede mostrar IMPORTANTE
                 //double calculoCMateriales = carritoItems.Sum(x => x.cantidad);
                 //double calculoTotal = carritoItems.Sum(x => x.subTotal);
-                db.SaveChanges();
+                
                 db.EncabezadoCanjes.Add(miEncabezadoC);
-
+                db.SaveChanges();
 
                 for (int i = 0; i < carritoItems.Count; i++)
                 {

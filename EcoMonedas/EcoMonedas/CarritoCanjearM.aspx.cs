@@ -71,7 +71,10 @@ namespace EcoMonedas
 
         protected void btnCanjeM_Click(object sender, EventArgs e)
         {
-            Response.Redirect("canjeMateriales.aspx");
+            if (correoC != null)
+            {
+                Response.Redirect("canjeMateriales.aspx?correoC="+correoC);
+            }
         }
     }
 }
