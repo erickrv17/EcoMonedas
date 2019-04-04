@@ -99,6 +99,13 @@ namespace Contexto
             CentroAcopio centroA = listas.Where(x => x.ID == id).FirstOrDefault<CentroAcopio>();
             return centroA;
         }
-      
+
+        public static CentroAcopio obtenerCentroAcopioPorID(string correoUsuario)
+        {
+            IEnumerable<CentroAcopio> listas = (IEnumerable<CentroAcopio>)CentroAcopioLN.ListaCentrosAcopio(1);
+            CentroAcopio centroA = listas.Where(x => x.UsuarioID == correoUsuario).FirstOrDefault<CentroAcopio>();
+            return centroA;
+        }
+
     }
 }

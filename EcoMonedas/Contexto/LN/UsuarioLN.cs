@@ -143,7 +143,7 @@ namespace Contexto
 
         public static Usuario obtenerUsuario(string correo)
         {
-            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(2);
+            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(3);
             Usuario usuario = listas.Where(x => x.CorreoElectronico == correo).FirstOrDefault<Usuario>();
             return usuario;
         }

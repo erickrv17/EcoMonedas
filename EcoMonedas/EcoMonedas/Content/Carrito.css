@@ -61,6 +61,7 @@
 }*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block;
+    margin-bottom:40px;
 }
 blockquote {
     quotes: none;
@@ -89,10 +90,6 @@ table td {
 }
 a img {
     border: 0;
-}
-img {
-    max-width: 100%;
-    height: auto;
 }
 h1, h2, h3, h4, h5, h6 {
     color: #303030;
@@ -126,6 +123,7 @@ h5 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
+    font-family: Arial;
 }
 h6 {
     font-size: 13px;
@@ -3566,7 +3564,7 @@ section.parallax_section_holder {
 .projects_holder.v4.standard_no_space .filler, .projects_holder.v4.hover_text.no_space .filler {
     width: 24.99%}
 .projects_holder.v3 .mix, .projects_holder.v3.hover_text .mix {
-    width: 32%;
+    width: 280px;
     margin:10px 50px 20px 10px;}
 .projects_holder.v3.hover_text .mix {
     margin: 0 0 2.2%}
