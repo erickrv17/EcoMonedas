@@ -14,7 +14,7 @@ namespace Contexto
         {
             BilleteraVirtuals = new HashSet<BilleteraVirtual>();
             CentroAcopios = new HashSet<CentroAcopio>();
-            DetalleCanjes = new HashSet<DetalleCanje>();
+            EncabezadoCanjes = new HashSet<EncabezadoCanje>();
             EncabezadoCupons = new HashSet<EncabezadoCupon>();
         }
 
@@ -48,9 +48,12 @@ namespace Contexto
 
         public int RolID { get; set; }
 
+        public bool Disponible { get; set; }
+
         public bool Estado { get; set; }
 
-        public bool Disponible { get; set; }
+
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BilleteraVirtual> BilleteraVirtuals { get; set; }
@@ -59,7 +62,7 @@ namespace Contexto
         public virtual ICollection<CentroAcopio> CentroAcopios { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCanje> DetalleCanjes { get; set; }
+        public virtual ICollection<EncabezadoCanje> EncabezadoCanjes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EncabezadoCupon> EncabezadoCupons { get; set; }

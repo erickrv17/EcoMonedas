@@ -13,20 +13,14 @@ namespace Contexto
 
         public int EncabezadoCanjeID { get; set; }
 
-        public int MaterialID { get; set; }
+        public int? MaterialID { get; set; }
 
         public int? Cantidad { get; set; }
 
         public int? Total { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string ClienteID { get; set; }
-
         public virtual EncabezadoCanje EncabezadoCanje { get; set; }
 
         public virtual Material Material { get; set; }
-
-        public virtual Usuario Usuario { get; set; }
     }
 }

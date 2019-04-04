@@ -32,5 +32,7 @@ namespace Contexto
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleCanje> DetalleCanjes { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
     }
 }
