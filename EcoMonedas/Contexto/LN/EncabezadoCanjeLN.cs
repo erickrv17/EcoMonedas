@@ -34,7 +34,15 @@ namespace Contexto.LN
 
             return query;
         }
-        
+
+        public static IEnumerable<DetalleCanje> listaDetalleCanjes(int encabezadoID)
+        {
+            IEnumerable<DetalleCanje> lista = (IEnumerable<DetalleCanje>)
+            EncabezadoCanjeLN.queryDetalleCanjeEncabezadoID(encabezadoID);
+            return lista;
+        }
+
+
 
         public static bool registrarEncabezado(List<CarritoCanje> carritoItems, string correoCliente, string correoAdminC)
         {

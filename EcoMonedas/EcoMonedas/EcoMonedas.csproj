@@ -80,6 +80,7 @@
     <Content Include="Content\Carrito.css" />
     <Content Include="Content\checkboxes.css" />
     <Content Include="Content\formularioCanje.css" />
+    <Content Include="detalleCanje.aspx" />
     <Content Include="detalleCentroAcopio.aspx" />
     <Content Include="Imagenes\AcercaDe.png" />
     <Content Include="Imagenes\Banner3.png" />
@@ -109,7 +110,7 @@
     <Content Include="Imagenes\Separador2.png" />
     <Content Include="Imagenes\Usuario.png" />
     <Content Include="InicioE.aspx" />
-    <Content Include="listaCanjesRealizadosA.aspx" />
+    <Content Include="listaCanjesR.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
     <Content Include="MantenimientoCentrosAcopio.aspx" />
     <Content Include="MantenimientoCupones.aspx" />
@@ -207,6 +208,13 @@
       <DependentUpon>CarritoCanjearM.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarritoLN\Carrito.cs" />
+    <Compile Include="detalleCanje.aspx.cs">
+      <DependentUpon>detalleCanje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalleCanje.aspx.designer.cs">
+      <DependentUpon>detalleCanje.aspx</DependentUpon>
+    </Compile>
     <Compile Include="detalleCentroAcopio.aspx.cs">
       <DependentUpon>detalleCentroAcopio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,12 +229,12 @@
     <Compile Include="InicioE.aspx.designer.cs">
       <DependentUpon>InicioE.aspx</DependentUpon>
     </Compile>
-    <Compile Include="listaCanjesRealizadosA.aspx.cs">
-      <DependentUpon>listaCanjesRealizadosA.aspx</DependentUpon>
+    <Compile Include="listaCanjesR.aspx.cs">
+      <DependentUpon>listaCanjesR.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="listaCanjesRealizadosA.aspx.designer.cs">
-      <DependentUpon>listaCanjesRealizadosA.aspx</DependentUpon>
+    <Compile Include="listaCanjesR.aspx.designer.cs">
+      <DependentUpon>listaCanjesR.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaCentrosAcopio.aspx.cs">
       <DependentUpon>listaCentrosAcopio.aspx</DependentUpon>

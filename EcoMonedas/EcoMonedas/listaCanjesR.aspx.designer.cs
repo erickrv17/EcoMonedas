@@ -10,7 +10,7 @@
 namespace EcoMonedas {
     
     
-    public partial class listaCanjesRealizadosA {
+    public partial class listaCanjesR {
         
         /// <summary>
         /// Control grvLista.

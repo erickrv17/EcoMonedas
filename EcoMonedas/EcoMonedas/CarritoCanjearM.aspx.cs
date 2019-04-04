@@ -62,7 +62,7 @@ namespace EcoMonedas
                     if (EncabezadoCanjeLN.registrarEncabezado(CarritoLN.Carrito.Instancia.Items, correoC, ((Usuario)Session["Usuario"]).CorreoElectronico))
                     {
                         CarritoLN.Carrito.Instancia.eliminarCarrito();
-                        Response.Redirect("listaCanjesRealizadosA.aspx");
+                        Response.Redirect("listaCanjesR.aspx");
                     }
                 }
                 

@@ -11,6 +11,7 @@ namespace Contexto
             : base("name=EcoMonedasContext")
         {
         }
+
         public virtual DbSet<BilleteraVirtual> BilleteraVirtuals { get; set; }
         public virtual DbSet<CentroAcopio> CentroAcopios { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
@@ -45,11 +46,6 @@ namespace Contexto
                 .WithRequired(e => e.EncabezadoCanje)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Material>()
-                .HasMany(e => e.DetalleCanjes)
-                .WithRequired(e => e.Material)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Provincia>()
                 .HasMany(e => e.CentroAcopios)
                 .WithRequired(e => e.Provincia)
@@ -73,7 +69,7 @@ namespace Contexto
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Usuario>()
-                .HasMany(e => e.DetalleCanjes)
+                .HasMany(e => e.EncabezadoCanjes)
                 .WithRequired(e => e.Usuario)
                 .HasForeignKey(e => e.ClienteID)
                 .WillCascadeOnDelete(false);
