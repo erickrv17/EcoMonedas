@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,13 @@ namespace Contexto.Entidades
         }
 
         public virtual Material mat { get; set; }
-       
+
         private double calculoSubtotal()
         {
             double subTotal = precioMaterial * cantidad;
             return subTotal;
         }
-        
+
         public double subTotal
         {
             get
