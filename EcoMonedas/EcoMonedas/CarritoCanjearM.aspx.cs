@@ -1,4 +1,5 @@
-﻿using Contexto.Entidades;
+﻿using Contexto;
+using Contexto.Entidades;
 using Contexto.LN;
 using System;
 using System.Collections.Generic;
@@ -11,18 +12,14 @@ namespace EcoMonedas
 {
     public partial class CarritoCanjearM : System.Web.UI.Page
     {
+        String correoC="";
         protected void Page_Load(object sender, EventArgs e)
         {
+            correoC = Request.QueryString["correoC"];
             if (!IsPostBack)
             {
                 llenarListaCarrito();
             }
-            //if (Session["encabezadoOrden"] != null)
-            //{
-            //    ordenCompra orden = (ordenCompra)Session["encabezadoOrden"];
-            //    txtCliente.Text = orden.cliente;
-
-            //}
         }
 
         private void llenarListaCarrito()
@@ -60,13 +57,15 @@ namespace EcoMonedas
         {
             if (grvCarrito.Rows.Count >= 1)
             {
-                int centroID=000;
-                int clienteID=000;
-                if (EncabezadoCanjeLN.registrarEncabezado(CarritoLN.Carrito.Instancia.Items, centroID,clienteID))
+                if (correoC!="")
                 {
-                    CarritoLN.Carrito.Instancia.eliminarCarrito();
-                    Response.Redirect("listaCanjesRealizadosA.aspx");
+                    if (EncabezadoCanjeLN.registrarEncabezado(CarritoLN.Carrito.Instancia.Items, correoC, ((Usuario)Session["Usuario"]).CorreoElectronico))
+                    {
+                        CarritoLN.Carrito.Instancia.eliminarCarrito();
+                        Response.Redirect("listaCanjesRealizadosA.aspx");
+                    }
                 }
+                
             }
         }
 

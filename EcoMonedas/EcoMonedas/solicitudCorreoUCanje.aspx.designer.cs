@@ -10,33 +10,42 @@
 namespace EcoMonedas {
     
     
-    public partial class canjeMateriales {
+    public partial class solicitudCorreoUCanje {
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control txtCorreoU.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoU;
         
         /// <summary>
-        /// Control btnCanjear.
+        /// Control txtContraseniaU.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCanjear;
+        protected global::System.Web.UI.WebControls.TextBox txtContraseniaU;
         
         /// <summary>
-        /// Control listaMateriales.
+        /// Control txtCorreoCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView listaMateriales;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoCliente;
+        
+        /// <summary>
+        /// Control btnSiguiente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSiguiente;
     }
 }

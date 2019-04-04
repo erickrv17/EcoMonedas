@@ -417,7 +417,8 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Iniciar Sesión" OnClick="btnIngresar_Click" />
+<%--                                <asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Iniciar Sesión" OnClick="btnIngresar_Click" />--%>
+                                <button runat="server" class="btn btn-success" onserverclick="btnIngresar_Click">Iniciar Sesión</button>
                             </div>
 				    	    <div>
                                 <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Olvidaste tu contraseña?</button>
@@ -432,7 +433,7 @@
     	    		    <div class="modal-body">
 		    				<div id="div-lost-msg">
                                 <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-lost-msg">escribe tu e-mail de recuperación.</span>
+                                <span id="text-lost-msg">Escribe tu e-mail de recuperación.</span>
                             </div>
 		    			    <asp:TextBox id="txtCorreoRecuperacion" class="form-control" type="text" runat="server" placeholder="Correo" ></asp:TextBox>
 				    		</div>
@@ -479,12 +480,11 @@
                              <br/>
                            <label for="lblConfirmarContrasenna" class="control-label">Confirmar contraseña</label>                           
                             <asp:TextBox placeholder="confirmar contraseña" runat="server" ID="txtConfirmarContrasenna" class="form-control" TextMode="Password"  />
-                            <asp:CompareValidator runat="server" ControlToCompare="txtContrasena" ControlToValidate="txtConfirmarContrasenna"
+                            <%--<asp:CompareValidator runat="server" ControlToCompare="txtContrasena" ControlToValidate="txtConfirmarContrasenna"
                              CssClass="text-danger" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden." />
-            			</div>
+            			--%></div>
 		    		    <div class="modal-footer">
                             <div>
-                                
                                 <button runat="server" class="btn btn-success" onserverclick="btnRegistra_Click">registrate</button>
                             </div>
                             <div>

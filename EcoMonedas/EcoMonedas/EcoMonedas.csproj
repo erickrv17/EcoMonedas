@@ -79,6 +79,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Carrito.css" />
     <Content Include="Content\checkboxes.css" />
+    <Content Include="Content\formularioCanje.css" />
     <Content Include="detalleCentroAcopio.aspx" />
     <Content Include="Imagenes\AcercaDe.png" />
     <Content Include="Imagenes\Banner3.png" />
@@ -106,8 +107,8 @@
     <Content Include="Imagenes\Patrocinadores\sur.png" />
     <Content Include="Imagenes\Separador.png" />
     <Content Include="Imagenes\Separador2.png" />
+    <Content Include="Imagenes\Usuario.png" />
     <Content Include="InicioE.aspx" />
-    <Content Include="InicioEM.aspx" />
     <Content Include="listaCanjesRealizadosA.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
     <Content Include="MantenimientoCentrosAcopio.aspx" />
@@ -174,6 +175,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="solicitudCorreoUCanje.aspx" />
     <Content Include="Template\TemplateInicio\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -218,13 +220,6 @@
     </Compile>
     <Compile Include="InicioE.aspx.designer.cs">
       <DependentUpon>InicioE.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="InicioEM.aspx.cs">
-      <DependentUpon>InicioEM.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InicioEM.aspx.designer.cs">
-      <DependentUpon>InicioEM.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaCanjesRealizadosA.aspx.cs">
       <DependentUpon>listaCanjesRealizadosA.aspx</DependentUpon>
@@ -345,6 +340,13 @@
     </Compile>
     <Compile Include="reporteMaterialesNombre.aspx.designer.cs">
       <DependentUpon>reporteMaterialesNombre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="solicitudCorreoUCanje.aspx.cs">
+      <DependentUpon>solicitudCorreoUCanje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="solicitudCorreoUCanje.aspx.designer.cs">
+      <DependentUpon>solicitudCorreoUCanje.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

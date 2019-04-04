@@ -11,9 +11,10 @@ namespace EcoMonedas
 {
     public partial class canjeMateriales : System.Web.UI.Page
     {
+        String correoC = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            correoC = Request.QueryString["correoC"];
         }
         public IEnumerable<Material> listadoMateriales()
         {
@@ -30,7 +31,7 @@ namespace EcoMonedas
 
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CarritoCanjearM.aspx");
+            Response.Redirect("CarritoCanjearM.aspx?correoC= "+correoC);
         }
     }
 }
