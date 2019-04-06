@@ -14,6 +14,10 @@ namespace EcoMonedas
         protected void Page_Load(object sender, EventArgs e)
         {
             string accionMat = Request.QueryString["accion"];
+            if ((Usuario)Session["Usuario"] == null)
+            {
+                Response.Redirect("InicioE.aspx");
+            }
             if (accionMat == "guardar")
             {
                 lblMensaje.Visible = true;
