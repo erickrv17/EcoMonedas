@@ -24,11 +24,11 @@ namespace EcoMonedas
                 txtMECorreoU.Text = "";
                 if (((Usuario)Session["Usuario"]) != null)
                 {
-                    if (((Usuario)Session["Usuario"]).CorreoElectronico == txtCorreoU.Text || txtCorreoU.Text != "")
+                    if (txtCorreoU.Text != "" && ((Usuario)Session["Usuario"]).CorreoElectronico == txtCorreoU.Text)
                     {
-                        if (((Usuario)Session["Usuario"]).contrasenia == txtContraseniaU.Text || txtContraseniaU.Text != "")
+                        if (((Usuario)Session["Usuario"]).contrasenia == txtContraseniaU.Text && txtContraseniaU.Text != "")
                         {
-                            if (UsuarioLN.obtenerUsuario(txtCorreoCliente.Text) != null || txtCorreoCliente.Text != "")
+                            if (UsuarioLN.obtenerUsuarioC(txtCorreoCliente.Text).Count()!=0 && txtCorreoCliente.Text != "")
                             {
                                 Response.Redirect("canjeMateriales.aspx?correoC="+txtCorreoCliente.Text);
                             }

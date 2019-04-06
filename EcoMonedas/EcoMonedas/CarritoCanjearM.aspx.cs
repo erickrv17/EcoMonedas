@@ -67,9 +67,15 @@ namespace EcoMonedas
                     {
                         CarritoLN.Carrito.Instancia.eliminarCarrito();
                         Response.Redirect("listaCanjesR.aspx");
+                    }else
+                    {
+                        lblMensaje.Text = "Ha ocurrido un error al intentar canjear dichos materiales, porfavor intentelo de nuevo";
+                        return;
                     }
+                }else
+                {
+                    Response.Redirect("solicitudCorreoUCanje.aspx");
                 }
-                
             }
         }
 
@@ -78,6 +84,9 @@ namespace EcoMonedas
             if (correoC != null)
             {
                 Response.Redirect("canjeMateriales.aspx?correoC="+correoC);
+            }else
+            {
+                Response.Redirect("solicitudCorreoUCanje.aspx");
             }
         }
     }

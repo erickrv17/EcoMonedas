@@ -148,6 +148,20 @@ namespace Contexto
             return usuario;
         }
 
+        public static IQueryable ListaUsuariosC(string correoE)
+        {
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Usuarios.Where(x => x.Estado == true);
+            query = db.Usuarios.Where(x => x.CorreoElectronico==correoE && x.RolID==3);
+            return query;
+        }
+
+        public static IEnumerable<Usuario> obtenerUsuarioC(string correo)
+        {
+            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuariosC(correo);
+            return listas;
+        }
+
         public static Usuario login(string correo, string contrasena)
         {
             Usuario usuario = null;
@@ -177,6 +191,20 @@ namespace Contexto
                 }
             }
             return contraseña;
+        }
+
+        public static IQueryable obtenerBilleteraU(string correoE)
+        {
+            var db = new EcoMonedasContext();
+            IQueryable query = db.BilleteraVirtuals.Where(x => x.Estado == true);
+            query = db.BilleteraVirtuals.Where(x => x.ClienteID == correoE);
+            return query;
+        }
+        
+        public static IEnumerable<BilleteraVirtual> billeteraUsuario(string correoU)
+        {
+            IEnumerable<BilleteraVirtual> lista= (IEnumerable<BilleteraVirtual>)UsuarioLN.obtenerBilleteraU(correoU);
+            return lista;
         }
     }
 }

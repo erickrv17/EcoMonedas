@@ -403,26 +403,26 @@
                     <!-- Begin # Login Form -->
                     <div id="login-form">
 		                <div class="modal-body">
-				    		<div id="div-login-msg">
-                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <label id="lblMensaje" visible="false" style="color:red;" runat="server">Usuario incorrecto</label>
-                                <span id="text-login-msg">Escribe tu correo y contraseña.</span>
+				    		<div>
+                                <div id="icon-login-msg"><i class="fa fa-user"></i></div>
+                                <label id="lblMensaje" visible="false" style="color:red;" runat="server">Usuario Incorrecto</label>
+                                <span>Digita tus credenciales de Inicio.</span>
                                 <br/>
                                 
                             </div>
-                            <asp:TextBox id="txtCorreoLogin" class="form-control" type="text" runat="server" placeholder="Correo electronico" ></asp:TextBox>
-                            <asp:TextBox id="txtContra" class="form-control" type="password" runat="server" placeholder="contraseña" ></asp:TextBox>
+                            <asp:TextBox id="txtCorreoLogin" class="form-control" type="text" runat="server" placeholder="Correo electrónico" ></asp:TextBox>
+                            <asp:TextBox id="txtContra" class="form-control" type="password" runat="server" placeholder="Contraseña" ></asp:TextBox>
 				    	
 				    	   <br/>
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-<%--                                <asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Iniciar Sesión" OnClick="btnIngresar_Click" />--%>
+                                <%--<asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Iniciar Sesión" OnClick="btnIngresar_Click" />--%>
                                 <button runat="server" class="btn btn-success" onserverclick="btnIngresar_Click">Iniciar Sesión</button>
                             </div>
 				    	    <div>
-                                <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Olvidaste tu contraseña?</button>
-                                <button id="login_register_btn" type="button" style="color: #7ed957"class="btn btn-link">registrate</button>
+                                <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>
+                                <button id="login_register_btn" type="button" style="color: #7ed957"class="btn btn-link">Registrate</button>
                             </div>
 				        </div>
                     </div>
@@ -431,9 +431,9 @@
                     <!-- Begin | Lost Password Form -->
                     <div id="lost-form" style="display:none;">
     	    		    <div class="modal-body">
-		    				<div id="div-lost-msg">
-                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-lost-msg">Escribe tu e-mail de recuperación.</span>
+		    				<div>
+                                <div id="icon-lost-msg"><i class="fa fa-paper-plane"></i></div>
+                                <span id="text-lost-msg">Escribe tu correo de recuperación.</span>
                             </div>
 		    			    <asp:TextBox id="txtCorreoRecuperacion" class="form-control" type="text" runat="server" placeholder="Correo" ></asp:TextBox>
 				    		</div>
@@ -443,7 +443,7 @@
                             </div>
                             <div>
                                 <button id="lost_login_btn" type="button" style="color: #7ed957"class="btn btn-link">Iniciar Sesión</button>
-                                <button id="lost_register_btn" type="button" style="color: #7ed957" class="btn btn-link">registrate</button>
+                                <button id="lost_register_btn" type="button" style="color: #7ed957" class="btn btn-link">Registrate</button>
                             </div>
 		    		    </div>
                     </div>
@@ -452,8 +452,8 @@
                     <!-- Begin | Register Form -->
                     <div id="register-form" style="display:none;">
             		    <div class="modal-body">
-		    				<div id="div-register-msg">
-                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+		    				<div>
+                                <div id="icon-register-msg"><i class="fa fa-user-plus"></i></div>
                                 <span id="text-register-msg">Crea tu propia cuenta</span>
                             </div>
                              <br/>
@@ -466,13 +466,13 @@
                             <label for="lblApellido2" class="control-label">Segundo apellido</label>                            
                             <asp:TextBox id="txtApellido2" class="form-control" type="text" runat="server" placeholder="Segundo apellido" ></asp:TextBox>
 				    	     <br/>
-                            <label for="lblTelefono" class="control-label">Telefono</label>                            
+                            <label for="lblTelefono" class="control-label">Teléfono</label>                            
                              <asp:TextBox id="txtTelefono" class="form-control" type="text" runat="server" placeholder="Telefono" ></asp:TextBox>
 				    	       <br/>
-                            <label for="lblDireccion" class="control-label">Direccion exacta</label>                            
+                            <label for="lblDireccion" class="control-label">Dirección exacta</label>                            
                            <asp:TextBox id="txtDireccion" class="form-control" type="text" runat="server" placeholder="Direccion exacta" ></asp:TextBox>
 				    	       <br/>
-                           <label for="lblCorreo" class="control-label">Correo electronico</label> 
+                           <label for="lblCorreo" class="control-label">Correo electrónico</label> 
                            <asp:TextBox id="txtEmail" class="form-control" TextMode="Email" runat="server" placeholder="Email" ></asp:TextBox>
 				    	    <br/>
                            <label for="lblContrasenna" class="control-label">Contraseña</label>                           
@@ -485,11 +485,11 @@
             			--%></div>
 		    		    <div class="modal-footer">
                             <div>
-                                <button runat="server" class="btn btn-success" onserverclick="btnRegistra_Click">registrate</button>
+                                <button runat="server" class="btn btn-success" onserverclick="btnRegistra_Click">Registrate</button>
                             </div>
                             <div>
                                 <button id="register_login_btn" type="button" style="color: #7ed957" class="btn btn-link">Iniciar Sesión</button>
-                                <button id="register_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">Olvidaste tu contraseña?</button>
+                                <button id="register_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>
                             </div>
 		    		    </div>
                     </div>

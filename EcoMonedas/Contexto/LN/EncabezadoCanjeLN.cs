@@ -47,36 +47,49 @@ namespace Contexto.LN
         public static bool registrarEncabezado(List<CarritoCanje> carritoItems, string correoCliente, string correoAdminC)
         {
             EcoMonedasContext db = new EcoMonedasContext();
-            try
+            if (correoAdminC!=null && carritoItems!=null && correoCliente != "" && UsuarioLN.obtenerUsuario(correoCliente)!=null)
             {
-                var miEncabezadoC = new EncabezadoCanje();
-                miEncabezadoC.Fecha = DateTime.Now;
-                miEncabezadoC.ClienteID = correoCliente;
-                miEncabezadoC.CentroAcopioID = CentroAcopioLN.obtenerCentroAcopioPorID(correoAdminC).ID;
-                miEncabezadoC.Estado = true;
-                //Calculos que puede mostrar IMPORTANTE
-                //double calculoCMateriales = carritoItems.Sum(x => x.cantidad);
-                //double calculoTotal = carritoItems.Sum(x => x.subTotal);
-                
-                db.EncabezadoCanjes.Add(miEncabezadoC);
-                db.SaveChanges();
-
-                for (int i = 0; i < carritoItems.Count; i++)
+                try
                 {
-                    var miDetalle = new DetalleCanje();
-                    miDetalle.EncabezadoCanjeID = miEncabezadoC.ID;
-                    miDetalle.MaterialID = carritoItems[i].idMaterial;
-                    miDetalle.Cantidad = carritoItems[i].cantidad;
-                    miDetalle.Total = Convert.ToInt32(carritoItems[i].subTotal);
-                    db.DetalleCanjes.Add(miDetalle);
+                    var miEncabezadoC = new EncabezadoCanje();
+                    miEncabezadoC.Fecha = DateTime.Now;
+                    miEncabezadoC.ClienteID = correoCliente;
+                    miEncabezadoC.CentroAcopioID = CentroAcopioLN.obtenerCentroAcopioPorID(correoAdminC).ID;
+                    miEncabezadoC.Estado = true;
+                    //Calculos que puede mostrar IMPORTANTE
+                    //double calculoCMateriales = carritoItems.Sum(x => x.cantidad);
+                    //double calculoTotal = carritoItems.Sum(x => x.subTotal);
+                
+                    db.EncabezadoCanjes.Add(miEncabezadoC);
+                    db.SaveChanges();
+
+                    int totalEcoM = 0;
+                    for (int i = 0; i < carritoItems.Count; i++)
+                    {
+                        var miDetalle = new DetalleCanje();
+                        miDetalle.EncabezadoCanjeID = miEncabezadoC.ID;
+                        miDetalle.MaterialID = carritoItems[i].idMaterial;
+                        miDetalle.Cantidad = carritoItems[i].cantidad;
+                        miDetalle.Total = Convert.ToInt32(carritoItems[i].subTotal);
+                        totalEcoM += Convert.ToInt32(carritoItems[i].subTotal);
+                        db.DetalleCanjes.Add(miDetalle);
+                        db.SaveChanges();
+                    }
+                    
+                    BilleteraVirtual billeteraN= db.BilleteraVirtuals.Where(p => p.ClienteID == correoCliente).First<BilleteraVirtual>();
+                    billeteraN.EcoMondedasGeneradas = billeteraN.EcoMondedasGeneradas + totalEcoM;
+                    billeteraN.EcoMondedasDisponibles = billeteraN.EcoMondedasDisponibles + totalEcoM;
                     db.SaveChanges();
                 }
-            }
-            catch (Exception ex)
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return true;
+            }else
             {
-                throw ex;
+                return false;
             }
-            return true;
         }
     }
 }
