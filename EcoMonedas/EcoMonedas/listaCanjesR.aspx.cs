@@ -13,6 +13,10 @@ namespace EcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Usuario)Session["Usuario"]==null)
+            {
+                Response.Redirect("InicioE.aspx");
+            }
             if (!IsPostBack)
             {
                 llenarListaCanjes();
@@ -35,6 +39,11 @@ namespace EcoMonedas
         {
             int idCanje = Convert.ToInt32(grvLista.DataKeys[grvLista.SelectedIndex].Values[0]);
             Response.Redirect("detalleCanje.aspx?idCanje="+idCanje);
+        }
+
+        protected void btnNuevoC_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("solicitudCorreoUCanje.aspx");
         }
     }
 }

@@ -10,10 +10,10 @@
             <div class="container">
                 <div class="container_inner default_template_holder clearfix page_container_inner">
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col-lg-7 col-sm-12">
                             <label>Porfavor coloquese por encima del material a canjear y haga click en agregar, si desea canjear una unidad o más de dicho material</label>
                         </div>
-                        <div class="col-5">
+                        <div class="col-lg-5 col-sm-12">
                             <asp:Button ID="btnCanjear" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="Procesar Canje →" OnClick="btnCanjear_Click" />
                         </div>
                     </div>

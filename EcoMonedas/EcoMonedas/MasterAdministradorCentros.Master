@@ -48,17 +48,22 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="canjeMateriales.aspx" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="solicitudCorreoUCanje.aspx" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-coins"></i>
                     <span>Canje de Materiales</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Registar un Canje</a>
+                        <a class="collapse-item" href="solicitudCorreoUCanje.aspx">Registar un Canje</a>
                     </div>
                 </div>
             </li>
-
+             <li class="nav-item">
+                <a class="nav-link" href="listaCanjesR.aspx"  aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Lista de Canjes</span>
+                </a>
+            </li>
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">

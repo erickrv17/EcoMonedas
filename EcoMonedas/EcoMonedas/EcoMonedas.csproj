@@ -123,7 +123,6 @@
     <Content Include="PerfilCliente.aspx" />
     <Content Include="PrincipalAdminCentroA.aspx" />
     <Content Include="PrincipalAdministrador.aspx" />
-    <Content Include="Registrarse.aspx" />
     <Content Include="ReporteMateriales.aspx" />
     <Content Include="reporteMaterialesNombre.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -328,13 +327,6 @@
       <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrarse.aspx.cs">
-      <DependentUpon>Registrarse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registrarse.aspx.designer.cs">
-      <DependentUpon>Registrarse.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ReporteMateriales.aspx.cs">
       <DependentUpon>ReporteMateriales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -11,10 +11,10 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="row">
-                <div class="col-5">
+                <div class="col-lg-5 col-sm-12">
                     <asp:Button ID="btnCanjeM" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="← Canjear Materiales" OnClick="btnCanjeM_Click" />
                 </div>
-                <div class="col-7">
+                <div class="col-lg-7 col-sm-12">
                     <label>De click si desea devolverse a la página donde se muestran los materiales disponibles para canjear.</label>
                 </div>
             </div>

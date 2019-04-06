@@ -35,7 +35,13 @@ namespace EcoMonedas
 
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CarritoCanjearM.aspx?correoC="+correoC);
+            if (correoC!=null)
+            {
+                Response.Redirect("CarritoCanjearM.aspx?correoC="+correoC);
+            }else
+            {
+                Response.Redirect("solicitudCorreoUCanje.aspx");
+            }
         }
     }
 }
