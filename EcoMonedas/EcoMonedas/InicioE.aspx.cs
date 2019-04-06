@@ -13,10 +13,7 @@ namespace EcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-
-            }
+           
         }
 
         //public IEnumerable<Material> listadoMateriales()
@@ -77,8 +74,14 @@ namespace EcoMonedas
             }
             else
             {
-                lblMensaje.Visible = true;
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none",
+                  "<script>$('#VentanaLogin').modal('show');</script>", false);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
 
+                lblMensaje.InnerText = "Error al iniciar sesion,verifique los datos ingresados";
+
+                lblMensaje.Visible = true;
+             
             }
 
         }
@@ -89,7 +92,7 @@ namespace EcoMonedas
         protected void btnRegistra_Click(object sender, EventArgs e)
         {
             Usuario miUsuario = new Usuario();
-            miUsuario.Nombre = txtNombre.Text;
+            miUsuario.Nombre = txtNombreU.Text;
             miUsuario.PrimerApellido = txtApellido1.Text;
             miUsuario.SegundoApellido = txtApellido2.Text;
             miUsuario.Telefono = txtTelefono.Text;
@@ -111,6 +114,10 @@ namespace EcoMonedas
 
                 
             }
+
+        }
+        public void ErroresRegistro()
+        {
 
         }
     }

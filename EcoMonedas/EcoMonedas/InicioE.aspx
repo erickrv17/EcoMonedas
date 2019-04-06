@@ -11,7 +11,11 @@
   <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Template/TemplateRegistro/css/cssRegistro.css" rel="stylesheet" />
     <script src="Template/TemplateRegistro/js/jsRegistro.js"></script>
-   
+   <script type="text/javascript">
+                    function openModal() {
+                        $('#VentanaLogin').modal('show');
+                    }
+                </script>
     <link rel="stylesheet" href="Template/TemplateInicio/style.css" />
 </head>
 <body>
@@ -397,7 +401,7 @@
 				</div>
                 
                 <!-- Begin # DIV Form -->
-               
+                
                 <div id="div-forms">
                 
                     <!-- Begin # Login Form -->
@@ -405,9 +409,10 @@
 		                <div class="modal-body">
 				    		<div>
                                 <div id="icon-login-msg"><i class="fa fa-user"></i></div>
-                                <label id="lblMensaje" visible="false" style="color:red;" runat="server">Usuario Incorrecto</label>
                                 <span>Digita tus credenciales de Inicio.</span>
-                                <br/>
+                                <br/>  <br />  
+                                  <label id="lblMensaje" visible="false" style="color:red;" runat="server">Usuario Incorrecto</label>
+                             
                                 
                             </div>
                             <asp:TextBox id="txtCorreoLogin" class="form-control" type="text" runat="server" placeholder="Correo electrónico" ></asp:TextBox>
@@ -458,7 +463,7 @@
                             </div>
                              <br/>
                             <label for="lblNombre" class="control-label">Nombre</label> 
-                            <asp:TextBox id="TextBox2" class="form-control" type="text" runat="server" placeholder="Nombre" ></asp:TextBox>
+                            <asp:TextBox id="txtNombreU" class="form-control" type="text" runat="server" placeholder="Nombre" ></asp:TextBox>
 				    	    <br/>
                             <label for="lblApellido1" class="control-label">Primer apellido</label>   
                             <asp:TextBox id="txtApellido1" class="form-control" type="text" runat="server" placeholder="Primer apellido" ></asp:TextBox>

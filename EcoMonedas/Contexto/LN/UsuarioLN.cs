@@ -138,6 +138,17 @@ namespace Contexto
             db.Usuarios.Add(miUsuario);
             db.SaveChanges();
 
+
+            BilleteraVirtual billeteraN = new BilleteraVirtual();
+            billeteraN.ClienteID = miUsuario.CorreoElectronico;
+            billeteraN.EcoMondedasCanjeadas = 0;
+            billeteraN.EcoMondedasGeneradas = 0;
+            billeteraN.EcoMondedasDisponibles = 0;
+            billeteraN.Estado = true;
+            db.BilleteraVirtuals.Add(billeteraN);
+            db.SaveChanges();
+
+
         }
 
 
