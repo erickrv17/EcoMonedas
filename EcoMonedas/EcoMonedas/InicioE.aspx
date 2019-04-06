@@ -6,16 +6,16 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>EcoMonedas</title>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="Imagenes/LogoTrans.png" rel="icon" />
-  <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Template/TemplateRegistro/css/cssRegistro.css" rel="stylesheet" />
     <script src="Template/TemplateRegistro/js/jsRegistro.js"></script>
-   <script type="text/javascript">
-                    function openModal() {
-                        $('#VentanaLogin').modal('show');
-                    }
-                </script>
+    <script type="text/javascript">
+        function openModal() {
+            $('#VentanaLogin').modal('show');
+        }
+    </script>
     <link rel="stylesheet" href="Template/TemplateInicio/style.css" />
 </head>
 <body>
@@ -163,7 +163,7 @@
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div runat="server" class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="box-shadow: 0 10px 10px;">
                                     <div class="">
-                                        <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle"/>
+                                        <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle" />
                                     </div>
                                     <div class="course-content">
                                         <h4><%#:Item.Nombre%></h4>
@@ -286,49 +286,56 @@
 
                 </div>
                 <br />
-                <div class="row">
-                    <!-- Single Top Popular Course -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="popular-course-content">
-                                <h5>[Nombre de Centro de Acopio]</h5>
-                                <span>[Provincia]</span>
-                                <p>[Descripción del Centro Educativo]</p>
+                <div class="academy-courses-area section-padding-100-0">
+                    <div class="container">
+                        <div class="row">
+                            <asp:ListView ID="ListView1" runat="server"
+                                DataKeyNames="ID" GroupItemCount="3"
+                                ItemType="Contexto.CentroAcopio" SelectMethod="GetCentrosAcopio">
+                                <EmptyDataTemplate>
+                                    <div class="row">
+                                        No hay datos
+                                    </div>
+                                </EmptyDataTemplate>
+                                <EmptyItemTemplate>
+                                    <div class="col-lg-3">
+                                    </div>
+                                </EmptyItemTemplate>
+                                <GroupTemplate>
+                                    <div class="row">
+                                        <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                                    </div>
+                                </GroupTemplate>
+                                <ItemTemplate>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <div runat="server" class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms" style="box-shadow: 0 10px 10px;">
+                                            <div class="">
+                                                <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/CentrosAcopio/{0}")%>' ImageAlign="Middle" />
+                                            </div>
+                                            <div class="course-content">
+                                                <h4><%#:Item.Nombre%></h4>
+                                                <p><b>Dirección: </b><%#: Item.DireccionExacta%></p>
+                                                <p><b>Correo: </b><%#: Item.Correo%></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <div class="container">
+                                        <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
+                                    </div>
+                                </LayoutTemplate>
+                            </asp:ListView>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="Imagenes/Separador.png" />
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Single Top Popular Course -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="popular-course-content">
-                                <h5>[Nombre de Centro de Acopio]</h5>
-                                <span>[Provincia]</span>
-                                <p>[Descripción del Centro Educativo]</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Top Popular Course -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="popular-course-content">
-                                <h5>[Nombre de Centro de Acopio]</h5>
-                                <span>[Provincia]</span>
-                                <p>[Descripción del Centro Educativo]</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Top Popular Course -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="popular-course-content">
-                                <h5>[Nombre de Centro de Acopio]</h5>
-                                <span>[Provincia]</span>
-                                <p>[Descripción del Centro Educativo]</p>
-                            </div>
-                        </div>
+                        <br />
+                        <br />
+                        <br />
                     </div>
                 </div>
                 <div class="row">
@@ -389,124 +396,126 @@
 
 
 
-     <div class="modal fade" id="VentanaLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header" >
-        
-					<img class="img-circle" id="img_logo" src="Imagenes/LogoT.png" />
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-					</button>
-				</div>
-                
-                <!-- Begin # DIV Form -->
-                
-                <div id="div-forms">
-                
-                    <!-- Begin # Login Form -->
-                    <div id="login-form">
-		                <div class="modal-body">
-				    		<div>
-                                <div id="icon-login-msg"><i class="fa fa-user"></i></div>
-                                <span>Digita tus credenciales de Inicio.</span>
-                                <br/>  <br />  
-                                  <label id="lblMensaje" visible="false" style="color:red;" runat="server">Usuario Incorrecto</label>
-                             
-                                
-                            </div>
-                            <asp:TextBox id="txtCorreoLogin" class="form-control" type="text" runat="server" placeholder="Correo electrónico" ></asp:TextBox>
-                            <asp:TextBox id="txtContra" class="form-control" type="password" runat="server" placeholder="Contraseña" ></asp:TextBox>
-				    	
-				    	   <br/>
-        		    	</div>
-				        <div class="modal-footer">
-                            <div>
-                                <%--<asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Iniciar Sesión" OnClick="btnIngresar_Click" />--%>
-                                <button runat="server" class="btn btn-success" onserverclick="btnIngresar_Click">Iniciar Sesión</button>
-                            </div>
-				    	    <div>
-                                <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>
-                                <button id="login_register_btn" type="button" style="color: #7ed957"class="btn btn-link">Registrate</button>
-                            </div>
-				        </div>
+        <div class="modal fade" id="VentanaLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <img class="img-circle" id="img_logo" src="Imagenes/LogoT.png" />
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
                     </div>
-                    <!-- End # Login Form -->
-                    
-                    <!-- Begin | Lost Password Form -->
-                    <div id="lost-form" style="display:none;">
-    	    		    <div class="modal-body">
-		    				<div>
-                                <div id="icon-lost-msg"><i class="fa fa-paper-plane"></i></div>
-                                <span id="text-lost-msg">Escribe tu correo de recuperación.</span>
+
+                    <!-- Begin # DIV Form -->
+
+                    <div id="div-forms">
+
+                        <!-- Begin # Login Form -->
+                        <div id="login-form">
+                            <div class="modal-body">
+                                <div>
+                                    <div id="icon-login-msg"><i class="fa fa-user"></i></div>
+                                    <span>Digita tus credenciales de Inicio.</span>
+                                    <br />
+                                    <br />
+                                    <label id="lblMensaje" visible="false" style="color: red;" runat="server">Usuario Incorrecto</label>
+
+
+                                </div>
+                                <asp:TextBox ID="txtCorreoLogin" class="form-control" type="text" runat="server" placeholder="Correo electrónico"></asp:TextBox>
+                                <asp:TextBox ID="txtContra" class="form-control" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
+
+                                <br />
                             </div>
-		    			    <asp:TextBox id="txtCorreoRecuperacion" class="form-control" type="text" runat="server" placeholder="Correo" ></asp:TextBox>
-				    		</div>
-		    		    <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-success" >Enviar</button>
+                            <div class="modal-footer">
+                                <div>
+                                    <%--<asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Iniciar Sesión" OnClick="btnIngresar_Click" />--%>
+                                    <button runat="server" class="btn btn-success" onserverclick="btnIngresar_Click">Iniciar Sesión</button>
+                                </div>
+                                <div>
+                                    <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>
+                                    <button id="login_register_btn" type="button" style="color: #7ed957" class="btn btn-link">Registrate</button>
+                                </div>
                             </div>
-                            <div>
-                                <button id="lost_login_btn" type="button" style="color: #7ed957"class="btn btn-link">Iniciar Sesión</button>
-                                <button id="lost_register_btn" type="button" style="color: #7ed957" class="btn btn-link">Registrate</button>
+                        </div>
+                        <!-- End # Login Form -->
+
+                        <!-- Begin | Lost Password Form -->
+                        <div id="lost-form" style="display: none;">
+                            <div class="modal-body">
+                                <div>
+                                    <div id="icon-lost-msg"><i class="fa fa-paper-plane"></i></div>
+                                    <span id="text-lost-msg">Escribe tu correo de recuperación.</span>
+                                </div>
+                                <asp:TextBox ID="txtCorreoRecuperacion" class="form-control" type="text" runat="server" placeholder="Correo"></asp:TextBox>
                             </div>
-		    		    </div>
-                    </div>
-                    <!-- End | Lost Password Form -->
-                    
-                    <!-- Begin | Register Form -->
-                    <div id="register-form" style="display:none;">
-            		    <div class="modal-body">
-		    				<div>
-                                <div id="icon-register-msg"><i class="fa fa-user-plus"></i></div>
-                                <span id="text-register-msg">Crea tu propia cuenta</span>
+                            <div class="modal-footer">
+                                <div>
+                                    <button type="submit" class="btn btn-success">Enviar</button>
+                                </div>
+                                <div>
+                                    <button id="lost_login_btn" type="button" style="color: #7ed957" class="btn btn-link">Iniciar Sesión</button>
+                                    <button id="lost_register_btn" type="button" style="color: #7ed957" class="btn btn-link">Registrate</button>
+                                </div>
                             </div>
-                             <br/>
-                            <label for="lblNombre" class="control-label">Nombre</label> 
-                            <asp:TextBox id="txtNombreU" class="form-control" type="text" runat="server" placeholder="Nombre" ></asp:TextBox>
-				    	    <br/>
-                            <label for="lblApellido1" class="control-label">Primer apellido</label>   
-                            <asp:TextBox id="txtApellido1" class="form-control" type="text" runat="server" placeholder="Primer apellido" ></asp:TextBox>
-				    	    <br/>
-                            <label for="lblApellido2" class="control-label">Segundo apellido</label>                            
-                            <asp:TextBox id="txtApellido2" class="form-control" type="text" runat="server" placeholder="Segundo apellido" ></asp:TextBox>
-				    	     <br/>
-                            <label for="lblTelefono" class="control-label">Teléfono</label>                            
-                             <asp:TextBox id="txtTelefono" class="form-control" type="text" runat="server" placeholder="Telefono" ></asp:TextBox>
-				    	       <br/>
-                            <label for="lblDireccion" class="control-label">Dirección exacta</label>                            
-                           <asp:TextBox id="txtDireccion" class="form-control" type="text" runat="server" placeholder="Direccion exacta" ></asp:TextBox>
-				    	       <br/>
-                           <label for="lblCorreo" class="control-label">Correo electrónico</label> 
-                           <asp:TextBox id="txtEmail" class="form-control" TextMode="Email" runat="server" placeholder="Email" ></asp:TextBox>
-				    	    <br/>
-                           <label for="lblContrasenna" class="control-label">Contraseña</label>                           
-                            <asp:TextBox placeholder="contraseña" runat="server" ID="txtContrasena" class="form-control" TextMode="Password"  />
-                             <br/>
-                           <label for="lblConfirmarContrasenna" class="control-label">Confirmar contraseña</label>                           
-                            <asp:TextBox placeholder="confirmar contraseña" runat="server" ID="txtConfirmarContrasenna" class="form-control" TextMode="Password"  />
-                            <%--<asp:CompareValidator runat="server" ControlToCompare="txtContrasena" ControlToValidate="txtConfirmarContrasenna"
+                        </div>
+                        <!-- End | Lost Password Form -->
+
+                        <!-- Begin | Register Form -->
+                        <div id="register-form" style="display: none;">
+                            <div class="modal-body">
+                                <div>
+                                    <div id="icon-register-msg"><i class="fa fa-user-plus"></i></div>
+                                    <span id="text-register-msg">Crea tu propia cuenta</span>
+                                </div>
+                                <br />
+                                <label for="lblNombre" class="control-label">Nombre</label>
+                                <asp:TextBox ID="txtNombreU" class="form-control" type="text" runat="server" placeholder="Nombre"></asp:TextBox>
+                                <br />
+                                <label for="lblApellido1" class="control-label">Primer apellido</label>
+                                <asp:TextBox ID="txtApellido1" class="form-control" type="text" runat="server" placeholder="Primer apellido"></asp:TextBox>
+                                <br />
+                                <label for="lblApellido2" class="control-label">Segundo apellido</label>
+                                <asp:TextBox ID="txtApellido2" class="form-control" type="text" runat="server" placeholder="Segundo apellido"></asp:TextBox>
+                                <br />
+                                <label for="lblTelefono" class="control-label">Teléfono</label>
+                                <asp:TextBox ID="txtTelefono" class="form-control" type="text" runat="server" placeholder="Telefono"></asp:TextBox>
+                                <br />
+                                <label for="lblDireccion" class="control-label">Dirección exacta</label>
+                                <asp:TextBox ID="txtDireccion" class="form-control" type="text" runat="server" placeholder="Direccion exacta"></asp:TextBox>
+                                <br />
+                                <label for="lblCorreo" class="control-label">Correo electrónico</label>
+                                <asp:TextBox ID="txtEmail" class="form-control" TextMode="Email" runat="server" placeholder="Email"></asp:TextBox>
+                                <br />
+                                <label for="lblContrasenna" class="control-label">Contraseña</label>
+                                <asp:TextBox placeholder="contraseña" runat="server" ID="txtContrasena" class="form-control" TextMode="Password" />
+                                <br />
+                                <label for="lblConfirmarContrasenna" class="control-label">Confirmar contraseña</label>
+                                <asp:TextBox placeholder="confirmar contraseña" runat="server" ID="txtConfirmarContrasenna" class="form-control" TextMode="Password" />
+                                <%--<asp:CompareValidator runat="server" ControlToCompare="txtContrasena" ControlToValidate="txtConfirmarContrasenna"
                              CssClass="text-danger" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden." />
-            			--%></div>
-		    		    <div class="modal-footer">
-                            <div>
-                                <button runat="server" class="btn btn-success" onserverclick="btnRegistra_Click">Registrate</button>
+                                --%>
                             </div>
-                            <div>
-                                <button id="register_login_btn" type="button" style="color: #7ed957" class="btn btn-link">Iniciar Sesión</button>
-                                <button id="register_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>
+                            <div class="modal-footer">
+                                <div>
+                                    <button runat="server" class="btn btn-success" onserverclick="btnRegistra_Click">Registrate</button>
+                                </div>
+                                <div>
+                                    <button id="register_login_btn" type="button" style="color: #7ed957" class="btn btn-link">Iniciar Sesión</button>
+                                    <button id="register_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>
+                                </div>
                             </div>
-		    		    </div>
+                        </div>
+                        <!-- End | Register Form -->
+
                     </div>
-                    <!-- End | Register Form -->
-                    
+
+                    <!-- End # DIV Form -->
+
                 </div>
-              
-                <!-- End # DIV Form -->
-                
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
 
     </form>
     <footer class="footer-area">

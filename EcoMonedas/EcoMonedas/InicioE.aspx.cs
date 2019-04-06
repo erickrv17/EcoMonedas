@@ -16,11 +16,11 @@ namespace EcoMonedas
            
         }
 
-        //public IEnumerable<Material> listadoMateriales()
-        //{
-        //        IEnumerable<Material> lista = (IEnumerable<Material>) MaterialLN.ListaMateriales();
-        //        return lista;
-        //}
+        public IEnumerable<CentroAcopio> GetCentrosAcopio()
+        {
+            IEnumerable<CentroAcopio> lista = (IEnumerable<CentroAcopio>)CentroAcopioLN.ListaCentrosAcopio(2);
+            return lista;
+        }
 
         public IEnumerable<Material> listadoMateriales()
         {
