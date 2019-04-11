@@ -79,6 +79,11 @@ namespace Contexto
             Cupon miCupon = listas.Where(x => x.ID == id).FirstOrDefault<Cupon>();
             return miCupon;
         }
+        public static IEnumerable<Cupon> obtenerListaCupones(int estado)
+        {
+            IEnumerable<Cupon> lista = (IEnumerable<Cupon>)CuponLN.ListaCupones(estado);
+            return lista;
+        }
 
     }
 }

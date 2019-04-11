@@ -69,6 +69,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BilleteraVirtualCliente.aspx" />
+    <Content Include="CanjeCupones.aspx" />
     <Content Include="canjeMateriales.aspx" />
     <Content Include="CarritoCanjearM.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -176,6 +178,8 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="solicitudCorreoUCanje.aspx" />
+    <Content Include="SolicitudCorreoUCanjearCupon.aspx" />
+    <Content Include="Template\TemplateCliente\css\BilleteraVirtual.css" />
     <Content Include="Template\TemplateInicio\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -192,6 +196,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BilleteraVirtualCliente.aspx.cs">
+      <DependentUpon>BilleteraVirtualCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BilleteraVirtualCliente.aspx.designer.cs">
+      <DependentUpon>BilleteraVirtualCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CanjeCupones.aspx.cs">
+      <DependentUpon>CanjeCupones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CanjeCupones.aspx.designer.cs">
+      <DependentUpon>CanjeCupones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="canjeMateriales.aspx.cs">
       <DependentUpon>canjeMateriales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -347,6 +365,13 @@
     </Compile>
     <Compile Include="solicitudCorreoUCanje.aspx.designer.cs">
       <DependentUpon>solicitudCorreoUCanje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudCorreoUCanjearCupon.aspx.cs">
+      <DependentUpon>SolicitudCorreoUCanjearCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudCorreoUCanjearCupon.aspx.designer.cs">
+      <DependentUpon>SolicitudCorreoUCanjearCupon.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

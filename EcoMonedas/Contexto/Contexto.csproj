@@ -60,10 +60,12 @@
     <Compile Include="Entidades\EncabezadoCanje.cs" />
     <Compile Include="Entidades\EncabezadoCupon.cs" />
     <Compile Include="EcoMonedasContext.cs" />
+    <Compile Include="LN\BilleteraLN.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\ColorLN.cs" />
     <Compile Include="LN\CorreoLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
+    <Compile Include="LN\EncabezadoCuponLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
     <Compile Include="LN\EncabezadoCanjeLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />

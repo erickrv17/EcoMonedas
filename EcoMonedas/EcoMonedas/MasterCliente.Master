@@ -14,6 +14,11 @@
     <link href="Template/TemplateRegistro/css/cssRegistro.css" rel="stylesheet" />
     <script src="Template/TemplateRegistro/js/jsRegistro.js"></script>
     <link rel="stylesheet" href="Template/TemplateInicio/style.css" />
+    <link href="Template/TemplateCliente/css/BilleteraVirtual.css" rel="stylesheet" />
+      <link href="Template/TemplateAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <link href="Template/TemplateAdmin/css/sb-admin-2.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -69,7 +74,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="PaginaPrincipalCliente.aspx">Inicio</a></li>
-                                    <li><a href="#">Billetera Virtual</a></li>
+                                    <li><a href="BilleteraVirtualCliente.aspx">Billetera Virtual</a></li>
                                     <li><a href="#">Perfil Usuario</a></li>
                                     <li><a href="#Contactenos">Contactenos</a></li>
                                     <li><a href="InicioE.aspx" style="color: #7ed957">Inicio de Eco-Monedas</a></li>
