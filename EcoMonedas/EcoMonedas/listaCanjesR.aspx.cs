@@ -13,7 +13,29 @@ namespace EcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Usuario)Session["Usuario"]==null)
+            if ((Usuario)Session["Usuario"] != null)
+            {
+                if (((Usuario)Session["Usuario"]).RolID != 2)
+                {
+                    if (((Usuario)Session["Usuario"]).RolID == 1)
+                    {
+                        Response.Redirect("PrincipalAdministrador.aspx");
+                    }
+                    else
+                    {
+                        if (((Usuario)Session["Usuario"]).RolID == 3)
+                        {
+                            Response.Redirect("PaginaPrincipalCliente.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
+                    }
+
+                }
+            }
+            else
             {
                 Response.Redirect("InicioE.aspx");
             }

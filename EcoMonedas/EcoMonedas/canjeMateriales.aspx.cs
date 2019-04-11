@@ -15,9 +15,33 @@ namespace EcoMonedas
         protected void Page_Load(object sender, EventArgs e)
         {
             correoC = Request.QueryString["correoC"];
-            if (correoC=="" || correoC==null)
+            if ((Usuario)Session["Usuario"]!=null)
             {
-                Response.Redirect("solicitudCorreoUCanje.aspx");
+                if (((Usuario)Session["Usuario"]).RolID != 2)
+                {
+                    if (((Usuario)Session["Usuario"]).RolID == 1)
+                    {
+                        Response.Redirect("PrincipalAdministrador.aspx");
+                    }
+                    else
+                    {
+                        if (((Usuario)Session["Usuario"]).RolID == 3)
+                        {
+                            Response.Redirect("PaginaPrincipalCliente.aspx");
+                        }else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
+                    }
+                    
+                }
+                if (correoC=="" || correoC==null)
+                {
+                    Response.Redirect("solicitudCorreoUCanje.aspx");
+                }
+            }else
+            {
+                Response.Redirect("InicioE.aspx");
             }
         }
         public IEnumerable<Material> listadoMateriales()

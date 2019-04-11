@@ -15,15 +15,5 @@ namespace EcoMonedas
         {
 
         }
-        public IEnumerable<CentroAcopio> GetCentrosAcopio()
-        {
-            IEnumerable<CentroAcopio> lista = (IEnumerable<CentroAcopio>)CentroAcopioLN.ListaCentrosAcopio(2);
-            return lista;
-        }
-        protected void navbarColor01_MenuItemDataBound(object sender, MenuEventArgs e)
-        {
-            SiteMapNode smn = (SiteMapNode)e.Item.DataItem;
-            e.Item.ImageUrl = smn["image"];
-        }
     }
 }

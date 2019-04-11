@@ -14,13 +14,38 @@ namespace EcoMonedas
         int encabezadoID =0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            encabezadoID = Convert.ToInt32(Request.QueryString["idCanje"]);
-            if ((Usuario)Session["Usuario"] == null)
+            string canjeID = Request.QueryString["idCanje"];
+            encabezadoID = Convert.ToInt32(canjeID);
+            if ((Usuario)Session["Usuario"] != null)
+            {
+                if (((Usuario)Session["Usuario"]).RolID != 2)
+                {
+                    if (((Usuario)Session["Usuario"]).RolID == 1)
+                    {
+                        Response.Redirect("PrincipalAdministrador.aspx");
+                    }
+                    else
+                    {
+                        if (((Usuario)Session["Usuario"]).RolID == 3)
+                        {
+                            Response.Redirect("PaginaPrincipalCliente.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
+                    }
+
+                }
+                if (encabezadoID == 0 || canjeID=="" || canjeID==null)
+                {
+                    Response.Redirect("listaCanjesR.aspx");
+                }
+            }else
             {
                 Response.Redirect("InicioE.aspx");
             }
-            
-            if (!IsPostBack)
+                if (!IsPostBack)
             {
                 llenarListaDetalleCanjes();
             }

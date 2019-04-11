@@ -22,8 +22,8 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav" style="box-shadow: 0px 7px 0px -4px rgba(126,217,87,1);">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="InicioEM.aspx">
-                    <img src="Imagenes/LogoT.png" width="auto" height="60" /></a>
+                <a class="navbar-brand js-scroll-trigger" href="#.aspx">
+                    <img src="#" width="auto" height="60" /></a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase text-white rounded" style="background-color: #7ed957;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -52,55 +52,7 @@
             <div class="container">
                 <div class="col-lg-12 mx-auto">
 
-                    <asp:ListView ID="centroAcopioList" runat="server"
-                        DataKeyNames="ID" GroupItemCount="3"
-                        ItemType="Contexto.CentroAcopio" SelectMethod="GetCentrosAcopio">
-                        <EmptyDataTemplate>
-                            <%-- Plantilla si no hay datos --%>
-                            <div class="row">
-                                No hay datos
-                   <div class="row">
-                        </EmptyDataTemplate>
-                        <EmptyItemTemplate>
-                            <%-- Plantilla para elemento o item vacío --%>
-                            <%-- Si hay un item o registro que le falte algún valor --%>
-                            <div class="col-lg-3">
-                            </div>
-                        </EmptyItemTemplate>
-                        <GroupTemplate>
-                            <%-- Plantilla de contenedor de grupo --%>
-                            <div class="row">
-                                <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
-                            </div>
-                        </GroupTemplate>
-                        <ItemTemplate>
-                            <%-- Plantilla del contenedor de item de datos --%>
-                            <div class="col-lg-3">
-                                <div class="card mb-3">
-                                    <asp:HyperLink ID="HyperLink1"
-                                        runat="server"
-                                        CssClass="card-header"
-                                        NavigateUrl='<%# Eval("ID", "~/detalleCentroAcopio.aspx?id={0}") %>'>
-                            <%#:Item.Nombre%>
-                                    </asp:HyperLink>
-                                    <asp:Image ID="Image1" ImageUrl='<%# Eval("imagen", "~/imagenes/{0}")%>'
-                                        Height="200px" ImageAlign="Middle" runat="server" />
-
-                                    <div class="card-body">
-                                        <p class="card-text"><b>Dirección :</b><%#Item.DireccionExacta%></p>
-                                    </div>
-                                    <div class="card-footer text-muted">
-                                    </div>
-                                </div>
-                            </div>
-                        </ItemTemplate>
-                        <LayoutTemplate>
-                            <%-- Plantilla de contenedor raíz --%>
-                            <div class="container">
-                                <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
-                            </div>
-                        </LayoutTemplate>
-                    </asp:ListView>
+                    <!--Bootstrap Comun y Corriente-->
 
                 </div>
             </div>
@@ -109,15 +61,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">Dirección</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                            2215 Madre Bolaños Rodriguez
                                 <br />
-                            Clark, MO 65243
+                            Cajon, Grecia
                         </p>
                     </div>
                     <div class="col-md-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <h4 class="text-uppercase mb-4">Acerca de Mother</h4>
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item">
                                 <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
@@ -147,11 +99,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, open source Bootstrap theme created by
-            <a href="http://startbootstrap.com">Start Bootstrap</a>.
-                        </p>
+                        <h4 class="text-uppercase mb-4">About Mother</h4>
                     </div>
                 </div>
             </div>
