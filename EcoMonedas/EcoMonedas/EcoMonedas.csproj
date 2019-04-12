@@ -89,6 +89,7 @@
     <Content Include="Imagenes\Banner4.png" />
     <Content Include="Imagenes\Contactenos.png" />
     <Content Include="Imagenes\Cuenta.png" />
+    <Content Include="Imagenes\EcoCupon.png" />
     <Content Include="Imagenes\EditarPerfil.png" />
     <Content Include="Imagenes\EditarPerfilAC.png" />
     <Content Include="Imagenes\FlechaAbajo.png" />

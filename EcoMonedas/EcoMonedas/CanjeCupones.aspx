@@ -9,23 +9,23 @@
         <ContentTemplate>
             <div class="container">
                 <div class="container_inner default_template_holder clearfix page_container_inner">
-                    <div class="row">
-                        <div class="col-lg-7 col-sm-12">
-                            <label>Porfavor coloquese por encima del cupon que desea adquirir y haga click en canjear</label>
+                    <div class="row" style="margin-left:15px;">
+                        <div class="col-lg-3 col-sm-12">
+                            <asp:Button ID="btnBilletera" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="← Volver a la página Principal" OnClick="btnBilletera_Click1" />
                         </div>
-                        <div class="col-lg-5 col-sm-12">
-                            <asp:Button ID="btnCanjear" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="Procesar Canje →" OnClick="btnCanjear_Click" />
+                        <div class="col-lg-9 col-sm-12">
+                            <label>Porfavor coloquese por encima del cupon que desea adquirir y haga click si lo desea obtener</label>
                         </div>
                     </div>
-                    <div class="vc_row wpb_row section vc_row-fluid" style="padding-top: 0px; text-align: left;">
+                    <div class="vc_row wpb_row section vc_row-fluid" style="padding-top: 80px; text-align: left;">
                         <div class=" full_section_inner clearfix">
                             <div class="vc_col-sm-12 wpb_column vc_column_container">
                                 <div class="wpb_wrapper">
                                     <div class="projects_holder_outer v3 portfolio_with_space portfolio_standard ">
                                         <div class="projects_holder clearfix v3 standard">
-                                            <asp:ListView ID="listaMateriales" runat="server"
+                                            <asp:ListView ID="listaCupones" runat="server"
                                                 DataKeyNames="ID" GroupItemCount="3"
-                                                ItemType="Contexto.Material" SelectMethod="listadoMateriales">
+                                                ItemType="Contexto.Cupon" SelectMethod="listadoCupones">
                                                 <EmptyDataTemplate>
                                                     <div class="row">
                                                         No hay datos
@@ -44,14 +44,16 @@
                                                     <article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;">
                                                         <div class="image_holder">
                                                             <a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self"><span class="image">
-                                                                <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle" CssClass="attachment-full wp-post-image" />
+                                                                <asp:Image ID="ImagenMat" runat="server" ImageUrl="~/Imagenes/EcoCupon.png" ImageAlign="Middle" CssClass="attachment-full wp-post-image" />
                                                             </span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons">
-                                                                <asp:LinkButton ID="linkAgregar" CssClass="btn btn-outline-dark lightbox qbutton small white" title='<%#:Item.Nombre%>' runat="server" OnClick="linkAgregar_Click">Agregar al carrito</asp:LinkButton></span></span></span></span></span>
-                                                        </div>
-                                                        <div class="portfolio_description ">
-                                                            <h5 class="portfolio_title"><a href="#" target="_self"><%#:Item.Nombre%></a></h5>
-                                                            <span class="project_category">Valor Unitario &cent;</b><%#: String.Format("{0:N2}", Item.PrecioUnitario)%></span>
-                                                            <asp:TextBox runat="server" BorderStyle="None" BorderColor="Black" BackColor='<%# System.Drawing.ColorTranslator.FromHtml(Item.Color.CodigoColor) %>' Width="120" Height="10"></asp:TextBox>
+                                                                <asp:LinkButton ID="linkAgregar" CssClass="btn btn-outline-dark lightbox qbutton small white" title='<%#:Item.Nombre%>' runat="server" OnClick="linkAgregar_Click">Obtener Cupon</asp:LinkButton></span></span></span></span></span>
+
+                                                            <div class="portfolio_description ">
+                                                                <h5 class="portfolio_title"><a href="#" target="_self"><%#:Item.Nombre%></a></h5>
+                                                                <span class="project_category"><%#: Item.Descripcion%></span>
+                                                                <span class="project_category"><b>Valor Comercial: </b>&cent;<%#: String.Format("{0:N2}", Item.PrecioCanje)%></span>
+                                                                <span class="project_category"><b>EcoMonedas Necesarias: </b>&cent;<%#: String.Format("{0:N2}", Item.EcoMonedasNecesarias)%></span>
+                                                            </div>
                                                         </div>
                                                     </article>
                                                 </ItemTemplate>

@@ -1718,7 +1718,6 @@ header.light:not(.sticky):not(.scrolled) .header_bottom_right_widget_holder a.qb
     margin-top: 0!important;
 }
 .container {
-    position: relative;
     padding: 0;
     width: 100%;
     z-index: 100;
