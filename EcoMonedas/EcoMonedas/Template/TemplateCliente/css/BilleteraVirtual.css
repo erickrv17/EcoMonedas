@@ -1,4 +1,9 @@
-﻿body {
+﻿/***********************************************/
+/***************** Packages ********************/
+/***********************************************/
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body {
 }
 .my-card
 {
@@ -7,3 +12,5 @@
     top:-20px;
     border-radius:50%;
 }
+
+

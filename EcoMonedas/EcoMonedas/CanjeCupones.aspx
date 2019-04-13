@@ -5,6 +5,41 @@
     <link href="Content/Carrito.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <script type="text/javascript">
+        function openModalCanjeCupon() {
+            $('#modalCanjearCupon').modal('show');
+        }
+    </script>
+     <div class="modal fade text-center py-5"  id="modalCanjearCupon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+              <div class="modal-header">
+                        <img class="img-circle" id="img_logo" src="Imagenes/LogoT.png" />
+              </div>
+            <div class="modal-body">
+				<div class="top-strip"></div>
+                <a class="#" >Canjear Cupon <label id="lblName"  runat="server">g</label></a>               
+                 <p class="pb-1 text-muted">Esta seguro que desea adquirir el cupon <asp:Label ID="lblNombre" runat="server"> ?</asp:Label></p>              
+                    <div class="input-group mb-3 w-75 mx-auto">
+                             <span> <b>descripcion:</b><asp:Label ID="lblDescripcion" runat="server"></asp:Label></span><br />
+                    </div>
+                    <div class="input-group mb-3 w-75 mx-auto">                  
+                             <span ><b>Valor Comercial: </b>&cent; <asp:Label ID="lblValorComercial" runat="server"></asp:Label></span><br />
+                    </div>
+                    <div class="input-group mb-3 w-75 mx-auto">
+                             <span ><b>EcoMonedas Necesarias: </b>&cent; <asp:Label ID="lblEcoMonedasNesarias" runat="server"></asp:Label></span><br />
+                    </div>    			
+                <p class="pb-1 text-muted"><small>Seleccione Confirmar para proceder a hacer su tansaccion</small></p>
+				<div class="bottom-strip"></div>
+            </div>
+            <div class="modal-footer">
+               <asp:Button runat="server" ID="btnVolver" class="form-control btn btn-secondary" OnClick="btnVolver_Click" Text="Cancelar"/>
+               <asp:Button runat="server" ID="btnCanjear" class="form-control btn btn-primary" data-dismiss="modalCanjearCupon" OnClick="btnCanjear_Click" Text="Confirmar compra del cupon"/>
+            </div>
+              <asp:HiddenField ID="hfCupon" runat="server" />
+        </div>
+    </div>
+</div>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="container">

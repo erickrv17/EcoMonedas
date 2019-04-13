@@ -53,12 +53,60 @@ namespace EcoMonedas
 
         protected void linkAgregar_Click(object sender, EventArgs e)
         {
+            ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
+            int idCupon = Convert.ToInt32(listaCupones.DataKeys[fila.DataItemIndex].Values[0]);
+             try
+            {
+                aceptarCupon(idCupon);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalCanjeCupon();", true);
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
-        
+
         protected void btnBilletera_Click1(object sender, EventArgs e)
         {
             Response.Redirect("PaginaPrincipalCliente.aspx");
+        }
+
+        public void aceptarCupon(int idCupon)
+        {
+            Cupon cupon = CuponLN.obtenerCupon(idCupon);
+            hfCupon.Value = cupon.ID.ToString();
+            lblDescripcion.Text = cupon.Descripcion;
+            lblEcoMonedasNesarias.Text = cupon.EcoMonedasNecesarias.ToString();
+            lblNombre.Text = cupon.Nombre;
+            lblName.InnerText = cupon.Nombre;
+            lblValorComercial.Text = cupon.PrecioCanje.ToString();
+        }
+        public void limpiar()
+        {
+            hfCupon.Value = "";
+            lblDescripcion.Text = "";
+            lblEcoMonedasNesarias.Text = "";
+            lblNombre.Text = "";
+            lblName.InnerText = "";
+            lblValorComercial.Text = "";
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        protected void btnCanjear_Click(object sender, EventArgs e)
+        {
+            EncabezadoCuponLN encC = new EncabezadoCuponLN();
+            bool encCupon = encC.GuardarEncCupon(((Usuario)Session["Usuario"]).CorreoElectronico, true, hfCupon.Value);
+            if (encCupon)
+            {
+                //hacer algo q le muestre q se logro guardar
+            }
+            limpiar();
         }
     }
 }
