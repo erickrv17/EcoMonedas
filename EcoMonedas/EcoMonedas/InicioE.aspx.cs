@@ -13,7 +13,36 @@ namespace EcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if ((Usuario)Session["Usuario"] != null)
+            {
+                lblregistrese.Visible = false;
+                lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
+                if (((Usuario)Session["Usuario"]).Rol.ID==1)
+                {
+                    btnModuloUsuario.Text = "Módulo Administrador";
+                }else
+                {
+                    if (((Usuario)Session["Usuario"]).Rol.ID == 2)
+                    {
+                        btnModuloUsuario.Text = "Módulo Administrador C";
+                    }
+                    else
+                    {
+                        if (((Usuario)Session["Usuario"]).Rol.ID == 3)
+                        {
+                            btnModuloUsuario.Text = "Módulo Cliente";
+                        }else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                lblregistrese.Visible = true;
+                lblNombreUsuario.Text = "¡Bienvenido!";
+            }
         }
 
         public IEnumerable<CentroAcopio> GetCentrosAcopio()
@@ -119,6 +148,50 @@ namespace EcoMonedas
         public void ErroresRegistro()
         {
 
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if ((Usuario)Session["Usuario"] != null)
+            {
+                Session["Usuario"] = null;
+                Response.Redirect("InicioE.aspx");
+            }
+        }
+
+        protected void btnModuloUsuario_Click(object sender, EventArgs e)
+        {
+            if ((Usuario)Session["Usuario"] != null)
+            {
+                lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
+                if (((Usuario)Session["Usuario"]).Rol.ID == 1)
+                {
+                    Response.Redirect("PrincipalAdministrador.aspx");
+                }
+                else
+                {
+                    if (((Usuario)Session["Usuario"]).Rol.ID == 2)
+                    {
+                        Response.Redirect("PrincipalAdminCentroA.aspx");
+                    }
+                    else
+                    {
+                        if (((Usuario)Session["Usuario"]).Rol.ID == 3)
+                        {
+                            Response.Redirect("PaginaPrincipalCliente.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                lblNombreUsuario.Text = "¡Bienvenido!";
+                Response.Redirect("InicioE.aspx");
+            }
         }
     }
 }

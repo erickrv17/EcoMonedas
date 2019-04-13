@@ -13,6 +13,42 @@ namespace EcoMonedas {
     public partial class InicioE {
         
         /// <summary>
+        /// Control lblNombreUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+        
+        /// <summary>
+        /// Control btnModuloUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModuloUsuario;
+        
+        /// <summary>
+        /// Control btnCerrarSesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
+        
+        /// <summary>
+        /// Control lblregistrese.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lblregistrese;
+        
+        /// <summary>
         /// Control listaMateriales.
         /// </summary>
         /// <remarks>

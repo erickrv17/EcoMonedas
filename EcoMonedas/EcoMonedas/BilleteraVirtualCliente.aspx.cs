@@ -30,7 +30,9 @@ namespace EcoMonedas
                             Response.Redirect("InicioE.aspx");
                         }
                     }
-
+                }else
+                {
+                    //lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
                 }
             }
             else
@@ -56,5 +58,37 @@ namespace EcoMonedas
         {
             Response.Redirect("SolicitudCorreoUCanjeCupon.aspx");
         }
+
+        //protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        //{
+        //    if ((Usuario)Session["Usuario"]!= null)
+        //    {
+        //        try
+        //        {
+        //            Session["Usuario"] = null;
+        //            Response.Redirect("InicioE.aspx");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //    }
+        //}
+
+        //protected void btnCerrarSesion_Click1(object sender, EventArgs e)
+        //{
+        //    if ((Usuario)Session["Usuario"] != null)
+        //    {
+        //        try
+        //        {
+        //            Session["Usuario"] = null;
+        //            Response.Redirect("InicioE.aspx");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //    }
+        //}
     }
 }

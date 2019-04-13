@@ -37,7 +37,22 @@
                                         <img src="Imagenes/LogoP.png" alt="" width="153" /></a>
                                 </div>
                                 <div class="login-content">
-                                    <a href="#VentanaLogin" data-toggle="modal">Registrese / Ingrese</a>
+                                    <ul class="navbar-nav ml-auto">
+                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                        <li class="nav-item dropdown no-arrow" title="Toque para opciones">
+                                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Toque para opciones">
+                                                <i class="fa fa-user-circle"></i>
+                                                <asp:Label ID="lblNombreUsuario" runat="server" Text="" CssClass="mr-2 d-none d-lg-inline text-gray-600" ForeColor="Black"></asp:Label>
+                                            </a>
+                                            <!-- Dropdown - User Information -->
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                                <asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />
+                                                <div class="dropdown-divider"></div>
+                                                <asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a href="#VentanaLogin" data-toggle="modal" runat="server" id="lblregistrese">Registrese / Ingrese</a>
                                 </div>
                             </div>
                         </div>
@@ -69,9 +84,9 @@
                                 <div class="classynav">
                                     <ul>
                                         <li><a href="InicioE.aspx">Inicio</a></li>
-                                        <li><a href="#">Acerca de Eco-Monedas</a></li>
+                                        <li><a href="#MaterialesR">Materiales reciclables</a></li>
+                                        <li><a href="#CentrosA">Centros de Acopio</a></li>
                                         <li><a href="#Contactenos">Contactenos</a></li>
-                                        <li><a href="#VentanaLogin" data-toggle="modal">Inicie Sesión</a></li>
                                     </ul>
                                 </div>
                                 <!-- Nav End -->
@@ -127,7 +142,7 @@
                                 <div class="col-12 col-md-12">
                                     <div class="single-top-features d-flex align-items-center justify-content-center">
                                         <i class="icon-contract" style="color: white;"></i>
-                                        <h5>Los materiales que se pueden Canjear actualmente</h5>
+                                        <h5 id="MaterialesR">Los materiales que se pueden Canjear actualmente</h5>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +163,8 @@
                         <EmptyDataTemplate>
                             <div class="row">
                                 No hay datos
-                   <div class="row">
+                  
+                                <div class="row">
                         </EmptyDataTemplate>
                         <EmptyItemTemplate>
                             <div class="col-lg-3">
@@ -183,7 +199,7 @@
                 <br />
                 <div class="row">
                     <div class="col-12">
-                        <img src="Imagenes/Separador.png" />
+                        <img id="Contactenos" src="Imagenes/Separador.png" />
                     </div>
                 </div>
                 <br />
@@ -195,7 +211,7 @@
         <!-- ##### Course Area End ##### -->
 
         <!-- ##### Testimonials Area Start ##### -->
-        <div id="Contactenos" class="testimonials-area section-padding-100" style="background-color: #7ed957;">
+        <div class="testimonials-area section-padding-100" style="background-color: #7ed957;">
             <div class="container">
                 <div class="row" id="contact">
                     <div class="col-md-3">
@@ -203,12 +219,14 @@
                         <address>
                             <hr />
                             <i class="fa fa-user fa-fw"></i>Creadores:
-                        <br />
+                       
+                            <br />
                             <p style="color: black;">César Fallas Gamboa</p>
                             <p style="color: black;">Erick Rodríguez Vega</p>
                             <hr />
                             <i class="fa fa-envelope-o fa-fw"></i>Correo Destinatario:
-                        <br />
+                       
+                            <br />
                             <p style="color: black;">EcomonedasP2019@gmail.com</p>
                             <br />
                         </address>
@@ -276,7 +294,7 @@
                                     <div class="col-12 col-md-12">
                                         <div class="single-top-features d-flex align-items-center justify-content-center">
                                             <i class="icon-contract" style="color: white;"></i>
-                                            <h5>Los Centros de Acopio disponibles</h5>
+                                            <h5 id="CentrosA">Los Centros de Acopio disponibles</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -295,6 +313,7 @@
                                 <EmptyDataTemplate>
                                     <div class="row">
                                         No hay datos
+                                   
                                     </div>
                                 </EmptyDataTemplate>
                                 <EmptyItemTemplate>
@@ -525,6 +544,7 @@
                     <div class="col-12">
                         <p style="color: white;">
                             Copyright &copy; Eco-Monedas I Cuatrimestre 2019 | César Fallas y Erick Rodríguez
+                       
                         </p>
                     </div>
                 </div>

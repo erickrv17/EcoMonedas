@@ -7,27 +7,31 @@
     <div class="col-12 col-sm-6 col-lg-2">
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
-        <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-            <div class="course-icon">
-                <i class="fa fa-money"></i>
+        <a href="BilleteraVirtualCliente.aspx">
+            <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                <div class="course-icon">
+                    <i class="fa fa-money"></i>
+                </div>
+                <div class="course-content">
+                    <h4>Billetera Virtual</h4>
+                    <p>En esta sección podrás revisar el saldo de tu cuenta de Eco-Monedas.</p>
+                </div>
             </div>
-            <div class="course-content">
-                <h4>Billetera Virtual</h4>
-                <p>En esta sección podrás revisar el saldo de tu cuenta de Eco-Monedas.</p>
-            </div>
-        </div>
+        </a>
     </div>
     <!-- Single Course Area -->
     <div class="col-12 col-sm-6 col-lg-4">
-        <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-            <div class="course-icon">
-                <i class="fa fa-user-circle"></i>
+        <a href="PerfilCliente.aspx">
+            <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                <div class="course-icon">
+                    <i class="fa fa-user-circle"></i>
+                </div>
+                <div class="course-content">
+                    <h4>Editar tu Perfil</h4>
+                    <p>En esta sección podrás revisar y cambiar tu información personal.</p>
+                </div>
             </div>
-            <div class="course-content">
-                <h4>Editar tu Perfil</h4>
-                <p>En esta sección podrás revisar y cambiar tu información personal.</p>
-            </div>
-        </div>
+        </a>
     </div>
     <!-- Single Course Area -->
     <div class="col-12 col-sm-6 col-lg-2">
@@ -40,6 +44,7 @@
     </div>
     </div>
     </div>
+   
     <div id="Contactenos" class="testimonials-area section-padding-100" style="background-color: #7ed957;">
         <div class="container">
             <div class="row" id="contact">
@@ -48,11 +53,13 @@
                     <address>
                         <hr />
                         <i class="fa fa-user fa-fw"></i>Creadores:
+                       
                         <br />
                         <p style="color: black;">César Fallas Gamboa</p>
                         <p style="color: black;">Erick Rodríguez Vega</p>
                         <hr />
                         <i class="fa fa-envelope-o fa-fw"></i>Correo Destinatario:
+                       
                         <br />
                         <p style="color: black;"><b>EcomonedasP2019@gmail.com</b></p>
                         <br />
@@ -72,23 +79,23 @@
                             <div class="row form-group">
                                 <div class="col-6">
                                     <label><b>Nombre:</b> </label>
-                                    <asp:textbox id="txtNombre" cssclass="form-control" runat="server"></asp:textbox>
+                                    <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="col-6">
                                     <label><b>Correo Electrónico:</b> </label>
-                                    <asp:textbox id="txtCorreo" cssclass="form-control" runat="server"></asp:textbox>
+                                    <asp:TextBox ID="txtCorreo" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label><b>Asunto:</b> </label>
-                                <asp:textbox id="txtAsunto" cssclass="form-control" runat="server"></asp:textbox>
+                                <asp:TextBox ID="txtAsunto" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label><b>Mensaje:</b> </label>
-                                <asp:textbox id="txtMensaje" cssclass="form-control" textmode="MultiLine" runat="server"></asp:textbox>
+                                <asp:TextBox ID="txtMensaje" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
                             </div>
                             <div class="text-center">
-                                <asp:button id="btnEnviar" runat="server" cssclass="btn btn-outline-dark" text="Enviar" />
+                                <asp:Button ID="btnEnviar" runat="server" CssClass="btn btn-outline-dark" Text="Enviar" />
                             </div>
                         </div>
                     </div>

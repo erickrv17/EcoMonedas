@@ -16,70 +16,44 @@ namespace EcoMonedas
             {
 
             }
-        }
-        protected void btnIngresar_Click(object sender, EventArgs e)
-        {
-            Usuario user = UsuarioLN.login(txtcorreo.Text, txtContra.Text);
-            Session["Usuario"] = user;
-            if (Session["Usuario"] != null && user.Estado==true)
+            if ((Usuario)Session["Usuario"] != null)
             {
-                if (user.RolID == 1)
+                if (((Usuario)Session["Usuario"]).RolID != 3)
                 {
-                    this.Response.Redirect("PrincipalAdministrador.aspx");
-                }
-                else
-                {
-                    if (user.RolID == 2)
+                    if (((Usuario)Session["Usuario"]).RolID == 1)
                     {
-                        if (!user.Disponible)
-                            this.Response.Redirect("PrincipalAdminCentroA.aspx");
-                        else
-                            lblMensaje.InnerText = "El usuario no posee un centro de acopio";
-                            lblMensaje.Visible = true;
+                        Response.Redirect("PrincipalAdministrador.aspx");
                     }
                     else
                     {
-                        this.Response.Redirect("PaginaPrincipalCliente.aspx");
-
+                        if (((Usuario)Session["Usuario"]).RolID == 2)
+                        {
+                            Response.Redirect("PaginaPrincipalAdminCentroA.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
                     }
                 }
-            }else
-            {
-                lblMensaje.Visible = true; 
-                
+                else
+                {
+                    lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
+                }
             }
-
+            else
+            {
+                Response.Redirect("InicioE.aspx");
+            }
         }
-        protected void btnEnviar_Click(object sender, EventArgs e)
+    
+        protected void btnCerrarSesion_Click1(object sender, EventArgs e)
         {
-
-        }
-        protected void btnRegistra_Click(object sender, EventArgs e)
-        {
-            Usuario miUsuario = new Usuario();
-            miUsuario.Nombre = txtNombre.Text;
-            miUsuario.PrimerApellido = txtApellido1.Text;
-            miUsuario.SegundoApellido = txtApellido2.Text;
-            miUsuario.Telefono = txtTelefono.Text;
-            miUsuario.CorreoElectronico = txtEmail.Text;
-            miUsuario.contrasenia = txtConfirmarContrasenna.Text;
-            miUsuario.Direccion = txtDireccion.Text;
-            miUsuario.RolID = 3;
-            miUsuario.Estado = true;
-            miUsuario.Disponible = true;
-
-            try
+            if (Session["Usuario"] != null)
             {
-                UsuarioLN us = new UsuarioLN();
-            us.insertaUsuario(miUsuario);
-
+                Session["Usuario"] = null;
+                Response.Redirect("InicioE.aspx");
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
-           
         }
     }
 }
