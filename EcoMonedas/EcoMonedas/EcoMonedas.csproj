@@ -179,7 +179,6 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="solicitudCorreoUCanje.aspx" />
-    <Content Include="SolicitudCorreoUCanjearCupon.aspx" />
     <Content Include="Template\TemplateCliente\css\BilleteraVirtual.css" />
     <Content Include="Template\TemplateInicio\style.css.map" />
     <None Include="Web.Debug.config">
@@ -366,13 +365,6 @@
     </Compile>
     <Compile Include="solicitudCorreoUCanje.aspx.designer.cs">
       <DependentUpon>solicitudCorreoUCanje.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SolicitudCorreoUCanjearCupon.aspx.cs">
-      <DependentUpon>SolicitudCorreoUCanjearCupon.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SolicitudCorreoUCanjearCupon.aspx.designer.cs">
-      <DependentUpon>SolicitudCorreoUCanjearCupon.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -47,8 +47,23 @@
                                     </a>
                                 </div>
                                 <div class="login-content">
-                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="" ForeColor="Black"></asp:Label>
-                                    <asp:Button ID="btnCerrarSesion" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click1" />
+                                    <ul class="navbar-nav ml-auto">
+                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                        <li class="nav-item dropdown no-arrow" title="Toque para opciones">
+                                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Toque para opciones">
+                                                <i class="fa fa-user-circle"></i>
+                                                <asp:Label ID="lblNombreUsuario" runat="server" Text="" CssClass="mr-2 d-none d-lg-inline text-gray-600" ForeColor="Black"></asp:Label>
+                                            </a>
+                                            <!-- Dropdown - User Information -->
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                                <%--<asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />--%>
+                                                <button runat="server" onserverclick="btnMU_ServerClick" id="btnMU" class="dropdown-item" style="color:#7ed957;">Módulo Usuario</button>
+                                                <div class="dropdown-divider"></div>
+                                                <%--<asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />--%>
+                                                <button runat="server" onserverclick="btnCerrarSesion_Click1" id="btnCS" style="color:#7ed957;" class="dropdown-item">Cerrar Sesión</button>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

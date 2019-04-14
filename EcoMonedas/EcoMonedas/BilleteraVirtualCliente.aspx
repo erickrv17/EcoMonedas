@@ -4,16 +4,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
     <div class="row" style="margin-bottom: 15px;">
         <div class="col-lg-9 col-sm-12">
             <label>De click si desea canjear sus ecomonedas disponibles por un Cupon.</label>
         </div>
         <div class="col-lg-3 col-sm-12">
-
-            <asp:Button ID="btnNuevoCupon" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="Obtener un cupon →" OnClick="btnNuevoC_Click" />
+            <button runat="server" onserverclick="btnNuevoC_Click" class="btn btn-primary" style="color: white;">Obtener un Cupon →</button>
         </div>
-
     </div>
     <div class="row">
         <div class="col-md-4">
@@ -24,7 +21,8 @@
                 </div>
                 <div class="text-info text-center mt-2">
                     <h1>
-                        <asp:Label ID="lblEcoMonedasGastadas" runat="server" Text=""></asp:Label></h1>
+                        <asp:label id="lblEcoMonedasGastadas" runat="server" text=""></asp:label>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -36,7 +34,8 @@
                 </div>
                 <div class="text-success text-center mt-2">
                     <h1>
-                        <asp:Label ID="lblEcoMonedasDisponibles" runat="server" Text=""></asp:Label></h1>
+                        <asp:label id="lblEcoMonedasDisponibles" runat="server" text=""></asp:label>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -49,7 +48,8 @@
                 </div>
                 <div class="text-warning text-center mt-2">
                     <h1>
-                        <asp:Label ID="lblEcoMonedasGeneradas" runat="server" Text=""></asp:Label></h1>
+                        <asp:label id="lblEcoMonedasGeneradas" runat="server" text=""></asp:label>
+                    </h1>
                 </div>
             </div>
         </div>

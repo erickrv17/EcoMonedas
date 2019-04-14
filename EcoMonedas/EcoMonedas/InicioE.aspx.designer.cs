@@ -22,22 +22,22 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
         
         /// <summary>
-        /// Control btnModuloUsuario.
+        /// Control btnMU.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModuloUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnMU;
         
         /// <summary>
-        /// Control btnCerrarSesion.
+        /// Control btnCS.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnCS;
         
         /// <summary>
         /// Control lblregistrese.

@@ -26,7 +26,7 @@
 </head>
 
 <body id="page-top">
-
+    <form id="formularioC" runat="server">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -36,13 +36,13 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="InicioE.aspx">
                 <div class="sidebar-brand-icon">
-                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/LogoT.png" Width="75px" Height="35px"/>
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/LogoT.png" Width="75px" Height="35px" />
                 </div>
                 <div class="sidebar-brand-text mx-3">Administrador</div>
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0"/>
+            <hr class="sidebar-divider my-0" />
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="PrincipalAdministrador.aspx">
@@ -51,11 +51,12 @@
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider"/>
+            <hr class="sidebar-divider" />
 
             <!-- Heading -->
             <div class="sidebar-heading">
                 Procesos
+           
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -88,27 +89,29 @@
                     </div>
                 </div>
             </li>
-            <hr class="sidebar-divider d-none d-md-block"/>
+            <hr class="sidebar-divider d-none d-md-block" />
             <div class="sidebar-heading">
                 Configuración
+           
             </div>
 
-             <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-user-edit"></i>
                     <span>Perfil de Administrador</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block" />
-            <div class="sidebar-heading" style="color:black;">
+            <div class="sidebar-heading" style="color: black;">
                 Principal
+           
             </div>
-             <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="InicioE.aspx">
-                    <i class="fas fa-fw fa-coins" style="color:black;"></i>
-                    <span style="color:black;">Inicio EcoMonedas</span></a>
+                    <i class="fas fa-fw fa-coins" style="color: black;"></i>
+                    <span style="color: black;">Inicio EcoMonedas</span></a>
             </li>
-            
-            <hr class="sidebar-divider d-none d-md-block"/>
+
+            <hr class="sidebar-divider d-none d-md-block" />
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -132,7 +135,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <div class="input-group-append">
                                 <a class="btn" href="PrincipalAdministrador.aspx">
@@ -141,35 +144,30 @@
                             </div>
                             <label style="color: #7ed957"><b>¡Bienvenido!</b></label>
                         </div>
-                    </form>
+                    </div>
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow" title="Toque para opciones">
+                        <ul class="navbar-nav ml-auto">
+                            <div class="topbar-divider d-none d-sm-block"></div>
+                            <li class="nav-item dropdown no-arrow" title="Toque para opciones">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Toque para opciones">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">César Fallas</span>
-                                    <i class="fas fa-arrow-circle-down"></i>
+                                    <i class="fa fa-user-circle"></i>
+                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="" CssClass="mr-2 d-none d-lg-inline text-gray-600" ForeColor="Black"></asp:Label>
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Perfil
-                                    </a>
+                                    <asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Salir
-                                    </a>
+                                    <asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />
                                 </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
                 </nav>
+                
                 <!-- End of Topbar -->
             </div>
-        <!-- End of Main Content -->
-        <form id="form1" runat="server">
+            
+            <!-- End of Main Content -->
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -182,8 +180,8 @@
                     </div>
                 </div>
             </footer>
+        </div>
+    </div>
         </form>
-    </div>
-    </div>
 </body>
 </html>

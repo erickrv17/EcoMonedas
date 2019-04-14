@@ -55,5 +55,40 @@ namespace EcoMonedas
                 Response.Redirect("InicioE.aspx");
             }
         }
+
+        protected void btnMU_ServerClick(object sender, EventArgs e)
+        {
+            if ((Usuario)Session["Usuario"] != null)
+            {
+                lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
+                if (((Usuario)Session["Usuario"]).Rol.ID == 1)
+                {
+                    Response.Redirect("PrincipalAdministrador.aspx");
+                }
+                else
+                {
+                    if (((Usuario)Session["Usuario"]).Rol.ID == 2)
+                    {
+                        Response.Redirect("PrincipalAdminCentroA.aspx");
+                    }
+                    else
+                    {
+                        if (((Usuario)Session["Usuario"]).Rol.ID == 3)
+                        {
+                            Response.Redirect("PaginaPrincipalCliente.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                lblNombreUsuario.Text = "¡Bienvenido!";
+                Response.Redirect("InicioE.aspx");
+            }
+        }
     }
 }

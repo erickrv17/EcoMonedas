@@ -134,26 +134,20 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow" title="Toque para opciones">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Toque para opciones">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">César Fallas</span>
-                                <i class="fas fa-arrow-circle-down"></i>
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
+                            <div class="topbar-divider d-none d-sm-block"></div>
+                            <li class="nav-item dropdown no-arrow" title="Toque para opciones">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Toque para opciones">
+                                    <i class="fa fa-user-circle"></i>
+                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="" CssClass="mr-2 d-none d-lg-inline text-gray-600" ForeColor="Black"></asp:Label>
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Salir
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />
+                                    <div class="dropdown-divider"></div>
+                                    <asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />
+                                </div>
+                            </li>
+                        </ul>
 
                 </nav>
                 <!-- End of Topbar -->

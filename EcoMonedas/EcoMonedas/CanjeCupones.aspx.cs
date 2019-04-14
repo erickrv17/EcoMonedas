@@ -57,13 +57,11 @@ namespace EcoMonedas
             int idCupon = Convert.ToInt32(listaCupones.DataKeys[fila.DataItemIndex].Values[0]);
              try
             {
-                aceptarCupon(idCupon);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalCanjeCupon();", true);
-
+                aceptarCupon(idCupon);
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -77,20 +75,20 @@ namespace EcoMonedas
         {
             Cupon cupon = CuponLN.obtenerCupon(idCupon);
             hfCupon.Value = cupon.ID.ToString();
-            lblDescripcion.Text = cupon.Descripcion;
-            lblEcoMonedasNesarias.Text = cupon.EcoMonedasNecesarias.ToString();
-            lblNombre.Text = cupon.Nombre;
-            lblName.InnerText = cupon.Nombre;
-            lblValorComercial.Text = cupon.PrecioCanje.ToString();
+            //lblDescripcion.Text = cupon.Descripcion;
+            //lblEcoMonedasNesarias.Text = cupon.EcoMonedasNecesarias.ToString();
+            //lblNombre.Text = cupon.Nombre;
+            lblNombreC.Text = cupon.Nombre;
+            //lblValorComercial.Text = cupon.PrecioCanje.ToString();
         }
         public void limpiar()
         {
-            hfCupon.Value = "";
-            lblDescripcion.Text = "";
-            lblEcoMonedasNesarias.Text = "";
-            lblNombre.Text = "";
-            lblName.InnerText = "";
-            lblValorComercial.Text = "";
+            //hfCupon.Value = "";
+            //lblDescripcion.Text = "";
+            //lblEcoMonedasNesarias.Text = "";
+            //lblNombre.Text = "";
+            //lblNombreC.Text = "";
+            //lblValorComercial.Text = "";
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

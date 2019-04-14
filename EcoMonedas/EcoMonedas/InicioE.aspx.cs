@@ -19,18 +19,18 @@ namespace EcoMonedas
                 lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
                 if (((Usuario)Session["Usuario"]).Rol.ID==1)
                 {
-                    btnModuloUsuario.Text = "Módulo Administrador";
+                    btnMU.InnerText = "Módulo Administrador";
                 }else
                 {
                     if (((Usuario)Session["Usuario"]).Rol.ID == 2)
                     {
-                        btnModuloUsuario.Text = "Módulo Administrador C";
+                        btnMU.InnerText = "Módulo Administrador C";
                     }
                     else
                     {
                         if (((Usuario)Session["Usuario"]).Rol.ID == 3)
                         {
-                            btnModuloUsuario.Text = "Módulo Cliente";
+                            btnMU.InnerText = "Módulo Cliente";
                         }else
                         {
                             Response.Redirect("InicioE.aspx");
@@ -156,6 +156,7 @@ namespace EcoMonedas
             {
                 Session["Usuario"] = null;
                 Response.Redirect("InicioE.aspx");
+                lblregistrese.Visible = true;
             }
         }
 
