@@ -74,15 +74,17 @@ namespace EcoMonedas
         public void aceptarCupon(int idCupon)
         {
             Cupon cupon = CuponLN.obtenerCupon(idCupon);
-            hfCupon.Value = cupon.ID.ToString();
+            Session["Cupon"] = cupon;
+            //hfCupon.Value = cupon.ID.ToString();
             //lblDescripcion.Text = cupon.Descripcion;
             //lblEcoMonedasNesarias.Text = cupon.EcoMonedasNecesarias.ToString();
-            //lblNombre.Text = cupon.Nombre;
-            lblNombreC.Text = cupon.Nombre;
+            //lblNombre.InnerText = cupon.Nombre;
+            //lblNombreC.Text = cupon.Nombre;
             //lblValorComercial.Text = cupon.PrecioCanje.ToString();
         }
         public void limpiar()
         {
+            Session["Cupon"] = null;
             //hfCupon.Value = "";
             //lblDescripcion.Text = "";
             //lblEcoMonedasNesarias.Text = "";
@@ -98,13 +100,41 @@ namespace EcoMonedas
 
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
+            if (ErrorCantidad()!="")
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = ErrorCantidad();
+                return;
+
+            }
             EncabezadoCuponLN encC = new EncabezadoCuponLN();
-            bool encCupon = encC.GuardarEncCupon(((Usuario)Session["Usuario"]).CorreoElectronico, true, hfCupon.Value);
+            bool encCupon = encC.GuardarEncCupon(((Usuario)Session["Usuario"]).CorreoElectronico, true, ((Cupon)Session["Cupon"]).ID);
             if (encCupon)
             {
-                //hacer algo q le muestre q se logro guardar
+
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "Cupon adquirido satisfactoriamente!";
+                lblMensaje.CssClass = "alert alert-dismissible alert-success";
+
+            }
+            else
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "No se puede cambiar el cupon";
+
             }
             limpiar();
+        }
+
+        public  string ErrorCantidad()
+        {
+            BilleteraVirtual bv = BilleteraLN.obtenerBilleteraUsuario(((Usuario)Session["Usuario"]).CorreoElectronico);
+            string error = "";
+            if (bv.EcoMondedasDisponibles < ((Cupon)Session["Cupon"]).EcoMonedasNecesarias)
+            {
+                error = "No cuenta con EcoMonedas suficientes!";
+            }
+            return error;
         }
     }
 }

@@ -10,13 +10,33 @@
             $('#modalCanjearCupon').modal('show');
         }
     </script>
-    <div class="modal fade text-center py-5" id="modalCanjearCupon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade text-center py-5" id="modalCanjearCupon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">       
+                <img class="img-circle" id="img_logo" src="Imagenes/LogoT.png" />
+             
+            </div>
+            <div class="modal-body">
+                    <a class="#">Canjear Cupon></a>
+                    <p class="pb-1 text-muted">¿Está seguro que desea adquirir el cupón?</p>
+                    <p class="pb-1 text-muted"><small>Seleccione confirmar para proceder a hacer su transacción</small></p>
+                   
+            </div>
+            <div class="modal-footer">
+                     <button runat="server" onserverclick="btnVolver_Click" class="form-control btn"  data-dismiss="modalCanjearCupon" style="background-color:rgba(21, 21, 21, 0.78); color: white; border-color:#7ed957;">Cancelar</button>
+                    <button runat="server" onserverclick="btnCanjear_Click" class="form-control btn btn-primary">Confirmar canje</button>
+                </div>
+        </div>
+    </div>
+</div>
+     <%-- <div class="modal fade text-center py-5" id="modalCanjearCupon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img class="img-circle" id="img_logo" src="Imagenes/LogoT.png" />
                 </div>
-                <div class="modal-body">
+         
+         <div class="modal-body">
                     <div class="top-strip"></div>
                     <a class="#">Canjear Cupon <asp:Label ID="lblNombreC" runat="server" Text=""></asp:Label></a>
                     <p class="pb-1 text-muted">¿Está seguro que desea adquirir el cupón?</p>
@@ -28,23 +48,28 @@
                     </div>
                     <div class="input-group mb-3 w-75 mx-auto">
                              <span ><b>EcoMonedas Necesarias: </b>&cent; <asp:Label ID="lblEcoMonedasNesarias" runat="server"></asp:Label></span><br />
-                    </div>    			--%>
+                    </div>    		
                     <p class="pb-1 text-muted"><small>Seleccione confirmar para proceder a hacer su transacción</small></p>
                     <div class="bottom-strip"></div>
-                </div>
+               </div>
                 <div class="modal-footer">
-                    <%--<asp:Button runat="server" ID="btnVolver" CssClass="form-control btn" OnClick="btnVolver_Click" Text="Cancelar" BackColor="rgba(21, 21, 21, 0.78)" ForeColor="White"/>--%>
+                    <%--<asp:Button runat="server" ID="btnVolver" CssClass="form-control btn" OnClick="btnVolver_Click" Text="Cancelar" BackColor="rgba(21, 21, 21, 0.78)" ForeColor="White"/>
                     <button runat="server" class="form-control btn" onserverclick="btnVolver_Click" data-dismiss="modalCanjearCupon" style="background-color:rgba(21, 21, 21, 0.78); color: white; border-color:#7ed957;">Cancelar</button>
-                    <%--<asp:Button runat="server" ID="btnCanjear" CssClass="form-control btn btn-primary" data-dismiss="modalCanjearCupon" OnClick="btnCanjear_Click" Text="Confirmar compra del cupón"/>--%>
+                    <%--<asp:Button runat="server" ID="btnCanjear" CssClass="form-control btn btn-primary" data-dismiss="modalCanjearCupon" OnClick="btnCanjear_Click" Text="Confirmar compra del cupón"/>
                     <button runat="server" onserverclick="btnCanjear_Click" class="form-control btn btn-primary">Confirmar canje</button>
                 </div>
-                <asp:HiddenField ID="hfCupon" runat="server" />
+                
             </div>
         </div>
-    </div>
+    </div>--%> 
+   <%-- <asp:HiddenField ID="hfCupon" runat="server" />--%>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="container">
+                 <div class="row">
+            <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="alert alert-dismissible alert-warning" Visible="false"></asp:Label>
+        </div>
+      
                 <div class="container_inner default_template_holder clearfix page_container_inner">
                     <div class="row" style="margin-left: 15px;">
                         <div class="col-lg-3 col-sm-12">

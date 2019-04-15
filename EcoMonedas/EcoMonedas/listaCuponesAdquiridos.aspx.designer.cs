@@ -10,42 +10,24 @@
 namespace EcoMonedas {
     
     
-    public partial class CanjeCupones {
+    public partial class listaCuponesAdquiridos {
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control btnNuevoC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Button btnNuevoC;
         
         /// <summary>
-        /// Control lblMensaje.
+        /// Control grvLista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
-        
-        /// <summary>
-        /// Control btnBilletera.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBilletera;
-        
-        /// <summary>
-        /// Control listaCupones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView listaCupones;
+        protected global::System.Web.UI.WebControls.GridView grvLista;
     }
 }

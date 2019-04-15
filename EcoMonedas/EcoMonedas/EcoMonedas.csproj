@@ -115,6 +115,7 @@
     <Content Include="InicioE.aspx" />
     <Content Include="listaCanjesR.aspx" />
     <Content Include="listaCentrosAcopio.aspx" />
+    <Content Include="listaCuponesAdquiridos.aspx" />
     <Content Include="MantenimientoCentrosAcopio.aspx" />
     <Content Include="MantenimientoCupones.aspx" />
     <Content Include="MantenimientoMateriales.aspx" />
@@ -259,6 +260,13 @@
     </Compile>
     <Compile Include="listaCentrosAcopio.aspx.designer.cs">
       <DependentUpon>listaCentrosAcopio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaCuponesAdquiridos.aspx.cs">
+      <DependentUpon>listaCuponesAdquiridos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaCuponesAdquiridos.aspx.designer.cs">
+      <DependentUpon>listaCuponesAdquiridos.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoCentrosAcopio.aspx.cs">
       <DependentUpon>MantenimientoCentrosAcopio.aspx</DependentUpon>
