@@ -10,10 +10,11 @@ namespace EcoMonedas
 {
     public partial class CanjeCupones : System.Web.UI.Page
     {
+        int idCuponSeleccionado;
         String correoC = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            correoC = Request.QueryString["correoC"];
+            correoC = Request.QueryString["correoC"];           
             //if ((Usuario)Session["Usuario"] != null)
             //{
             //    if (((Usuario)Session["Usuario"]).RolID != 3)
@@ -53,10 +54,16 @@ namespace EcoMonedas
 
         protected void linkAgregar_Click(object sender, EventArgs e)
         {
+            //hfCupon.Value = "";
             ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
             int idCupon = Convert.ToInt32(listaCupones.DataKeys[fila.DataItemIndex].Values[0]);
+            idCuponSeleccionado = idCupon;
              try
             {
+                if (idCupon!=0)
+                {
+                    //hfCupon.Value = idCupon.ToString();
+                }
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalCanjeCupon();", true);
                 aceptarCupon(idCupon);
             }
