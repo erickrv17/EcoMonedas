@@ -10,10 +10,9 @@ namespace EcoMonedas
 {
     public partial class CanjeCupones : System.Web.UI.Page
     {
-        String correoC = "";
+        int idCuponSeleccionado;
         protected void Page_Load(object sender, EventArgs e)
         {
-            correoC = Request.QueryString["correoC"];
             //if ((Usuario)Session["Usuario"] != null)
             //{
             //    if (((Usuario)Session["Usuario"]).RolID != 3)
@@ -53,10 +52,16 @@ namespace EcoMonedas
 
         protected void linkAgregar_Click(object sender, EventArgs e)
         {
+            hfCupon.Value = "";
             ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
             int idCupon = Convert.ToInt32(listaCupones.DataKeys[fila.DataItemIndex].Values[0]);
+            idCuponSeleccionado = idCupon;
              try
             {
+                if (idCupon!=0)
+                {
+                    hfCupon.Value = idCupon.ToString();
+                }
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalCanjeCupon();", true);
                 aceptarCupon(idCupon);
             }
@@ -75,20 +80,16 @@ namespace EcoMonedas
         {
             Cupon cupon = CuponLN.obtenerCupon(idCupon);
             hfCupon.Value = cupon.ID.ToString();
+            idCuponSeleccionado = cupon.ID;
             //lblDescripcion.Text = cupon.Descripcion;
             //lblEcoMonedasNesarias.Text = cupon.EcoMonedasNecesarias.ToString();
             //lblNombre.Text = cupon.Nombre;
-            lblNombreC.Text = cupon.Nombre;
+            lblNombreC.Text = idCuponSeleccionado.ToString();
             //lblValorComercial.Text = cupon.PrecioCanje.ToString();
         }
         public void limpiar()
         {
-            //hfCupon.Value = "";
-            //lblDescripcion.Text = "";
-            //lblEcoMonedasNesarias.Text = "";
-            //lblNombre.Text = "";
-            //lblNombreC.Text = "";
-            //lblValorComercial.Text = "";
+            hfCupon.Value = "";
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
@@ -98,8 +99,7 @@ namespace EcoMonedas
 
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
-            EncabezadoCuponLN encC = new EncabezadoCuponLN();
-            bool encCupon = encC.GuardarEncCupon(((Usuario)Session["Usuario"]).CorreoElectronico, true, hfCupon.Value);
+            bool encCupon = EncabezadoCuponLN.GuardarEncCupon(((Usuario)Session["Usuario"]).CorreoElectronico, true, idCuponSeleccionado);
             if (encCupon)
             {
                 //hacer algo q le muestre q se logro guardar

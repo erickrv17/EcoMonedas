@@ -20,21 +20,20 @@ namespace Contexto
             EncabezadoCuponLN.queryListaEncabezadosCupon();
             return lista;
         }
-        public bool GuardarEncCupon(
+        public static bool GuardarEncCupon(
            string clienteId,          
            bool estado,
-           string cuponid
+           int cuponID
            )
         {
 
             EcoMonedasContext db = new EcoMonedasContext();
             var miEncCupon = new EncabezadoCupon();
-            int idCupon = 0;
            
             miEncCupon.ClienteID = clienteId;
             miEncCupon.Fecha = DateTime.Now;
             miEncCupon.Estado = estado;
-            miEncCupon.CuponID = Convert.ToInt32(cuponid);
+            miEncCupon.CuponID = cuponID;
             db.EncabezadoCupons.Add(miEncCupon);
             
             db.SaveChanges();
