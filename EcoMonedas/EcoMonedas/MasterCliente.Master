@@ -56,10 +56,8 @@
                                             </a>
                                             <!-- Dropdown - User Information -->
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                <%--<asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />--%>
                                                 <button runat="server" onserverclick="btnMU_ServerClick" id="btnMU" class="dropdown-item" style="color:#7ed957;">Módulo Usuario</button>
                                                 <div class="dropdown-divider"></div>
-                                                <%--<asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />--%>
                                                 <button runat="server" onserverclick="btnCerrarSesion_Click1" id="btnCS" style="color:#7ed957;" class="dropdown-item">Cerrar Sesión</button>
                                             </div>
                                         </li>
@@ -96,7 +94,6 @@
                                     <ul>
                                         <li><a href="PaginaPrincipalCliente.aspx">Inicio</a></li>
                                         <li><a href="BilleteraVirtualCliente.aspx">Billetera Virtual</a></li>
-                                        <li><a href="#">Perfil Usuario</a></li>
                                         <li><a href="#Contactenos">Contactenos</a></li>
                                         <li><a href="InicioE.aspx" style="color: #7ed957">Inicio de Eco-Monedas</a></li>
                                         <li class="nav-item dropdown">
@@ -106,9 +103,8 @@
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                               <a class="dropdown-item" href="CanjeCupones.aspx">Canjear Cupon</a>
                                               <a class="dropdown-item" href="listaCuponesAdquiridos.aspx">Cupones adquiridos</a>
-                                                 <a class="dropdown-item" href="#">Devolver cupones</a>
-                                            
-                                               </div>
+                                              <a class="dropdown-item" href="#">Devolver cupones</a>
+                                            </div>
                                          </li>
                                       
                                     </ul>
