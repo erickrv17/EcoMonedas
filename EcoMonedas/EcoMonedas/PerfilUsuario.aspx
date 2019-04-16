@@ -20,7 +20,7 @@
     <link href="Content/checkboxes.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg" style="background-color: #f5f7fa; box-shadow: 0px 1px 0px 0px black;">
+    <nav class="navbar navbar-expand-lg navbar-expand-md" style="background-color: #f5f7fa; box-shadow: 0px 1px 0px 0px black; margin-top:100px; margin-left:60px; margin-right:60px;">
         <a class="navbar-brand" href="InicioE.aspx">
             <img src="Imagenes/LogoT.png" width="60" height="30" /></a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase text-white rounded" style="background-color: #7ed957;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

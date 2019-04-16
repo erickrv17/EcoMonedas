@@ -118,9 +118,7 @@
     <Content Include="packages.config" />
     <Content Include="paginaMaestra.Master" />
     <Content Include="PaginaPrincipalCliente.aspx" />
-    <Content Include="PerfilCliente.aspx" />
     <Content Include="PerfilUsuario.aspx" />
-    <Content Include="PerfilUsuarioEM.aspx" />
     <Content Include="PrincipalAdminCentroA.aspx" />
     <Content Include="PrincipalAdministrador.aspx" />
     <Content Include="ReporteMateriales.aspx" />
@@ -327,26 +325,12 @@
     <Compile Include="PaginaPrincipalCliente.aspx.designer.cs">
       <DependentUpon>PaginaPrincipalCliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PerfilCliente.aspx.cs">
-      <DependentUpon>PerfilCliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PerfilCliente.aspx.designer.cs">
-      <DependentUpon>PerfilCliente.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PerfilUsuario.aspx.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PerfilUsuario.aspx.designer.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PerfilUsuarioEM.aspx.cs">
-      <DependentUpon>PerfilUsuarioEM.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PerfilUsuarioEM.aspx.designer.cs">
-      <DependentUpon>PerfilUsuarioEM.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalAdminCentroA.aspx.cs">
       <DependentUpon>PrincipalAdminCentroA.aspx</DependentUpon>
