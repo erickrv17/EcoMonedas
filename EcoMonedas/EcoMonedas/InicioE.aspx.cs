@@ -17,6 +17,8 @@ namespace EcoMonedas
             {
                 lblregistrese.Visible = false;
                 lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
+                txtNombreC.Value = ((Usuario)Session["Usuario"]).Nombre;
+                txtCorreoC.Value = ((Usuario)Session["Usuario"]).CorreoElectronico;
                 if (((Usuario)Session["Usuario"]).Rol.ID==1)
                 {
                     btnMU.InnerText = "Módulo Administrador";
@@ -165,6 +167,8 @@ namespace EcoMonedas
             if ((Usuario)Session["Usuario"] != null)
             {
                 lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
+                txtNombreC.Value = ((Usuario)Session["Usuario"]).Nombre;
+                txtCorreoC.Value = ((Usuario)Session["Usuario"]).CorreoElectronico;
                 if (((Usuario)Session["Usuario"]).Rol.ID == 1)
                 {
                     Response.Redirect("PrincipalAdministrador.aspx");
@@ -193,6 +197,11 @@ namespace EcoMonedas
                 lblNombreUsuario.Text = "¡Bienvenido!";
                 Response.Redirect("InicioE.aspx");
             }
+        }
+
+        protected void btnConfirmar_ServerClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

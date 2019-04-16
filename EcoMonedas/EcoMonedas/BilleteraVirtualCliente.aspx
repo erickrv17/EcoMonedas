@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <div class="card border-info mx-sm-1 p-3" style="height: 230px;">
+            <div class="card border-info mx-sm-1 p-3">
                 <div class="card border-danger shadow p-3 my-card" style="width: 55px; color: red;"><span class="fa fa-money-bill" aria-hidden="true"></span></div>
                 <div class="text-info text-center mt-3">
                     <h4>Ecomonedas Gastadas</h4>

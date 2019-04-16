@@ -84,20 +84,14 @@
     <Content Include="Content\formularioCanje.css" />
     <Content Include="detalleCanje.aspx" />
     <Content Include="detalleCentroAcopio.aspx" />
-    <Content Include="Imagenes\AcercaDe.png" />
     <Content Include="Imagenes\Banner3.png" />
     <Content Include="Imagenes\Banner4.png" />
-    <Content Include="Imagenes\Contactenos.png" />
     <Content Include="Imagenes\Cuenta.png" />
     <Content Include="Imagenes\EcoCupon.png" />
     <Content Include="Imagenes\EditarPerfil.png" />
     <Content Include="Imagenes\EditarPerfilAC.png" />
-    <Content Include="Imagenes\FlechaAbajo.png" />
     <Content Include="Imagenes\Funciones.png" />
     <Content Include="Imagenes\FuncionesAC.png" />
-    <Content Include="Imagenes\HojaBreadC.png" />
-    <Content Include="Imagenes\IconoInfoC.png" />
-    <Content Include="Imagenes\Inicio.png" />
     <Content Include="Imagenes\logo.png" />
     <Content Include="Imagenes\LogoP.png" />
     <Content Include="Imagenes\LogoT.png" />
@@ -109,6 +103,7 @@
     <Content Include="Imagenes\Patrocinadores\numar.jpg" />
     <Content Include="Imagenes\Patrocinadores\sardimar.jpg" />
     <Content Include="Imagenes\Patrocinadores\sur.png" />
+    <Content Include="Imagenes\PerfilUEM.png" />
     <Content Include="Imagenes\Separador.png" />
     <Content Include="Imagenes\Separador2.png" />
     <Content Include="Imagenes\Usuario.png" />
@@ -122,9 +117,10 @@
     <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="packages.config" />
     <Content Include="paginaMaestra.Master" />
-    <Content Include="Imagenes\IconoInfoR.png" />
     <Content Include="PaginaPrincipalCliente.aspx" />
     <Content Include="PerfilCliente.aspx" />
+    <Content Include="PerfilUsuario.aspx" />
+    <Content Include="PerfilUsuarioEM.aspx" />
     <Content Include="PrincipalAdminCentroA.aspx" />
     <Content Include="PrincipalAdministrador.aspx" />
     <Content Include="ReporteMateriales.aspx" />
@@ -337,6 +333,20 @@
     </Compile>
     <Compile Include="PerfilCliente.aspx.designer.cs">
       <DependentUpon>PerfilCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilUsuarioEM.aspx.cs">
+      <DependentUpon>PerfilUsuarioEM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuarioEM.aspx.designer.cs">
+      <DependentUpon>PerfilUsuarioEM.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalAdminCentroA.aspx.cs">
       <DependentUpon>PrincipalAdminCentroA.aspx</DependentUpon>

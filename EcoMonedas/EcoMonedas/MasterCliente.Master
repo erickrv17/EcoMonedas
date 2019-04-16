@@ -56,9 +56,11 @@
                                             </a>
                                             <!-- Dropdown - User Information -->
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                <button runat="server" onserverclick="btnMU_ServerClick" id="btnMU" class="dropdown-item" style="color:#7ed957;">Módulo Usuario</button>
+                                                <button runat="server" onserverclick="btnMU_ServerClick" id="btnMU" class="dropdown-item" style="color: #7ed957;">Módulo Usuario</button>
                                                 <div class="dropdown-divider"></div>
-                                                <button runat="server" onserverclick="btnCerrarSesion_Click1" id="btnCS" style="color:#7ed957;" class="dropdown-item">Cerrar Sesión</button>
+                                                <button runat="server" onserverclick="btnPerfil_ServerClick" id="btnPerfil" class="dropdown-item" style="color: #7ed957;">Perfil Usuario</button>
+                                                <div class="dropdown-divider"></div>
+                                                <button runat="server" onserverclick="btnCerrarSesion_Click1" id="btnCS" style="color: #7ed957;" class="dropdown-item">Cerrar Sesión</button>
                                             </div>
                                         </li>
                                     </ul>
@@ -93,20 +95,19 @@
                                 <div class="classynav">
                                     <ul>
                                         <li><a href="PaginaPrincipalCliente.aspx">Inicio</a></li>
+                                        <li><a href="InicioE.aspx">Inicio de Eco-Monedas</a></li>
                                         <li><a href="BilleteraVirtualCliente.aspx">Billetera Virtual</a></li>
-                                        <li><a href="#Contactenos">Contactenos</a></li>
-                                        <li><a href="InicioE.aspx" style="color: #7ed957">Inicio de Eco-Monedas</a></li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              Procesos
+                                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="navbarDropdownMenuLink">Procesos
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                              <a class="dropdown-item" href="CanjeCupones.aspx">Canjear Cupon</a>
-                                              <a class="dropdown-item" href="listaCuponesAdquiridos.aspx">Cupones adquiridos</a>
-                                              <a class="dropdown-item" href="#">Devolver cupones</a>
+                                                <a class="dropdown-item" href="CanjeCupones.aspx">Canjear Cupon</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="listaCuponesAdquiridos.aspx">Cupones adquiridos</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Devolver cupones</a>
                                             </div>
-                                         </li>
-                                      
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- Nav End -->
@@ -124,11 +125,9 @@
         </header>
         <div class="academy-courses-area section-padding-100-0">
             <div class="container">
-                <div class="row">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
 

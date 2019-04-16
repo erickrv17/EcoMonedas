@@ -13,48 +13,57 @@ namespace EcoMonedas {
     public partial class PaginaPrincipalCliente {
         
         /// <summary>
-        /// Control txtNombre.
+        /// Control lblNombreBienv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblNombreBienv;
         
         /// <summary>
-        /// Control txtCorreo.
+        /// Control txtNombreC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNombreC;
         
         /// <summary>
-        /// Control txtAsunto.
+        /// Control txtCorreoC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAsunto;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCorreoC;
         
         /// <summary>
-        /// Control txtMensaje.
+        /// Control txtAsuntoC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMensaje;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAsuntoC;
         
         /// <summary>
-        /// Control btnEnviar.
+        /// Control txtMensajeC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtMensajeC;
+        
+        /// <summary>
+        /// Control btnConfirmar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnConfirmar;
     }
 }

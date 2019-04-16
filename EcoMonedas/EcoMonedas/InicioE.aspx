@@ -47,10 +47,10 @@
                                             <!-- Dropdown - User Information -->
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                                 <%--<asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />--%>
-                                                <button runat="server" onserverclick="btnModuloUsuario_Click" id="btnMU" class="dropdown-item" style="color:#7ed957;">Módulo Usuario</button>
+                                                <button runat="server" onserverclick="btnModuloUsuario_Click" id="btnMU" class="dropdown-item" style="color: #7ed957;">Módulo Usuario</button>
                                                 <div class="dropdown-divider"></div>
                                                 <%--<asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />--%>
-                                                <button runat="server" onserverclick="btnCerrarSesion_Click" id="btnCS" style="color:#7ed957;" class="dropdown-item">Cerrar Sesión</button>
+                                                <button runat="server" onserverclick="btnCerrarSesion_Click" id="btnCS" style="color: #7ed957;" class="dropdown-item">Cerrar Sesión</button>
                                             </div>
                                         </li>
                                     </ul>
@@ -244,26 +244,28 @@
                             </div>
                             <br />
                             <div runat="server" role="form" class="contactForm">
-                                <div class="row form-group">
-                                    <div class="col-6">
-                                        <label><b>Nombre:</b> </label>
-                                        <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
+                                <div runat="server" role="form" class="contactForm">
+                                    <div class="row form-group">
+                                        <div class="col-6">
+                                            <label><b>Nombre:</b> </label>
+                                            <input class="form-control" id="txtNombreC" type="text" runat="server" />
+                                        </div>
+                                        <div class="col-6">
+                                            <label><b>Correo Electrónico:</b> </label>
+                                            <input class="form-control" id="txtCorreoC" type="text" runat="server" />
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                        <label><b>Correo Electrónico:</b> </label>
-                                        <asp:TextBox ID="txtCorreo" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <div class="form-group">
+                                        <label><b>Asunto:</b> </label>
+                                        <input class="form-control" id="txtAsuntoC" type="text" runat="server" />
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label><b>Asunto:</b> </label>
-                                    <asp:TextBox ID="txtAsunto" CssClass="form-control" runat="server"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <label><b>Mensaje:</b> </label>
-                                    <asp:TextBox ID="txtMensaje" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
-                                </div>
-                                <div class="text-center">
-                                    <asp:Button ID="btnEnviar" runat="server" CssClass="btn btn-outline-dark" Text="Enviar" />
+                                    <div class="form-group">
+                                        <label><b>Mensaje:</b> </label>
+                                        <textarea class="form-control" id="txtMensajeC" runat="server" rows="5"></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn" style="background-color: #7ed957; border-color: black; color: #000;" id="btnConfirmar" runat="server" onserverclick="btnConfirmar_ServerClick">Enviar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -424,7 +426,7 @@
 
                         <img class="img-circle" id="img_logo" src="Imagenes/LogoT.png" />
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            <span class="fa fa-remove" aria-hidden="true"></span>
                         </button>
                     </div>
 
@@ -451,7 +453,6 @@
                             </div>
                             <div class="modal-footer">
                                 <div>
-                                    <%--<asp:Button ID="btnIngresar" class="btn btn-success" runat="server" Text="Iniciar Sesión" OnClick="btnIngresar_Click" />--%>
                                     <button runat="server" class="btn btn-success" onserverclick="btnIngresar_Click">Iniciar Sesión</button>
                                 </div>
                                 <div>

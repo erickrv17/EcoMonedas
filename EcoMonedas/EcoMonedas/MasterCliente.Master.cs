@@ -90,5 +90,10 @@ namespace EcoMonedas
                 Response.Redirect("InicioE.aspx");
             }
         }
+
+        protected void btnPerfil_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("PerfilCliente.aspx");
+        }
     }
 }

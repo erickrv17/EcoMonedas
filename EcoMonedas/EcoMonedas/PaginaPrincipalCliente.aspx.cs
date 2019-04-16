@@ -32,12 +32,22 @@ namespace EcoMonedas
                         }
                     }
 
+                } else
+                {
+                    lblNombreBienv.InnerText = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido +" "+ ((Usuario)Session["Usuario"]).SegundoApellido;
+                    txtNombreC.Value = ((Usuario)Session["Usuario"]).Nombre;
+                    txtCorreoC.Value = ((Usuario)Session["Usuario"]).CorreoElectronico;
                 }
             }
             else
             {
                 Response.Redirect("InicioE.aspx");
             }
+        }
+
+        protected void btnConfirmar_ServerClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
