@@ -14,37 +14,37 @@ namespace EcoMonedas
         String correoC = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            correoC = Request.QueryString["correoC"];           
-            //if ((Usuario)Session["Usuario"] != null)
-            //{
-            //    if (((Usuario)Session["Usuario"]).RolID != 3)
-            //    {
-            //        if (((Usuario)Session["Usuario"]).RolID == 1)
-            //        {
-            //            Response.Redirect("PrincipalAdministrador.aspx");
-            //        }
-            //        else
-            //        {
-            //            if (((Usuario)Session["Usuario"]).RolID == 2)
-            //            {
-            //                Response.Redirect("PaginaPrincipalAdminCentroA.aspx");
-            //            }
-            //            else
-            //            {
-            //                Response.Redirect("InicioE.aspx");
-            //            }
-            //        }
+            correoC = Request.QueryString["correoC"];
+            if ((Usuario)Session["Usuario"] != null)
+            {
+                if (((Usuario)Session["Usuario"]).RolID != 3)
+                {
+                    if (((Usuario)Session["Usuario"]).RolID == 1)
+                    {
+                        Response.Redirect("PrincipalAdministrador.aspx");
+                    }
+                    else
+                    {
+                        if (((Usuario)Session["Usuario"]).RolID == 2)
+                        {
+                            Response.Redirect("PaginaPrincipalAdminCentroA.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("InicioE.aspx");
+                        }
+                    }
 
-            //    }
-            //    if (correoC == "" || correoC == null)
-            //    {
-            //        Response.Redirect("SolicitudCorreoUCanjearCupon.aspx");
-            //    }
-            //}
-            //else
-            //{
-            //    Response.Redirect("InicioE.aspx");
-            //}
+                }
+                if (correoC == "" || correoC == null)
+                {
+                    Response.Redirect("SolicitudCorreoUCanjearCupon.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("InicioE.aspx");
+            }
         }
         public IEnumerable<Cupon> listadoCupones()
         {
