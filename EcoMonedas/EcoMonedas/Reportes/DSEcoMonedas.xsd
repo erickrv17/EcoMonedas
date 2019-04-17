@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEcoMonedas" targetNamespace="http://tempuri.org/DSEcoMonedas.xsd" xmlns:mstns="http://tempuri.org/DSEcoMonedas.xsd" xmlns="http://tempuri.org/DSEcoMonedas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="EcoMonedasContext" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EcoMonedasContext (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.EcoMonedasContext.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EcoMonedasContext (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CentroAcopio.Nombre AS nombreCentro, EncabezadoCanje.Fecha AS fechaCanje, sum(DetalleCanje.Total) AS TotalPorFactura, EncabezadoCanje.ID AS numeroFactura
+FROM            EncabezadoCanje INNER JOIN
+                         DetalleCanje ON EncabezadoCanje.ID = DetalleCanje.EncabezadoCanjeID INNER JOIN
+                         CentroAcopio ON EncabezadoCanje.CentroAcopioID = CentroAcopio.ID group by CentroAcopio.Nombre,EncabezadoCanje.Fecha,EncabezadoCanje.ID  order by EncabezadoCanje.Fecha desc
+
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombreCentro" DataSetColumn="nombreCentro" />
+              <Mapping SourceColumn="fechaCanje" DataSetColumn="fechaCanje" />
+              <Mapping SourceColumn="TotalPorFactura" DataSetColumn="TotalPorFactura" />
+              <Mapping SourceColumn="numeroFactura" DataSetColumn="numeroFactura" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEcoMonedas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEcoMonedas" msprop:Generator_UserDSName="DSEcoMonedas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombreCentro" msprop:Generator_ColumnVarNameInTable="columnnombreCentro" msprop:Generator_ColumnPropNameInRow="nombreCentro" msprop:Generator_ColumnPropNameInTable="nombreCentroColumn" msprop:Generator_UserColumnName="nombreCentro">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechaCanje" msprop:Generator_ColumnVarNameInTable="columnfechaCanje" msprop:Generator_ColumnPropNameInRow="fechaCanje" msprop:Generator_ColumnPropNameInTable="fechaCanjeColumn" msprop:Generator_UserColumnName="fechaCanje" type="xs:dateTime" />
+              <xs:element name="TotalPorFactura" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalPorFactura" msprop:Generator_ColumnPropNameInRow="TotalPorFactura" msprop:Generator_ColumnPropNameInTable="TotalPorFacturaColumn" msprop:Generator_UserColumnName="TotalPorFactura" type="xs:int" minOccurs="0" />
+              <xs:element name="numeroFactura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnnumeroFactura" msprop:Generator_ColumnPropNameInRow="numeroFactura" msprop:Generator_ColumnPropNameInTable="numeroFacturaColumn" msprop:Generator_UserColumnName="numeroFactura" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:numeroFactura" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

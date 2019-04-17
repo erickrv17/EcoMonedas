@@ -22,8 +22,7 @@ namespace EcoMonedas
                 txtPrimerApellido.Text = user.PrimerApellido;
                 txtSegundoApellido.Text = user.SegundoApellido;
                 txtTelefono.Text = user.Telefono;
-                chkEstado.Checked = user.Estado;
-                lblNombreUs.Text = "¡Bienvenido! "+user.Nombre;
+               lblNombreUs.Text = "¡Bienvenido! "+user.Nombre;
                 if (((Usuario)Session["Usuario"]).RolID == 1)
                 {
                     ModuloUsuario.InnerText = "Inicio Administrador";
@@ -55,7 +54,30 @@ namespace EcoMonedas
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            Usuario usuario =(Usuario)Session["Usuario"];
+            usuario.Nombre = txtNombre.Text;
+            usuario.PrimerApellido = txtPrimerApellido.Text;
+            usuario.SegundoApellido = txtSegundoApellido.Text;
+            usuario.Telefono = txtTelefono.Text;
+            usuario.Direccion = txtDireccion.Text;
+            usuario.contrasenia = txtPassword.Text;
+            try
+            {
+                UsuarioLN us = new UsuarioLN();
+                us.actaulizaUsuario(usuario);
 
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "Sus datos se han actualizado satisfactoriamente!";
+                lblMensaje.CssClass = "alert alert-dismissible alert-success";
+                
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "No se puede actualizar su perfil, Error : "+ex.Message ;
+                return;
+            }
+            
         }
 
         protected void ModuloUsuario_ServerClick(object sender, EventArgs e)

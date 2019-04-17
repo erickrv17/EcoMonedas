@@ -111,7 +111,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea">Correo electronico</label>
-                            <asp:TextBox ID="txtCorreo" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtCorreo" enable="false" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*El correo es requerido." ControlToValidate="txtCorreo" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group">
@@ -125,13 +125,7 @@
                             <asp:TextBox ID="txtDireccion" TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*La dirección es requerida." ControlToValidate="txtDireccion" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
-                        <div class="form-group">
-                            <label class="checkBoxEstado" style="font-size: 14px; font-weight: 700;">
-                                Activo
-                                <asp:CheckBox runat="server" ID="chkEstado" />
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
+                       
                         <br />
 
                         <asp:HiddenField ID="hfUsuarioID" runat="server" Value="" />

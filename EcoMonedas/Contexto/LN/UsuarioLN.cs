@@ -127,7 +127,15 @@ namespace Contexto
             
              miUsuario = db.Usuarios.Where(p => p.CorreoElectronico == user.CorreoElectronico).First<Usuario>();
             miUsuario.Disponible = user.Disponible;
-            db.SaveChanges();
+
+            miUsuario.Nombre = user.Nombre;
+            miUsuario.PrimerApellido = user.PrimerApellido;
+            miUsuario.SegundoApellido = user.SegundoApellido;
+            miUsuario.contrasenia = user.contrasenia;
+            miUsuario.Telefono = user.Telefono;
+            miUsuario.Direccion = user.Direccion;
+
+                db.SaveChanges();
 
         }
         public void insertaUsuario(Usuario user)
