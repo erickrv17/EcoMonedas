@@ -98,7 +98,7 @@
                 </a>
             </div>
             <div class="col-xl-6 col-md-6 mb-4">
-                <a href="#">
+                <a href="PerfilUsuario.aspx">
                     <div class="card border-left shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
@@ -154,7 +154,7 @@
                             <p>El Administrador puede: </p>
                             <p>Editar o Añadir datos personales en su perfil, haciendo clic acá abajo en el link ↓</p>
                             <br />
-                            <a href="#" style="color: #7ed957; text-align: center;" title="Clic para ir al Perfil">Ir al Perfil del Administrador →</a>
+                            <a href="PerfilUsuario.aspx" style="color: #7ed957; text-align: center;" title="Clic para ir al Perfil">Ir al Perfil del Administrador →</a>
                         </div>
                         <div class="card-footer py-3">
                             <h6 class="m-0 font-weight-bold" style="color: #000; text-align: center;">Eco-Monedas</h6>

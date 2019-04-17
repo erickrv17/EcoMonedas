@@ -80,7 +80,7 @@
                         <p>El Administrador de Centro de Acopio puede: </p>
                         <p>Editar o Añadir datos personales en su perfil, haciendo clic acá abajo en el link ↓</p>
 
-                        <a href="#" style="color:#7ed957; text-align:center;" title="Clic para ir al Perfil del Admin.C.A">Ir a su Perfil de Administrador de Centro de Acopio →</a>
+                        <a href="PerfilUsuario.aspx" style="color:#7ed957; text-align:center;" title="Clic para ir al Perfil del Admin.C.A">Ir a su Perfil de Administrador de Centro de Acopio →</a>
                     </div>
                     <div class="card-footer py-3">
                         <h6 class="m-0 font-weight-bold" style="color:#000; text-align:center;">Eco-Monedas</h6>

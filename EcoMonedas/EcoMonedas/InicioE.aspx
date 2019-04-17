@@ -49,6 +49,8 @@
                                                 <%--<asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />--%>
                                                 <button runat="server" onserverclick="btnModuloUsuario_Click" id="btnMU" class="dropdown-item" style="color: #7ed957;">Módulo Usuario</button>
                                                 <div class="dropdown-divider"></div>
+                                                <button runat="server" onserverclick="btnPerfil_ServerClick" id="btnPerfil" class="dropdown-item" style="color: #7ed957;">Perfil Usuario</button>
+                                                <div class="dropdown-divider"></div>
                                                 <%--<asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />--%>
                                                 <button runat="server" onserverclick="btnCerrarSesion_Click" id="btnCS" style="color: #7ed957;" class="dropdown-item">Cerrar Sesión</button>
                                             </div>

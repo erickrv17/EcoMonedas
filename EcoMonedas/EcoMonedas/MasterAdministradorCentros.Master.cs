@@ -15,6 +15,7 @@ namespace EcoMonedas
             if ((Usuario)Session["Usuario"] != null)
             {
                 lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
+                lblCentroAcopio.Text = buscarNombreCentro(((Usuario)Session["Usuario"]).CorreoElectronico);
                 if (((Usuario)Session["Usuario"]).Rol.ID == 1)
                 {
                     btnModuloUsuario.Text = "Módulo Administrador";
@@ -44,6 +45,13 @@ namespace EcoMonedas
             }
         }
 
+        private string buscarNombreCentro(string idUsuario)
+        {
+            CentroAcopio centro= CentroAcopioLN.obtenerCentroAcopioPorID(idUsuario);
+            lblCentroAcopio.Text = centro.Nombre;
+            return centro.Nombre;
+        }
+
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             try
@@ -61,7 +69,15 @@ namespace EcoMonedas
             }
         }
 
-        protected void btnModuloUsuario_Click(object sender, EventArgs e)
+        protected void btnPerfilU_Click(object sender, EventArgs e)
+        {
+            if (Session["Usuario"]!=null)
+            {
+                Response.Redirect("PerfilUsuario.aspx");
+            }
+        }
+
+        protected void btnModuloUsuario_Click1(object sender, EventArgs e)
         {
             Response.Redirect("PrincipalAdminCentroA.aspx");
         }

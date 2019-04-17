@@ -3,42 +3,32 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Eco-Monedas Perfil Usuario</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/checkboxes.css" rel="stylesheet" />
+    <link href="Content/botonA.css" rel="stylesheet" />
+    <script src="Scripts/botonA.js"></script>
+    <link href="Template/TemplateInicio/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-expand-md" style="background-color: #f5f7fa; box-shadow: 0px 1px 0px 0px black; margin-top:100px; margin-left:60px; margin-right:60px;">
-        <a class="navbar-brand" href="InicioE.aspx">
-            <img src="Imagenes/LogoT.png" width="60" height="30" /></a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase text-white rounded" style="background-color: #7ed957;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menú
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor03">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" runat="server" id="ModuloUsuario" onserverclick="ModuloUsuario_ServerClick">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="InicioE.aspx">Inicio Ecomonedas</a>
-                </li>
-            </ul>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2">
+            <a href="InicioE.aspx">
+                <img src="Imagenes/LogoP.png" alt="" width="153" /></a>
         </div>
-    </nav>
+        <div class="col-lg-7"></div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+
+    <a class="ir-arriba" href="#" title="Volver arriba" style="background-color: #7ed957;">
+        <i class="fa fa-arrow-up"></i>
+    </a>
     <div class="container">
         <div class="row">
             <div class="col-sm-10">
@@ -47,30 +37,19 @@
             </div>
             <div class="col-sm-2">
                 <div class="pull-right">
-                    <img title="profile image" class="img-circle img-responsive" src="Imagenes/PerfilUEM.png" />
+                    <img title="Perfil Usuario Eco-Monedas" class="img-circle img-responsive" src="Imagenes/PerfilUEM.png" />
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
-
-
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" style="margin-bottom:200px;">
                 <ul class="list-group">
-                    <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+                    <li class="list-group-item" style="background-color: #7ed957; color: white;"><i class="fa fa-list fa-1x" style="color: white;"></i> Menú de Navegación</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong><a class="nav-link" runat="server" id="ModuloUsuario" onserverclick="ModuloUsuario_ServerClick">Inicio</a></strong></span><i class="fa fa-arrow-circle-left"></i></li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong><a class="nav-link" href="InicioE.aspx">Inicio Eco-Monedas</a></strong></span><i class="fa fa-home"></i></li>
                 </ul>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">Social Media</div>
-                    <div class="panel-body">
-                        <i class="fa fa-facebook fa-2x"></i><i class="fa fa-github fa-2x"></i><i class="fa fa-twitter fa-2x"></i><i class="fa fa-pinterest fa-2x"></i><i class="fa fa-google-plus fa-2x"></i>
-                    </div>
-                </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
                 <div class="tab-content">
                     <form id="form1" runat="server">
                         <div class="row">
@@ -156,24 +135,24 @@
                         <br />
 
                         <asp:HiddenField ID="hfUsuarioID" runat="server" Value="" />
-                        <asp:Button ID="btnRegistrar" runat="server" CssClass="btn" BackColor="#7ed957" ForeColor="white" BorderColor="Black" Text="Registrar" OnClick="btnRegistrar_Click" />
+                        <asp:Button ID="btnRegistrar" runat="server" CssClass="btn" BackColor="#7ed957" ForeColor="white" BorderColor="Black" Text="Editar" OnClick="btnRegistrar_Click" />
                     </form>
                 </div>
             </div>
         </div>
     </div>
-     <footer class="row">
-            <div class="bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <p style="color: white;">
-                                Copyright &copy; Eco-Monedas I Cuatrimestre 2019 | César Fallas y Erick Rodríguez
-                            </p>
-                        </div>
+    <footer class="row">
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p style="color: white;">
+                            Copyright &copy; Eco-Monedas I Cuatrimestre 2019 | César Fallas y Erick Rodríguez
+                        </p>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 </html>

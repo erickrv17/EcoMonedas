@@ -1,0 +1,48 @@
+﻿.ir-arriba {
+        display:none;
+        padding:20px;
+        background-repeat: no-repeat;
+        font-size:20px;
+        color:white;
+        cursor:pointer;
+        position: fixed;
+        bottom:20px;
+        right:20px;
+        z-index: 2;
+}
+
+a {
+
+    font-weight: 700;
+    text-transform: uppercase;
+    color:black;
+}
+
+a:hover{
+    background-color:#7ed957;
+    border-radius:10px;
+    color:#fff;
+}
+
+.img-responsive{
+    border-radius:60px;
+}
+
+ul {
+
+    padding: 0 12px;
+    display: block;
+    height: 35px;
+    font-size: 14px;
+    line-height: 34px;
+    color:#7ed957;
+
+}
+
+.list-group-item{
+    color:white;
+}
+
+nav {
+    height:85px;
+}

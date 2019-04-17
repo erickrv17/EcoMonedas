@@ -93,7 +93,7 @@ namespace EcoMonedas
 
         protected void btnPerfil_ServerClick(object sender, EventArgs e)
         {
-            Response.Redirect("PerfilCliente.aspx");
+            Response.Redirect("PerfilUsuario.aspx");
         }
     }
 }

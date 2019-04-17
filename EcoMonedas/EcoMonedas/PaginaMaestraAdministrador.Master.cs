@@ -66,5 +66,13 @@ namespace EcoMonedas
         {
             Response.Redirect("PrincipalAdministrador.aspx");
         }
+
+        protected void btnPerfil_Click(object sender, EventArgs e)
+        {
+            if (Session["Usuario"]!=null)
+            {
+                Response.Redirect("PerfilUsuario.aspx");
+            }
+        }
     }
 }

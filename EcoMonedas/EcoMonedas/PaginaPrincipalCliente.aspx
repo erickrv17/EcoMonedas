@@ -60,7 +60,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-6">
-                    <a href="PerfilCliente.aspx" style="text-decoration-color: #7ed957;">
+                    <a href="PerfilUsuario.aspx" style="text-decoration-color: #7ed957;">
                         <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
                             <div class="course-content">
                                 <h4>Editar tu Perfil</h4>

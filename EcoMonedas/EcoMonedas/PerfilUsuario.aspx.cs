@@ -23,6 +23,7 @@ namespace EcoMonedas
                 txtSegundoApellido.Text = user.SegundoApellido;
                 txtTelefono.Text = user.Telefono;
                 chkEstado.Checked = user.Estado;
+                lblNombreUs.Text = "¡Bienvenido! "+user.Nombre;
                 if (((Usuario)Session["Usuario"]).RolID == 1)
                 {
                     ModuloUsuario.InnerText = "Inicio Administrador";
@@ -86,5 +87,6 @@ namespace EcoMonedas
                 Response.Redirect("InicioE.aspx");
             }
         }
+        
     }
 }
