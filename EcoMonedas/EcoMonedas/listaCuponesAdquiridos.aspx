@@ -13,7 +13,7 @@
     </div>
     <asp:Gridview ID="grvLista" runat="server" CssClass="table table-hover overflow-auto" DataKeyNames="ID" GridLines="Vertical" CellPadding="4" AutoGenerateColumns="false" OnSelectedIndexChanged="grvLista_SelectedIndexChanged">
         <Columns>
-            <asp:CommandField ControlStyle-CssClass="btn btn-primary" SelectText="Descargar cupon" ShowSelectButton="True" ButtonType="Button"></asp:CommandField>
+            <asp:CommandField ControlStyle-CssClass="btn btn-primary" SelectText="Detalle del cupon" ShowSelectButton="True" ButtonType="Button"></asp:CommandField>
             <asp:BoundField DataField="ID" HeaderText="Factura #:"></asp:BoundField>
             <asp:BoundField DataField="CuponID" HeaderText="Codigo del cupon:"></asp:BoundField>
             <asp:BoundField DataField="Fecha" HeaderText="Fecha de Adquisicion:"></asp:BoundField>

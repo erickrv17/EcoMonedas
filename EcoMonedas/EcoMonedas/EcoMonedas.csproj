@@ -85,6 +85,7 @@
     <Content Include="Content\formularioCanje.css" />
     <Content Include="detalleCanje.aspx" />
     <Content Include="detalleCentroAcopio.aspx" />
+    <Content Include="detalleCupon.aspx" />
     <Content Include="Imagenes\Banner3.png" />
     <Content Include="Imagenes\Banner4.png" />
     <Content Include="Imagenes\Cuenta.png" />
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="detalleCentroAcopio.aspx.designer.cs">
       <DependentUpon>detalleCentroAcopio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detalleCupon.aspx.cs">
+      <DependentUpon>detalleCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalleCupon.aspx.designer.cs">
+      <DependentUpon>detalleCupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioE.aspx.cs">
       <DependentUpon>InicioE.aspx</DependentUpon>
@@ -437,6 +445,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\reporteCupon.rdlc" />
     <EmbeddedResource Include="Reportes\reporteEcoMonedasPorCentroDeAcopio.rdlc" />
     <EmbeddedResource Include="Reportes\reporteMaterialNombre.rdlc" />
     <EmbeddedResource Include="Reportes\reportePrueba.rdlc" />

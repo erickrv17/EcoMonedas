@@ -84,6 +84,13 @@ namespace Contexto
             IEnumerable<Cupon> lista = (IEnumerable<Cupon>)CuponLN.ListaCupones(estado);
             return lista;
         }
-
+        public static IEnumerable<Cupon> obtenerCuponPorID(int id)
+        {
+            IEnumerable<Cupon> lista = null;
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Cupons.Where(x => x.ID == id);
+            lista = (IEnumerable<Cupon>)query;            
+            return lista;
+        }
     }
 }

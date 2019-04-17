@@ -69,7 +69,7 @@ namespace EcoMonedas
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Sus datos se han actualizado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
-                
+                Session["Usuario"] = usuario;
             }
             catch (Exception ex)
             {
