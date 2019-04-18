@@ -4,7 +4,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-        <LocalReport ReportPath="Reportes\reportePrueba.rdlc"></LocalReport>
-    </rsweb:ReportViewer>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10" style="margin-bottom: 20px;">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+                <LocalReport ReportPath="Reportes\reportePrueba.rdlc"></LocalReport>
+            </rsweb:ReportViewer>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
 </asp:Content>

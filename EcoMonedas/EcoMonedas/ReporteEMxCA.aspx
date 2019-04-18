@@ -4,7 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>Reporte de EcoMonedas</h2>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10" style="margin-bottom:20px;">
+            <h2>Reporte de Eco-Monedas</h2>
     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
         <LocalReport ReportPath="Reportes\reporteEcoMonedasPorCentroDeAcopio.rdlc">
             <DataSources>
@@ -13,4 +16,7 @@
         </LocalReport>
     </rsweb:ReportViewer>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EcoMonedas.Reportes.DSEcoMonedasTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
 </asp:Content>
