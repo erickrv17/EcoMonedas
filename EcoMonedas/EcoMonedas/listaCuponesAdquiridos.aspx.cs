@@ -27,8 +27,9 @@ namespace EcoMonedas
      
         protected void grvLista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idCupon = Convert.ToInt32(grvLista.DataKeys[grvLista.SelectedIndex].Values[0]);
-            Response.Redirect("detalleCupon.aspx?idCupon=" + idCupon);
+            int idEncCupon = Convert.ToInt32(grvLista.DataKeys[grvLista.SelectedIndex].Values[0]);
+            EncabezadoCupon encC = EncabezadoCuponLN.obtenerEncCupon(idEncCupon);
+            Response.Redirect("detalleCupon.aspx?idCupon=" + encC.CuponID);
         }
 
         protected void btnNuevoC_Click(object sender, EventArgs e)

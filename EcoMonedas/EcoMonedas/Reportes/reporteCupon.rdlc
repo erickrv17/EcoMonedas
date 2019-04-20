@@ -210,7 +210,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Fecha de Transacción:</Value>
+                <Value>Descripcion:</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>

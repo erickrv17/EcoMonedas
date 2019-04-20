@@ -15,13 +15,13 @@ namespace EcoMonedas
             if (((Usuario)Session["Usuario"]) != null)
             {
                 Usuario user = ((Usuario)Session["Usuario"]);
-                txtCorreo.Text = user.CorreoElectronico;
-                txtDireccion.Text = user.Direccion;
-                txtNombre.Text = user.Nombre;
-                txtPassword.Text = user.contrasenia;
-                txtPrimerApellido.Text = user.PrimerApellido;
-                txtSegundoApellido.Text = user.SegundoApellido;
-                txtTelefono.Text = user.Telefono;
+                //txtCorreo.Text = user.CorreoElectronico;
+                //txtDireccion.Text = user.Direccion;
+                //txtNombre.Text = user.Nombre;
+                //txtPassword.Text = user.contrasenia;
+                //txtPrimerApellido.Text = user.PrimerApellido;
+                //txtSegundoApellido.Text = user.SegundoApellido;
+                //txtTelefono.Text = user.Telefono;
                lblNombreUs.Text = "¡Bienvenido! "+user.Nombre;
                 if (((Usuario)Session["Usuario"]).RolID == 1)
                 {
@@ -49,6 +49,18 @@ namespace EcoMonedas
             else
             {
                 Response.Redirect("InicioE.aspx");
+            }
+            if (!IsPostBack)
+            {
+                Usuario user = ((Usuario)Session["Usuario"]);
+                txtCorreo.Text = user.CorreoElectronico;
+                txtDireccion.Text = user.Direccion;
+                txtNombre.Text = user.Nombre;
+                txtPassword.Text = user.contrasenia;
+                txtPrimerApellido.Text = user.PrimerApellido;
+                txtSegundoApellido.Text = user.SegundoApellido;
+                txtTelefono.Text = user.Telefono;
+
             }
         }
 

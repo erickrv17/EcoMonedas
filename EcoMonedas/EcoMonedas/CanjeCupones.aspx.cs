@@ -11,10 +11,10 @@ namespace EcoMonedas
     public partial class CanjeCupones : System.Web.UI.Page
     {
         int idCuponSeleccionado;
-        String correoC = "";
+        //String correoC = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            correoC = Request.QueryString["correoC"];
+            //correoC = Request.QueryString["correoC"];
             if ((Usuario)Session["Usuario"] != null)
             {
                 if (((Usuario)Session["Usuario"]).RolID != 3)
@@ -36,16 +36,11 @@ namespace EcoMonedas
                     }
 
                 }
-                if (correoC == "" || correoC == null)
-                {
-                    Response.Redirect("SolicitudCorreoUCanjearCupon.aspx");
-                }
-            }
-            else
-            {
-                Response.Redirect("InicioE.aspx");
+
             }
         }
+
+
         public IEnumerable<Cupon> listadoCupones()
         {
             List<Cupon> lista = CuponLN.obtenerListaCupones(1).ToList();

@@ -111,5 +111,37 @@ namespace Contexto
 
 
         }
+        public void enviarCorreoConCupon(byte[] facturaBytes,Usuario user)
+        {
+            var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
+
+            correo.To.Add(new MailAddress(user.CorreoElectronico, user.Nombre));
+            correo.Body = "Querido usuario en este correo se le adjunta un pdf con su cupon correspondinete";
+            correo.Subject = "Cupon";
+
+            //correo.Attachments.Add(new Attachment(new MemoryStream(facturaBytes), "Reporte.pdf"));
+            correo.Attachments.Add(new Attachment(new MemoryStream(facturaBytes), "Cupon.pdf"));
+
+           using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+            {
+
+                smtpClient.EnableSsl = true;
+                smtpClient.Port = 587;
+
+                smtpClient.Credentials =
+                    new System.Net.NetworkCredential("ecomonedasP2019@gmail.com", "jecc123456");
+
+                try
+                {
+                    smtpClient.Send(correo);
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+
+                }
+            }
+        }
     }
 }

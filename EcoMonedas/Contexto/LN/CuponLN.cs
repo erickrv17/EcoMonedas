@@ -86,11 +86,11 @@ namespace Contexto
         }
         public static IEnumerable<Cupon> obtenerCuponPorID(int id)
         {
-            IEnumerable<Cupon> lista = null;
-            var db = new EcoMonedasContext();
-            IQueryable query = db.Cupons.Where(x => x.ID == id);
-            lista = (IEnumerable<Cupon>)query;            
+            //IEnumerable<Cupon> lista = null;
+            EcoMonedasContext db = new EcoMonedasContext();
+            IEnumerable<Cupon> lista = db.Cupons.Where(x => x.ID == id);
+                    
             return lista;
-        }
+       }
     }
 }

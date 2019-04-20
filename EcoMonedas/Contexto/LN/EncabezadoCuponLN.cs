@@ -50,5 +50,12 @@ namespace Contexto
             return true;
         }
 
+        public static EncabezadoCupon obtenerEncCupon(int id)
+        {
+            var db = new EcoMonedasContext();
+            EncabezadoCupon encC = db.EncabezadoCupons.Where(x => x.ID == id).FirstOrDefault<EncabezadoCupon>();
+            return encC;
+        }
+
     }
 }

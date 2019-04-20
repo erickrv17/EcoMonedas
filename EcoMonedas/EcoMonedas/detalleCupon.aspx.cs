@@ -29,7 +29,31 @@ namespace EcoMonedas
 
         protected void btnListaCupones_Click(object sender, EventArgs e)
         {
+            Response.Redirect("listaCuponesAdquiridos.aspx");
+        }
 
+        protected void btnDescargar_Click(object sender, EventArgs e)
+        {
+            CorreoLN correoLogica = new CorreoLN();
+            correoLogica.enviarCorreoConCupon(ConverirReportePDF(ReportViewer1.LocalReport),(Usuario)Session["Usuario"]);
+
+
+        }
+
+        public byte[] ConverirReportePDF(LocalReport localReport)
+        {
+
+            string mimeType, encoding, extension;
+            Warning[] warnings;
+            string[] streams;
+            //reportViewer1.ReportPath = "./Reportes/RepComprobanteElectronico.rdlc";
+            var bytes = localReport.Render("PDF", @"<DeviceInfo><OutputFormat>PDF</OutputFormat><HumanReadablePDF>False</HumanReadablePDF></DeviceInfo>",
+                out mimeType,
+                out encoding,
+                out extension,
+                out streams,
+                out warnings);
+            return bytes;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PaginaMaestraAdministrador.Master"  CodeBehind="detalleCupon.aspx.cs" Inherits="EcoMonedas.detalleCupon" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterCliente.Master"  CodeBehind="detalleCupon.aspx.cs" Inherits="EcoMonedas.detalleCupon" %>
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
@@ -21,9 +21,11 @@
     </rsweb:ReportViewer>
     </div>
     <div class="row">
-      <%--  <div class="col-lg-5 col-sm-12">
-            <asp:Button ID="btn" runat="server" CssClass="btn btn-primary" ForeColor="White" Text=""  />
-        </div>  --%>     
+     <div class="col-lg-5 col-sm-12">
+                <button  type="button" runat="server" onserverclick="btnDescargar_Click" class="btn btn-primary">Enviar por correo</button>
+                         
+           <%-- <asp:Button ID="btnDescargar" runat="server" CssClass="btn btn-primary" ForeColor="White" Text="Enviar por correo" OnClick="btnDescargar_Click"  />
+        --%></div>      
     </div>
   
 </asp:Content>
