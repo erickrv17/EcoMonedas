@@ -15,13 +15,6 @@ namespace EcoMonedas
             if (((Usuario)Session["Usuario"]) != null)
             {
                 Usuario user = ((Usuario)Session["Usuario"]);
-                //txtCorreo.Text = user.CorreoElectronico;
-                //txtDireccion.Text = user.Direccion;
-                //txtNombre.Text = user.Nombre;
-                //txtPassword.Text = user.contrasenia;
-                //txtPrimerApellido.Text = user.PrimerApellido;
-                //txtSegundoApellido.Text = user.SegundoApellido;
-                //txtTelefono.Text = user.Telefono;
                lblNombreUs.Text = "¡Bienvenido! "+user.Nombre;
                 if (((Usuario)Session["Usuario"]).RolID == 1)
                 {
@@ -60,7 +53,6 @@ namespace EcoMonedas
                 txtPrimerApellido.Text = user.PrimerApellido;
                 txtSegundoApellido.Text = user.SegundoApellido;
                 txtTelefono.Text = user.Telefono;
-
             }
         }
 
@@ -81,6 +73,7 @@ namespace EcoMonedas
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Sus datos se han actualizado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
+                lblNombreUs.Text = "¡Bienvenido! "+((Usuario)Session["Usuario"]).Nombre;
                 Session["Usuario"] = usuario;
             }
             catch (Exception ex)
