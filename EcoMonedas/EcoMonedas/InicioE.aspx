@@ -23,10 +23,7 @@
         <div id="preloader">
             <i class="circle-preloader"></i>
         </div>
-
         <header class="header-area">
-
-            <!-- Top Header Area -->
             <div class="top-header">
                 <div class="container h-100">
                     <div class="row h-100">
@@ -46,12 +43,10 @@
                                             </a>
                                             <!-- Dropdown - User Information -->
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                <%--<asp:Button ID="btnModuloUsuario" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Módulo de Usuario" OnClick="btnModuloUsuario_Click" />--%>
                                                 <button runat="server" onserverclick="btnModuloUsuario_Click" id="btnMU" class="dropdown-item" style="color: #7ed957;">Módulo Usuario</button>
                                                 <div class="dropdown-divider"></div>
                                                 <button runat="server" onserverclick="btnPerfil_ServerClick" id="btnPerfil" class="dropdown-item" style="color: #7ed957;">Perfil Usuario</button>
                                                 <div class="dropdown-divider"></div>
-                                                <%--<asp:Button ID="btnCerrarSesion" CssClass="dropdown-item" runat="server" ForeColor="#7ed957" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" />--%>
                                                 <button runat="server" onserverclick="btnCerrarSesion_Click" id="btnCS" style="color: #7ed957;" class="dropdown-item">Cerrar Sesión</button>
                                             </div>
                                         </li>
@@ -64,27 +59,21 @@
                 </div>
             </div>
 
-            <!-- Navbar Area -->
             <div class="academy-main-menu">
                 <div class="classy-nav-container breakpoint-off">
                     <div class="container">
-                        <!-- Menu -->
                         <nav class="classy-navbar justify-content-between" id="academyNav" style="box-shadow: 0px 1px 0px 0px black;">
 
-                            <!-- Navbar Toggler -->
                             <div class="classy-navbar-toggler">
                                 <span class="navbarToggler"><span></span><span></span><span></span></span>
                             </div>
 
-                            <!-- Menu -->
                             <div class="classy-menu">
 
-                                <!-- close btn -->
                                 <div class="classycloseIcon">
                                     <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                                 </div>
 
-                                <!-- Nav Start -->
                                 <div class="classynav">
                                     <ul>
                                         <li><a href="InicioE.aspx">Inicio</a></li>
@@ -93,7 +82,6 @@
                                         <li><a href="#Contactenos">Contactenos</a></li>
                                     </ul>
                                 </div>
-                                <!-- Nav End -->
                             </div>
 
                             <div class="calling-info">
@@ -106,9 +94,6 @@
                 </div>
             </div>
         </header>
-        <!-- ##### Header Area End ##### -->
-
-        <!-- ##### Hero Area Start ##### -->
         <section class="hero-area">
             <div class="hero-slides owl-carousel">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -123,9 +108,6 @@
                 </div>
             </div>
         </section>
-        <!-- ##### Hero Area End ##### -->
-
-        <!-- ##### Top Feature Area Start ##### -->
         <div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
             <div class="container">
                 <br />
@@ -155,9 +137,6 @@
                 </div>
             </div>
         </div>
-        <!-- ##### Top Feature Area End ##### -->
-
-        <!-- ##### Course Area Start ##### -->
         <div class="academy-courses-area section-padding-100-0">
             <div class="container">
                 <div class="row">
@@ -212,9 +191,6 @@
             </div>
         </div>
 
-        <!-- ##### Course Area End ##### -->
-
-        <!-- ##### Testimonials Area Start ##### -->
         <div class="testimonials-area section-padding-100" style="background-color: #7ed957;">
             <div class="container">
                 <div class="row" id="contact">
@@ -275,9 +251,6 @@
                 </div>
             </div>
         </div>
-        <!-- ##### Testimonials Area End ##### -->
-
-        <!-- ##### Top Popular Courses Area Start ##### -->
         <div class="top-popular-courses-area section-padding-100-70">
             <div class="container">
                 <div class="row">
@@ -290,9 +263,6 @@
                 <br />
                 <div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
                     <div class="row">
-                        <%--<div class="col-12" style="background-color:#7ed957; padding: 40px 15px; margin-top: 40px; border-color: black; border-style: solid; border-width: thin; text-align:center;position: relative; z-index: 50; -webkit-transform: translateY(-50%); transform: translateY(-50%);">
-                    <label style="font-size: 18px; margin-bottom: 0; font-weight: 600; color: #ffffff;">Centros de Acopio</label>
-                </div>--%>
                         <div class="col-12">
                             <div class="features-content" style="margin-top: 40px; border-color: black; border-style: solid; border-width: thin;">
                                 <div class="row no-gutters">
@@ -517,9 +487,7 @@
                                 <br />
                                 <label for="lblConfirmarContrasenna" class="control-label">Confirmar contraseña</label>
                                 <asp:TextBox placeholder="confirmar contraseña" runat="server" ID="txtConfirmarContrasenna" class="form-control" TextMode="Password" />
-                                <%--<asp:CompareValidator runat="server" ControlToCompare="txtContrasena" ControlToValidate="txtConfirmarContrasenna"
-                             CssClass="text-danger" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden." />
-                                --%>
+
                             </div>
                             <div class="modal-footer">
                                 <div>
@@ -531,11 +499,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End | Register Form -->
-
                     </div>
-
-                    <!-- End # DIV Form -->
 
                 </div>
             </div>
