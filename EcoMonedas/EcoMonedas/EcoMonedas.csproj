@@ -124,6 +124,7 @@
     <Content Include="PerfilUsuario.aspx" />
     <Content Include="PrincipalAdminCentroA.aspx" />
     <Content Include="PrincipalAdministrador.aspx" />
+    <Content Include="Registrarse.aspx" />
     <Content Include="ReporteEMxCA.aspx" />
     <Content Include="ReporteMateriales.aspx" />
     <Content Include="reporteMaterialesNombre.aspx" />
@@ -377,6 +378,13 @@
       <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReporteEMxCA.aspx.cs">
       <DependentUpon>ReporteEMxCA.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
