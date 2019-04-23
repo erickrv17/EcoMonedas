@@ -29,7 +29,12 @@
     <form id="formularioC" runat="server">
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="InicioE.aspx">
+                <div class="sidebar-brand-icon">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Imagenes/LogoT.png" Width="75px" Height="35px" />
+                </div>
+                <div class="sidebar-brand-text mx-3">Administrador</div>
+            </a>
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 

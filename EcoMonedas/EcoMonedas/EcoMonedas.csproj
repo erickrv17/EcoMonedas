@@ -86,6 +86,7 @@
     <Content Include="detalleCanje.aspx" />
     <Content Include="detalleCentroAcopio.aspx" />
     <Content Include="detalleCupon.aspx" />
+    <Content Include="Error404.aspx" />
     <Content Include="Imagenes\Banner3.png" />
     <Content Include="Imagenes\Banner4.png" />
     <Content Include="Imagenes\Cuenta.png" />
@@ -255,6 +256,13 @@
     </Compile>
     <Compile Include="detalleCupon.aspx.designer.cs">
       <DependentUpon>detalleCupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioE.aspx.cs">
       <DependentUpon>InicioE.aspx</DependentUpon>
