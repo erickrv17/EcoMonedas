@@ -19,7 +19,7 @@ namespace Contexto
             var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
 
             correo.To.Add(new MailAddress(usuario.CorreoElectronico, usuario.Nombre));
-            correo.Body = "Canje realizado con exito";
+            correo.Body = "¡Canje realizado con exito!";
             correo.Subject = "Comprobante de canje";
            
             //correo.Attachments.Add(new Attachment(new MemoryStream(facturaBytes), "Reporte.pdf"));
@@ -52,7 +52,7 @@ namespace Contexto
             var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
 
             correo.To.Add(new MailAddress(usuario.CorreoElectronico, usuario.Nombre));
-            correo.Body = "Bienvenido "+ usuario.Nombre+", su contrase es"+usuario.contrasenia;
+            correo.Body = "Bienvenido! "+ usuario.Nombre+", su contraseña de ingreso es: "+usuario.contrasenia;
             correo.Subject = "Registro exitoso";
 
             using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
@@ -84,7 +84,7 @@ namespace Contexto
             var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
 
             correo.To.Add(new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas"));
-            correo.Body = "Correo :"+correoU+", "+"Nombre :"+nombre+", /n"+mensaje;
+            correo.Body = "Correo: "+correoU+", "+"Nombre: "+nombre+", Mensaje: "+mensaje;
             correo.Subject = asunto;
 
             using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
@@ -149,8 +149,8 @@ namespace Contexto
             var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
 
             correo.To.Add(new MailAddress(user.CorreoElectronico, user.Nombre));
-            correo.Body = "Querido usuario en este correo se le adjunta un pdf con su cupon correspondinete";
-            correo.Subject = "Cupon";
+            correo.Body = "Querido usuario en este correo se le adjunta un pdf con su cupon correspondiente";
+            correo.Subject = "Cupón";
 
             //correo.Attachments.Add(new Attachment(new MemoryStream(facturaBytes), "Reporte.pdf"));
             correo.Attachments.Add(new Attachment(new MemoryStream(facturaBytes), "Cupon.pdf"));

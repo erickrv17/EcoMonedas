@@ -51,9 +51,9 @@
                                             </div>
                                         </li>
                                     </ul>
-                               <a href="#VentanaLogin" data-toggle="modal" runat="server" id="lblregistrese">Ingrese</a>
-                               <a href="Registrarse.aspx" runat="server" id="lblAutoRegistro">/ Registrese</a>
-                                  </div>
+                                    <a href="#VentanaLogin" data-toggle="modal" runat="server" id="lblregistrese">Ingrese</a>
+                                    <a href="Registrarse.aspx" runat="server" id="lblAutoRegistro">/ Registrese</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -245,6 +245,8 @@
                                     <div class="text-center">
                                         <button class="btn" style="background-color: #7ed957; border-color: black; color: #000;" id="btnConfirmar" runat="server" onserverclick="btnConfirmar_ServerClick">Enviar</button>
                                     </div>
+                                    <br /><br />
+                                    <asp:Label ID="lblMensajeCorreo" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
                                 </div>
                             </div>
                         </div>
@@ -392,7 +394,7 @@
 
 
 
-       <div class="modal fade" id="VentanaLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal fade" id="VentanaLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -401,7 +403,7 @@
                             <span class="fa fa-remove" aria-hidden="true"></span>
                         </button>
                     </div>
-                    <div id="div-forms">                   
+                    <div id="div-forms">
                         <div id="login-form">
                             <div class="modal-body">
                                 <div>
@@ -424,7 +426,7 @@
                                 </div>
                             </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
