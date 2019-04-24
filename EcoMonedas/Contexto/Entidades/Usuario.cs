@@ -43,7 +43,6 @@ namespace Contexto
         public string contrasenia { get; set; }
 
         [Required]
-        [StringLength(100)]
         public string Direccion { get; set; }
 
         public int RolID { get; set; }
