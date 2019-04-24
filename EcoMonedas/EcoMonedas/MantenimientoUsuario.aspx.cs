@@ -90,9 +90,9 @@ namespace EcoMonedas
                     lblMensaje.Visible = true;
                     lblMensaje.Text = "No se puede guardar el usuario";
                 }
-
-          
-
+                    btnRegistrar.Text = "Registrar";
+                    Limpiar();
+                    txtCorreo.Enabled = true;
         }
 
         //public IQueryable listaRoles()
@@ -102,6 +102,7 @@ namespace EcoMonedas
        
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtCorreo.Enabled = false;
             if (ddlFiltrosXEstado.SelectedItem.Value.Equals("3"))
             {
                 return;
@@ -135,6 +136,19 @@ namespace EcoMonedas
         protected void ddlFiltrosXEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarGrid(Convert.ToInt32(ddlFiltrosXEstado.SelectedItem.Value));
+        }
+
+        public void Limpiar()
+        {
+            txtNombre.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+            txtDireccion.Text = "";
+            chkDisponible.Checked = true;
+            chkEstado.Checked = true;
+            hfUsuarioID.Value = "";
         }
     }
 }
