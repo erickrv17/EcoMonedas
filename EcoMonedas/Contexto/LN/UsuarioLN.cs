@@ -32,12 +32,12 @@ namespace Contexto
                 {
                     if (estado == 2)
                     {
-                        query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID != 3);
+                        query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID != 3 && x.RolID != 1);
                     }else
                     {
                         if (estado == 3)
                         {
-                            query = db.Usuarios.Where(x => x.Estado == true || x.Estado == true && x.RolID == 3);
+                            query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID == 3);
                         }
                     }
                 }
@@ -162,7 +162,7 @@ namespace Contexto
 
         public static Usuario obtenerUsuario(string correo)
         {
-            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(3);
+            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(2);
             Usuario usuario = listas.Where(x => x.CorreoElectronico == correo).FirstOrDefault<Usuario>();
             return usuario;
         }

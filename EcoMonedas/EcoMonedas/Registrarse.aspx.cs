@@ -16,6 +16,7 @@ namespace EcoMonedas
             if ((Usuario)Session["Usuario"] != null)
             {
                 lblregistrese.Visible = false;
+                
                 lblAutoRegistro.Visible = false;
                 lblNombreUsuario.Text = ((Usuario)Session["Usuario"]).Nombre + " " + ((Usuario)Session["Usuario"]).PrimerApellido;
                 if (((Usuario)Session["Usuario"]).Rol.ID == 1)
@@ -44,6 +45,7 @@ namespace EcoMonedas
             else
             {
                 lblregistrese.Visible = true;
+                lblAutoRegistro.Visible = true;
                 lblNombreUsuario.Text = "¡Bienvenido!";
             }
         }
@@ -215,6 +217,7 @@ namespace EcoMonedas
                 Session["Usuario"] = null;
                 Response.Redirect("InicioE.aspx");
                 lblregistrese.Visible = true;
+                lblAutoRegistro.Visible = true;
             }
         }
 
