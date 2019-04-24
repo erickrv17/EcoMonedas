@@ -111,9 +111,8 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea">Correo electronico</label>
-                            <asp:TextBox ID="txtCorreo" enable="false" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*El correo es requerido." ControlToValidate="txtCorreo" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
-                        </div>
+                            <asp:TextBox ID="txtCorreo" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
+                            </div>
                         <div class="form-group">
                             <label for="exampleTextarea">Contraseña</label>
                             <asp:TextBox ID="txtPassword" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>

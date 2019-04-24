@@ -85,13 +85,13 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control lblErrorNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label lblErrorNombre;
         
         /// <summary>
         /// Control cvNombre.
@@ -112,13 +112,13 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtPrimerApellido;
         
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control lblErrorPrimerApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.Label lblErrorPrimerApellido;
         
         /// <summary>
         /// Control txtSegundoApellido.
@@ -130,13 +130,13 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtSegundoApellido;
         
         /// <summary>
-        /// Control RequiredFieldValidator6.
+        /// Control lblErrorSegundoApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.Label lblErrorSegundoApellido;
         
         /// <summary>
         /// Control txtTelefono.
@@ -148,13 +148,13 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// Control RequiredFieldValidator7.
+        /// Control lblErrorTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        protected global::System.Web.UI.WebControls.Label lblErrorTelefono;
         
         /// <summary>
         /// Control RegularExpressionValidator3.
@@ -175,6 +175,15 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
         
         /// <summary>
+        /// Control lblErrorCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorCorreo;
+        
+        /// <summary>
         /// Control validateEmail.
         /// </summary>
         /// <remarks>
@@ -193,6 +202,15 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtContrasena;
         
         /// <summary>
+        /// Control lblErrorContra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorContra;
+        
+        /// <summary>
         /// Control txtConfirmarContrasenna.
         /// </summary>
         /// <remarks>
@@ -200,6 +218,15 @@ namespace EcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConfirmarContrasenna;
+        
+        /// <summary>
+        /// Control lblErrorConfirmar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorConfirmar;
         
         /// <summary>
         /// Control txtDireccion.
@@ -211,13 +238,13 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtDireccion;
         
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control lblErrorDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.Label lblErrorDireccion;
         
         /// <summary>
         /// Control lblMensaje.
@@ -247,12 +274,12 @@ namespace EcoMonedas {
         protected global::System.Web.UI.WebControls.TextBox txtContra;
         
         /// <summary>
-        /// Control txtCorreoRecuperacion.
+        /// Control btnPaginaRegistrarse.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreoRecuperacion;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnPaginaRegistrarse;
     }
 }

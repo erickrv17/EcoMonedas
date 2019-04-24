@@ -33,7 +33,7 @@
                         <div class="col-12 h-100">
                             <div class="header-content h-100 d-flex align-items-center justify-content-between">
                                 <div class="academy-logo">
-                                    <a href="index.html">
+                                    <a href="InicioE.aspx">
                                         <img src="Imagenes/LogoP.png" alt="" width="153" /></a>
                                 </div>
                                 <div class="login-content">
@@ -129,45 +129,53 @@
 
         <%-- Inicio del frame --%>
         <div class="container">
-            <div class="row">
-                <asp:Label ID="lblMensajeU" runat="server" Text="" CssClass="alert alert-dismissible alert-warning" Visible="false"></asp:Label>
-            </div>
+           
             <div class="row">
                 <div class="col-lg-4"></div>
+                 
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <h2>Registro de Usuarios </h2>
+                <div class="row">
+                                <asp:Label ID="lblMensajeU" runat="server" Text="" CssClass="alert alert-dismissible alert-warning" Visible="false"></asp:Label>
+                            </div>
+                    <h2>Crea tu propia cuenta!</h2>
 
                     <div class="form-group row">
                         <label for="lblNombre" class="control-label">Nombre</label>
                         <asp:TextBox CssClass="form-control" ID="txtNombre" placeholder="Nombre" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
+                        <asp:Label ID="lblErrorNombre" style="color:red;" runat="server" Text="*El nombre es requerido" Visible="false"></asp:Label>
+                    
+                    <%--    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
                             runat="server"
                             ErrorMessage="*El nombre es requerido."
                             ControlToValidate="txtNombre"
                             ForeColor="Red"
                             SetFocusOnError="true"
-                            Display="Dynamic"></asp:RequiredFieldValidator>
+                            Display="Dynamic"></asp:RequiredFieldValidator>--%>
                         <asp:CustomValidator ID="cvNombre" runat="server" ErrorMessage="El nombre debe de tener almenos 15 caracteres (Customizado)" ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:CustomValidator>
                     </div>
                     <div class="form-group row">
                         <label for="lblPrimerApellido">Primer apellido</label>
                         <asp:TextBox ID="txtPrimerApellido" placeholder="Primer apellido" CssClass="form-control" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                      <%--  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
                             ErrorMessage="*El primer apellido es requerido."
                             ControlToValidate="txtPrimerApellido"
                             ForeColor="Red"
                             SetFocusOnError="true"
-                            Display="Dynamic"></asp:RequiredFieldValidator>
+                            Display="Dynamic"></asp:RequiredFieldValidator>--%>
+                         <asp:Label ID="lblErrorPrimerApellido" style="color:red;" runat="server" Text="*El primer apellido es requerido" Visible="false"></asp:Label>
+                    
                     </div>
                     <div class="form-group row">
                         <label for="exampleTextarea">Segundo Apellido</label>
                         <asp:TextBox ID="txtSegundoApellido" placeholder="Segundo apellido" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"
+            <%--            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"
                             ErrorMessage="*El segundo apellido es requerido."
                             ControlToValidate="txtSegundoApellido"
                             ForeColor="Red"
                             SetFocusOnError="true"
-                            Display="Dynamic"></asp:RequiredFieldValidator>
+                            Display="Dynamic"></asp:RequiredFieldValidator>--%>
+                        <asp:Label ID="lblErrorSegundoApellido" style="color:red;" runat="server" Text="*El segundo apellido es requerido" Visible="false"></asp:Label>
+                    
                     </div>
                     <div class="form-group row">
                         <label for="exampleTextarea">Teléfono</label>
@@ -177,13 +185,14 @@
                             </div>
                             <asp:TextBox ID="txtTelefono" placeholder="ej:8888 8888" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                         </div>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server"
+                       <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server"
                             ErrorMessage="*El teléfono es requerido."
                             ControlToValidate="txtTelefono"
                             ForeColor="Red"
                             SetFocusOnError="true"
-                            Display="Dynamic"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator
+                            Display="Dynamic"></asp:RequiredFieldValidator>--%>
+                         <asp:Label ID="lblErrorTelefono" style="color:red;" runat="server" Text="*El teléfono es requerido." Visible="false"></asp:Label>
+                         <asp:RegularExpressionValidator
                             ID="RegularExpressionValidator3"
                             runat="server"
                             Text="El teléfono solo debe contener números"
@@ -194,35 +203,42 @@
                     <div class="form-group row">
                         <label for="exampleTextarea">Correo electronico</label>
                         <asp:TextBox placeholder="ej: correo001@gmail.com" runat="server" ID="txtCorreo" class="form-control" TextMode="Email" />
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCorreo"
-                            CssClass="text-danger" ErrorMessage="*El correo es necesario" />
-                        <asp:RegularExpressionValidator
+                    <%--    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCorreo"
+                            CssClass="text-danger" ErrorMessage="*El correo es necesario" />--%>   
+                             <asp:Label ID="lblErrorCorreo" style="color:red;" runat="server" Text="*El correo es necesario" Visible="false"></asp:Label>
+                   
+                     <asp:RegularExpressionValidator
                             ID="validateEmail"
                             runat="server"
                             ErrorMessage="Correo invalido"
+                            ForeColor="Red" Display="Dynamic"
                             ControlToValidate="txtCorreo"
                             ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" />
 
                     </div>
                     <div class="form-group row">
                         <label for="contrasenna">Contraseña</label>
-                        <asp:TextBox placeholder="contraseña" runat="server" ID="txtContrasena" class="form-control" TextMode="Password" required="required" />
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContrasena"
-                            CssClass="text-danger" ErrorMessage="*La contraseña es necesaria" />
-
+                        <asp:TextBox placeholder="contraseña" runat="server" ID="txtContrasena" cssClass="form-control" TextMode="Password" />
+                       <%-- <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContrasena"
+                            CssClass="text-danger" ErrorMessage=*La contraseña es necesaria" />--%>
+                          <asp:Label ID="lblErrorContra" style="color:red;" runat="server" Text="*La contraseña es necesaria" Visible="false"></asp:Label>
+                   
                     </div>
                     <div class="form-group row">
                         <label for="contrasenna">Confirmar contraseña</label>
-                        <asp:TextBox placeholder="confirmar contraseña" runat="server" ID="txtConfirmarContrasenna" class="form-control" TextMode="Password" required="required" />
+                        <asp:TextBox placeholder="confirmar contraseña" runat="server" ID="txtConfirmarContrasenna" class="form-control" TextMode="Password" />
                         <asp:CompareValidator runat="server" ControlToCompare="txtContrasena" ControlToValidate="txtConfirmarContrasenna"
                             CssClass="text-danger" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden." />
-
+                         <asp:Label ID="lblErrorConfirmar" style="color:red;" runat="server" Text="*La confirmacio de la contraseña es necesaria" Visible="false"></asp:Label>
+                 
                     </div>
                     <div class="form-group row">
                         <label for="exampleTextarea">Dirección exacta</label>
                         <asp:TextBox ID="txtDireccion" TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*La dirección es requerida." ControlToValidate="txtDireccion" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
-                    </div>
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*La dirección es requerida." ControlToValidate="txtDireccion" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>--%>
+                        <asp:Label ID="lblErrorDireccion" style="color:red;" runat="server" Text="*La direccion es necesaria" Visible="false"></asp:Label>
+                 
+                           </div>
                     <div class="form-group row">
                         <button runat="server" class="btn" style="background-color: #7ed957; color: white;" onserverclick="btnRegistra_Click">Registrate</button>
                         <div class="col-1"></div>
@@ -287,15 +303,15 @@
                                     <button runat="server" class="btn" style="background-color: #7ed957; color: white" onserverclick="btnIngresar_Click">Iniciar Sesión</button>
                                 </div>
                                 <div>
-                                    <button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>
-                                    <button id="btnPaginaRegistrarse" type="button" style="color: #7ed957" class="btn btn-link">Registrate</button>
+                               <%--<button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>--%>
+                                    <button id="btnPaginaRegistrarse" type="button" runat="server" onserverclick="btnPaginaRegistrarse_ServerClick" style="color: #7ed957" class="btn btn-link">Registrate aqui</button>
                                 </div>
                             </div>
                         </div>
                         <!-- End # Login Form -->
 
                         <!-- Begin | Lost Password Form -->
-                        <div id="lost-form" style="display: none;">
+                      <%--  <div id="lost-form" style="display: none;">
                             <div class="modal-body">
                                 <div>
                                     <div id="icon-lost-msg"><i class="fa fa-paper-plane"></i></div>
@@ -312,7 +328,7 @@
                                     <button id="register_btn" type="button" style="color: #7ed957" class="btn btn-link">Registrate</button>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <!-- End | Lost Password Form -->
 
                         <!-- Begin | Register Form -->

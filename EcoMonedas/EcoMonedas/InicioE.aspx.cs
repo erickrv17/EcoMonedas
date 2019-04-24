@@ -122,35 +122,32 @@ namespace EcoMonedas
         }
         protected void btnRegistra_Click(object sender, EventArgs e)
         {
-            Usuario miUsuario = new Usuario();
-            miUsuario.Nombre = txtNombreU.Text;
-            miUsuario.PrimerApellido = txtApellido1.Text;
-            miUsuario.SegundoApellido = txtApellido2.Text;
-            miUsuario.Telefono = txtTelefono.Text;
-            miUsuario.CorreoElectronico = txtEmail.Text;
-            miUsuario.contrasenia = txtConfirmarContrasenna.Text;
-            miUsuario.Direccion = txtDireccion.Text;
-            miUsuario.RolID = 3;
-            miUsuario.Estado = true;
-            miUsuario.Disponible = true;
+            //Usuario miUsuario = new Usuario();
+            //miUsuario.Nombre = txtNombreU.Text;
+            //miUsuario.PrimerApellido = txtApellido1.Text;
+            //miUsuario.SegundoApellido = txtApellido2.Text;
+            //miUsuario.Telefono = txtTelefono.Text;
+            //miUsuario.CorreoElectronico = txtEmail.Text;
+            //miUsuario.contrasenia = txtConfirmarContrasenna.Text;
+            //miUsuario.Direccion = txtDireccion.Text;
+            //miUsuario.RolID = 3;
+            //miUsuario.Estado = true;
+            //miUsuario.Disponible = true;
 
-            try
-            {
-                UsuarioLN us = new UsuarioLN();
-                us.insertaUsuario(miUsuario);
+            //try
+            //{
+            //    UsuarioLN us = new UsuarioLN();
+            //    us.insertaUsuario(miUsuario);
 
-            }
-            catch (Exception)
-            {
+            //}
+            //catch (Exception)
+            //{
 
                 
-            }
+            //}
 
         }
-        public void ErroresRegistro()
-        {
-
-        }
+      
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -210,6 +207,10 @@ namespace EcoMonedas
             {
                 Response.Redirect("PerfilUsuario.aspx");
             }
+        }
+        protected void btnPaginaRegistrarse_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Registrarse.aspx");
         }
     }
 }

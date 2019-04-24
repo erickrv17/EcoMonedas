@@ -115,6 +115,12 @@ namespace EcoMonedas
         }
         protected void btnRegistra_Click(object sender, EventArgs e)
         {
+
+            if (ErroresRegistro())
+            {
+                return;
+            }
+
             Usuario miUsuario = new Usuario();
             miUsuario.Nombre = txtNombre.Text;
             miUsuario.PrimerApellido = txtPrimerApellido.Text;
@@ -145,9 +151,61 @@ namespace EcoMonedas
             }
 
         }
-        public void ErroresRegistro()
+        public bool ErroresRegistro()
         {
-           
+            LimpiaErrores();
+            bool error = false;
+            if (txtNombre.Text.Equals(""))
+            {
+                lblErrorNombre.Visible = true;
+                error = true;
+            }
+            if (txtPrimerApellido.Text.Equals(""))
+            {
+                lblErrorPrimerApellido.Visible = true;
+                error = true;
+            }
+            if (txtSegundoApellido.Text.Equals(""))
+            {
+                lblErrorSegundoApellido.Visible = true;
+                error = true;
+            }
+            if (txtTelefono.Text.Equals(""))
+            {
+                lblErrorTelefono.Visible = true;
+                error = true;
+            }
+            if (txtCorreo.Text.Equals(""))
+            {
+                lblErrorCorreo.Visible = true;
+                error = true;
+            }
+            if (txtContrasena.Text.Equals(""))
+            {
+                lblErrorContra.Visible = true;
+                error = true;
+            }
+            if (txtConfirmarContrasenna.Text.Equals(""))
+            {
+                lblErrorConfirmar.Visible = true;
+                error = true;
+            }
+            if (txtDireccion.Text.Equals(""))
+            {
+                lblErrorDireccion.Visible = true;
+                error = true;
+            }
+            return error;
+        }
+        public void LimpiaErrores(){
+            lblErrorNombre.Visible = false;        
+            lblErrorPrimerApellido.Visible = false;
+            lblErrorSegundoApellido.Visible = false;
+            lblErrorTelefono.Visible = false;
+            lblErrorCorreo.Visible = false;
+            lblErrorContra.Visible = false;
+            lblErrorConfirmar.Visible = false;
+            lblErrorDireccion.Visible = false;
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -206,6 +264,11 @@ namespace EcoMonedas
             {
                 Response.Redirect("PerfilUsuario.aspx");
             }
+        }
+
+        protected void btnPaginaRegistrarse_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Registrarse.aspx");
         }
     }
 }

@@ -12,6 +12,7 @@ namespace EcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtCorreo.Enabled = false;
             if (((Usuario)Session["Usuario"]) != null)
             {
                 Usuario user = ((Usuario)Session["Usuario"]);
@@ -73,8 +74,9 @@ namespace EcoMonedas
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Sus datos se han actualizado satisfactoriamente!";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
-                lblNombreUs.Text = "¡Bienvenido! "+((Usuario)Session["Usuario"]).Nombre;
                 Session["Usuario"] = usuario;
+                lblNombreUs.Text = "¡Bienvenido! "+((Usuario)Session["Usuario"]).Nombre;
+                
             }
             catch (Exception ex)
             {
