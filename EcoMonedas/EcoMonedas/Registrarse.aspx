@@ -88,10 +88,8 @@
                                 <!-- Nav Start -->
                                 <div class="classynav">
                                     <ul>
-                                        <li><a href="InicioE.aspx">Inicio</a></li>
-                                        <li><a href="#MaterialesR">Materiales reciclables</a></li>
-                                        <li><a href="#CentrosA">Centros de Acopio</a></li>
-                                        <li><a href="#Contactenos">Contactenos</a></li>
+                                        <li><a href="Registrarse.aspx">Inicio</a></li>
+                                        <li><a href="InicioE.aspx">Inicio Eco-Monedas</a></li>
                                     </ul>
                                 </div>
                                 <!-- Nav End -->
@@ -140,7 +138,7 @@
                     <h2>Crea tu propia cuenta!</h2>
 
                     <div class="form-group row">
-                        <label for="lblNombre" class="control-label">Nombre</label>
+                        <label for="lblNombre" class="control-label">Nombre: </label>
                         <asp:TextBox CssClass="form-control" ID="txtNombre" placeholder="Nombre" runat="server"></asp:TextBox>
                         <asp:Label ID="lblErrorNombre" style="color:red;" runat="server" Text="*El nombre es requerido" Visible="false"></asp:Label>
                     
@@ -154,7 +152,7 @@
                         <asp:CustomValidator ID="cvNombre" runat="server" ErrorMessage="El nombre debe de tener almenos 15 caracteres (Customizado)" ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:CustomValidator>
                     </div>
                     <div class="form-group row">
-                        <label for="lblPrimerApellido">Primer apellido</label>
+                        <label for="lblPrimerApellido">Primer Apellido: </label>
                         <asp:TextBox ID="txtPrimerApellido" placeholder="Primer apellido" CssClass="form-control" runat="server"></asp:TextBox>
                       <%--  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
                             ErrorMessage="*El primer apellido es requerido."
@@ -166,7 +164,7 @@
                     
                     </div>
                     <div class="form-group row">
-                        <label for="exampleTextarea">Segundo Apellido</label>
+                        <label for="exampleTextarea">Segundo Apellido: </label>
                         <asp:TextBox ID="txtSegundoApellido" placeholder="Segundo apellido" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
             <%--            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"
                             ErrorMessage="*El segundo apellido es requerido."
@@ -178,7 +176,7 @@
                     
                     </div>
                     <div class="form-group row">
-                        <label for="exampleTextarea">Teléfono</label>
+                        <label for="exampleTextarea">Teléfono: </label>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">+506</span>
@@ -201,7 +199,7 @@
                             ValidationExpression="^[0-9]*(\,)?[0-9]?[0-9]?$"></asp:RegularExpressionValidator>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleTextarea">Correo electronico</label>
+                        <label for="exampleTextarea">Correo electrónico: </label>
                         <asp:TextBox placeholder="ej: correo001@gmail.com" runat="server" ID="txtCorreo" class="form-control" TextMode="Email" />
                     <%--    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCorreo"
                             CssClass="text-danger" ErrorMessage="*El correo es necesario" />--%>   
@@ -217,7 +215,7 @@
 
                     </div>
                     <div class="form-group row">
-                        <label for="contrasenna">Contraseña</label>
+                        <label for="contrasenna">Contraseña: </label>
                         <asp:TextBox placeholder="contraseña" runat="server" ID="txtContrasena" cssClass="form-control" TextMode="Password" />
                        <%-- <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContrasena"
                             CssClass="text-danger" ErrorMessage=*La contraseña es necesaria" />--%>
@@ -225,7 +223,7 @@
                    
                     </div>
                     <div class="form-group row">
-                        <label for="contrasenna">Confirmar contraseña</label>
+                        <label for="contrasenna">Confirmar contraseña: </label>
                         <asp:TextBox placeholder="confirmar contraseña" runat="server" ID="txtConfirmarContrasenna" class="form-control" TextMode="Password" />
                         <asp:CompareValidator runat="server" ControlToCompare="txtContrasena" ControlToValidate="txtConfirmarContrasenna"
                             CssClass="text-danger" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden." />
@@ -233,7 +231,7 @@
                  
                     </div>
                     <div class="form-group row">
-                        <label for="exampleTextarea">Dirección exacta</label>
+                        <label for="exampleTextarea">Dirección exacta: </label>
                         <asp:TextBox ID="txtDireccion" TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                         <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*La dirección es requerida." ControlToValidate="txtDireccion" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>--%>
                         <asp:Label ID="lblErrorDireccion" style="color:red;" runat="server" Text="*La direccion es necesaria" Visible="false"></asp:Label>
@@ -311,7 +309,7 @@
                                 </div>
                                 <div>
                                <%--<button id="login_lost_btn" type="button" style="color: #7ed957" class="btn btn-link">¿Olvidaste tu contraseña?</button>--%>
-                                    <button id="btnPaginaRegistrarse" type="button" runat="server" onserverclick="btnPaginaRegistrarse_ServerClick" style="color: #7ed957" class="btn btn-link">Registrate aqui</button>
+                                    <button id="btnPaginaRegistrarse" type="button" runat="server" onserverclick="btnPaginaRegistrarse_ServerClick" style="color: #7ed957" class="btn btn-link">Registrate aquí</button>
                                 </div>
                             </div>
                         </div>

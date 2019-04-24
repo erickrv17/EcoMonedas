@@ -6,27 +6,27 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.01921cm</Width>
+              <Width>2.62234cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.01921cm</Width>
+              <Width>2.62234cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.01921cm</Width>
+              <Width>2.62234cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.47896cm</Width>
+              <Width>3.08209cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.40238cm</Width>
+              <Width>2.91329cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.32363cm</Width>
+              <Width>6.92676cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.63969cm</Height>
+              <Height>1.22177cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -37,7 +37,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Correo Electronico</Value>
+                              <Value>Correo Electrónico</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -181,7 +181,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Telefono</Value>
+                              <Value>Teléfono</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -217,7 +217,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Direccion</Value>
+                              <Value>Dirección</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -247,7 +247,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.63969cm</Height>
+              <Height>1.22177cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -456,8 +456,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>1.70862cm</Top>
         <Left>0.53125cm</Left>
-        <Height>1.27938cm</Height>
-        <Width>22.26259cm</Width>
+        <Height>2.44355cm</Height>
+        <Width>20.78914cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -648,7 +648,6 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>0.97cm</Top>
-          <Left>0cm</Left>
           <Height>0.6cm</Height>
           <Width>14.39363cm</Width>
           <ZIndex>1</ZIndex>

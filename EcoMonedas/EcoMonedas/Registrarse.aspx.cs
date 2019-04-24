@@ -22,18 +22,21 @@ namespace EcoMonedas
                 if (((Usuario)Session["Usuario"]).Rol.ID == 1)
                 {
                     btnMU.InnerText = "Módulo Administrador";
+                    Response.Redirect("InicioE.aspx");
                 }
                 else
                 {
                     if (((Usuario)Session["Usuario"]).Rol.ID == 2)
                     {
                         btnMU.InnerText = "Módulo Administrador C";
+                        Response.Redirect("InicioE.aspx");
                     }
                     else
                     {
                         if (((Usuario)Session["Usuario"]).Rol.ID == 3)
                         {
                             btnMU.InnerText = "Módulo Cliente";
+                            Response.Redirect("InicioE.aspx");
                         }
                         else
                         {
@@ -143,6 +146,7 @@ namespace EcoMonedas
                 lblMensajeU.CssClass = "alert alert-dismissible alert-success";
                 CorreoLN coor = new CorreoLN();
                 coor.EnviarCorreoNuevoCliente(miUsuario);
+                LimpiaCampos();
             }
             catch (Exception ex)
             {
@@ -207,6 +211,18 @@ namespace EcoMonedas
             lblErrorContra.Visible = false;
             lblErrorConfirmar.Visible = false;
             lblErrorDireccion.Visible = false;
+        }
+
+        public void LimpiaCampos()
+        {
+            lblErrorNombre.Text = "";
+            lblErrorPrimerApellido.Text = "";
+            lblErrorSegundoApellido.Text = "";
+            lblErrorTelefono.Text = "";
+            lblErrorCorreo.Text = "";
+            lblErrorContra.Text = "";
+            lblErrorConfirmar.Text = "";
+            lblErrorDireccion.Text = "";
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

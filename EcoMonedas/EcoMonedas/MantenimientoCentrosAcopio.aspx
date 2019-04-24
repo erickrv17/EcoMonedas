@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 offset-lg-1">
-                <h2>Registro Centros de acopio </h2>
+                <h2>Registro Centros de Acopio </h2>
 
                 <div class="row form-group">
                     <label for="inputSmall">Nombre</label>
@@ -91,7 +91,7 @@
             </div>
 
             <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>Listado Centros de acopio
+                <h2>Listado Centros de Acopio
                 </h2>
                 <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->

@@ -80,7 +80,7 @@
                                         <li><a href="InicioE.aspx">Inicio</a></li>
                                         <li><a href="#MaterialesR">Materiales reciclables</a></li>
                                         <li><a href="#CentrosA">Centros de Acopio</a></li>
-                                        <li><a href="#Contactenos">Contactenos</a></li>
+                                        <li><a href="#Contactenos">Contáctenos</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -215,7 +215,7 @@
                     </div>
                     <div class="col-1"></div>
                     <div class="col-md-8">
-                        <h4 class="text-uppercase" style="text-align: center; font-family: inherit;">Contactenos
+                        <h4 class="text-uppercase" style="text-align: center; font-family: inherit;">Contáctenos
                         </h4>
                         <div class="form">
                             <div id="sendmessage">
