@@ -45,6 +45,42 @@ namespace Contexto
 
             return query;
         }
+
+        //REVISAR
+        public static IQueryable ListaUsuarios2(int estado)
+        {
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Usuarios.Where(x => x.Estado == true);
+            if (estado == 0)
+            {
+                query = db.Usuarios.Where(x => x.Estado == false && x.RolID != 3);
+            }
+            else
+            {
+                if (estado == 1)
+                {
+                    query = db.Usuarios.Where(x => x.Estado == true && x.RolID != 3);
+                }
+                else
+                {
+                    if (estado == 2)
+                    {
+                        query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID != 3 && x.RolID != 1);
+                    }
+                    else
+                    {
+                        if (estado == 3)
+                        {
+                            query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID == 3);
+                        }
+                    }
+                }
+            }
+
+            return query;
+        }
+        //REVISAR
+
         public static IQueryable ListaUsuariosDisponibles(String correoU)
         {
             var db = new EcoMonedasContext();
@@ -167,6 +203,15 @@ namespace Contexto
             return usuario;
         }
 
+        //Revisar
+        public static Usuario obtenerUsuarioCliente(string correo)
+        {
+            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuarios(3);
+            Usuario usuario = listas.Where(x => x.CorreoElectronico == correo).FirstOrDefault<Usuario>();
+            return usuario;
+        }
+        //Revisar    
+    
         public static IQueryable ListaUsuariosC(string correoE)
         {
             var db = new EcoMonedasContext();

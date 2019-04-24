@@ -47,7 +47,7 @@ namespace Contexto.LN
         public static bool registrarEncabezado(List<CarritoCanje> carritoItems, string correoCliente, string correoAdminC)
         {
             EcoMonedasContext db = new EcoMonedasContext();
-            if (correoAdminC!=null && carritoItems!=null && correoCliente != "" && UsuarioLN.obtenerUsuario(correoCliente)!=null)
+            if (correoAdminC!=null && carritoItems!=null && correoCliente != "" && UsuarioLN.obtenerUsuarioCliente(correoCliente)!=null)
             {
                 try
                 {

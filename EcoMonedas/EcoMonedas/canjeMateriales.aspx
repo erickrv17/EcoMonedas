@@ -9,6 +9,13 @@
         <ContentTemplate>
             <div class="container">
                 <div class="container_inner default_template_holder clearfix page_container_inner">
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
+                        </div>
+                    </div>
+                    <br />
                     <div class="row">
                         <div class="col-lg-7 col-sm-12">
                             <label>Porfavor coloquese por encima del material a canjear y haga click en agregar, si desea canjear una unidad o más de dicho material</label>
@@ -29,6 +36,7 @@
                                                 <EmptyDataTemplate>
                                                     <div class="row">
                                                         No hay datos
+                                                   
                                                     </div>
                                                 </EmptyDataTemplate>
                                                 <EmptyItemTemplate>

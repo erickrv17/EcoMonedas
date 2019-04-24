@@ -17,6 +17,13 @@
                             <span class="input-group-text"><i class="fas fa-user" style="margin-right:10px;"></i><label style="margin-bottom:0rem;">Correo Administrador Centro:</label></span>
                             <asp:TextBox ID="txtCorreoU" CssClass="form-control input_user" runat="server"></asp:TextBox>
                             <asp:Label ID="txtMECorreoU" runat="server" CssClass="form-text text-danger" Text=""></asp:Label>    
+                            <asp:RegularExpressionValidator
+                            ID="RegularExpressionValidator1"
+                            runat="server"
+                            ErrorMessage="Correo invalido"
+                            ForeColor="Red" Display="Dynamic"
+                            ControlToValidate="txtCorreoU"
+                            ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" />
                     </div>
                     <div class="row form-group" style="width:80%; margin-left:10%;">
                             <span class="input-group-text" style="margin-bottom:0rem;"><i class="fas fa-key" style="margin-right:10px;"></i><label style="margin-bottom:0rem;">Contraseña Administrador Centro:</label></span>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace EcoMonedas
 {
@@ -63,9 +64,13 @@ namespace EcoMonedas
 
         protected void grvCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            lblMensaje.Visible = true;
+            lblMensaje.Text = "";
             int idMaterial = Convert.ToInt32(grvCarrito.DataKeys[e.RowIndex].Values[0]);
             CarritoLN.Carrito.Instancia.EliminarItem(idMaterial);
             llenarListaCarrito();
+            lblMensaje.Visible = true;
+            lblMensaje.Text = "¡Material Eliminado!";
         }
 
         protected void CantidadCanjear_TextChanged(object sender, EventArgs e)
@@ -74,10 +79,21 @@ namespace EcoMonedas
             TextBox txtCantidad = (TextBox)currentRow.FindControl("CantidadCanjear");
             if (txtCantidad.Text != "")
             {
-                int cantidad = Convert.ToInt32(txtCantidad.Text);
-                int idMaterial = Convert.ToInt32(grvCarrito.DataKeys[currentRow.RowIndex].Values[0]);
-                CarritoLN.Carrito.Instancia.SetItemcantidad(idMaterial, cantidad);
-                llenarListaCarrito();
+                Regex validaNumeros = new Regex(@"^[0-9]*$");
+                if (validaNumeros.IsMatch(txtCantidad.Text))
+                {
+                    lblMensaje.Text = "";
+                    lblMensaje.Visible = false;
+                    int cantidad = Convert.ToInt32(txtCantidad.Text);
+                    int idMaterial = Convert.ToInt32(grvCarrito.DataKeys[currentRow.RowIndex].Values[0]);
+                    CarritoLN.Carrito.Instancia.SetItemcantidad(idMaterial, cantidad);
+                    llenarListaCarrito();
+                }
+                else
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "Debe ingresar solo datos númericos enteros";
+                }
             }
         }
     

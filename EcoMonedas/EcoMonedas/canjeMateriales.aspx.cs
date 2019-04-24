@@ -52,9 +52,13 @@ namespace EcoMonedas
 
         protected void linkAgregar_Click(object sender, EventArgs e)
         {
+            lblMensaje.Visible = true;
+            lblMensaje.Text = "";
             ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
             int idMaterial = Convert.ToInt32(listaMateriales.DataKeys[fila.DataItemIndex].Values[0]);
             Carrito.Instancia.AgregarItem(idMaterial);
+            lblMensaje.Visible = true;
+            lblMensaje.Text = "¡Material Agregado!";
         }
 
         protected void btnCanjear_Click(object sender, EventArgs e)
