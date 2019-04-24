@@ -111,8 +111,8 @@ namespace Contexto
 
             EcoMonedasContext db = new EcoMonedasContext();
 
-            var miUsuario = obtenerUsuario(correoElectronico);
-
+            //var miUsuario = obtenerUsuario(correoElectronico);
+            var miUsuario = db.Usuarios.Where(x => x.CorreoElectronico.Equals(correoElectronico)).FirstOrDefault();
             //int idUsuario = 0;
             //bool esNumero = int.TryParse(correoElectronico, out idUsuario);
 
@@ -131,28 +131,38 @@ namespace Contexto
                 miUsuario.Disponible = disponible;
                 if (!correoElectronico.Equals(""))
                 {
-
                     db.Usuarios.Add(miUsuario);
                 }
             }
             else
             {
-             miUsuario = db.Usuarios.Where(p => p.CorreoElectronico == correoElectronico).First<Usuario>();
-             miUsuario.Nombre = nombre;
-            miUsuario.PrimerApellido = primerApellido;
-            miUsuario.SegundoApellido = segundoApellido;
-            miUsuario.Telefono = telefono;
-            miUsuario.Direccion = direccion;
-            miUsuario.RolID = Convert.ToInt32(rolID);
-            miUsuario.Estado = estado;
-            miUsuario.Disponible = disponible;
+                if (miUsuario.RolID==2)
+                {
+                    miUsuario = db.Usuarios.Where(p => p.CorreoElectronico == correoElectronico).First<Usuario>();
+                    miUsuario.Nombre = nombre;
+                    miUsuario.PrimerApellido = primerApellido;
+                    miUsuario.SegundoApellido = segundoApellido;
+                    miUsuario.Telefono = telefono;
+                    miUsuario.Direccion = direccion;
+                    miUsuario.RolID = Convert.ToInt32(rolID);
+                    miUsuario.Estado = estado;
+                    miUsuario.Disponible = disponible;
+                }else
+                {
+                    return false;
+                }
+            }
+            try
+            {
+
+                db.SaveChanges();//Realiza el commit para el insert en la base de datos
 
             }
+            catch (Exception ex)
+            {
 
-             db.SaveChanges();//Realiza el commit para el insert en la base de datos
-          
-            
-
+                throw ex;
+            }
             return true;
         }
         public void actaulizaUsuario(Usuario user)  {

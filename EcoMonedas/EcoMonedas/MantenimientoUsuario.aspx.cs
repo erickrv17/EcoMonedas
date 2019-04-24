@@ -90,7 +90,7 @@ namespace EcoMonedas
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puede guardar el usuario";
+                    lblMensaje.Text = "Ha ocurrido un error, no se puede guardar el usuario";
                 }
                     btnRegistrar.Text = "Registrar";
                     Limpiar();

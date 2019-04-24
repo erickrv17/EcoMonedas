@@ -48,8 +48,14 @@ namespace EcoMonedas
         private string buscarNombreCentro(string idUsuario)
         {
             CentroAcopio centro= CentroAcopioLN.obtenerCentroAcopioPorID(idUsuario);
+            if (centro==null)
+            {
+                Session["Usuario"] = null;
+                Response.Redirect("InicioE.aspx");
+            }
             lblCentroAcopio.Text = centro.Nombre;
             return centro.Nombre;
+           
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

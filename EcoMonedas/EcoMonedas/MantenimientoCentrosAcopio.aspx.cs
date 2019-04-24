@@ -149,7 +149,7 @@ namespace EcoMonedas
             txtDireccion.Text = centrAcopio.DireccionExacta;
             txtCorreo.Text = centrAcopio.Correo;
             chkEstado.Checked = centrAcopio.Estado;
-            Image1.ImageUrl = "~/Imagenes/" + centrAcopio.Imagen;
+            Image1.ImageUrl = "~/Imagenes/CentrosAcopio/" + centrAcopio.Imagen;
             hfCentroID.Value = centrAcopio.ID.ToString();
             btnRegistrar.Text = "Actualizar";
             

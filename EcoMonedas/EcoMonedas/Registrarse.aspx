@@ -183,7 +183,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">+506</span>
                             </div>
-                            <asp:TextBox ID="txtTelefono" placeholder="ej:8888 8888" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtTelefono" placeholder="ej:88888888" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                         </div>
                        <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server"
                             ErrorMessage="*El teléfono es requerido."

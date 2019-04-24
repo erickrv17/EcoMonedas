@@ -165,7 +165,7 @@
                                     <div class="">
                                         <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/Materiales/{0}")%>' ImageAlign="Middle" />
                                     </div>
-                                    <div class="course-content">
+                                    <div class="course-content" style="margin-left: 20px;">
                                         <h4><%#:Item.Nombre%></h4>
                                         <asp:TextBox runat="server" BorderStyle="Outset" BorderColor="Black" BackColor='<%# System.Drawing.ColorTranslator.FromHtml(Item.Color.CodigoColor) %>'></asp:TextBox>
                                         <p><b>Precio Unitario &cent;</b><%#: String.Format("{0:N2}", Item.PrecioUnitario)%></p>
@@ -311,7 +311,7 @@
                                             <div class="">
                                                 <asp:Image ID="ImagenMat" runat="server" ImageUrl='<%# Eval("imagen", "~/Imagenes/CentrosAcopio/{0}")%>' ImageAlign="Middle" />
                                             </div>
-                                            <div class="course-content">
+                                            <div class="course-content" style="margin-left: 20px;">
                                                 <h4><%#:Item.Nombre%></h4>
                                                 <p><b>Dirección: </b><%#: Item.DireccionExacta%></p>
                                                 <p><b>Correo: </b><%#: Item.Correo%></p>
