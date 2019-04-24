@@ -83,6 +83,8 @@ namespace EcoMonedas
 
                 if (confirmacion)
                 {
+                CorreoLN cl = new CorreoLN();
+                cl.EnviarCorreoRegistro((Usuario)UsuarioLN.obtenerUsuario(txtCorreo.Text));
                     this.Response.Redirect("MantenimientoUsuario.aspx?accion=guardado");
                 }
                 else

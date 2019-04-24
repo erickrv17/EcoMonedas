@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,8 +52,40 @@ namespace Contexto
             var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
 
             correo.To.Add(new MailAddress(usuario.CorreoElectronico, usuario.Nombre));
-            correo.Body = "Tu registro se ha creado con exito te damos la bienvenida a relojeria cet";
+            correo.Body = "Bienvenido "+ usuario.Nombre+", su contrase es"+usuario.contrasenia;
             correo.Subject = "Registro exitoso";
+
+            using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+            {
+
+                smtpClient.EnableSsl = true;
+                smtpClient.Port = 587;
+
+                smtpClient.Credentials =
+                      new System.Net.NetworkCredential("ecomonedasP2019@gmail.com", "jecc123456");
+                try
+                {
+                    smtpClient.Send(correo);
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+
+                }
+
+            }
+
+
+        }
+        public void EnviarContactenos(String correoU, string nombre ,String asunto,String mensaje)
+        {
+            var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
+
+            correo.To.Add(new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas"));
+            correo.Body = "Correo :"+correoU+", "+"Nombre :"+nombre+", /n"+mensaje;
+            correo.Subject = asunto;
 
             using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
             {
@@ -142,6 +175,7 @@ namespace Contexto
 
                 }
             }
+            
         }
     }
 }

@@ -13,6 +13,8 @@ namespace EcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CorreoLN cr = new CorreoLN();
+          
             if ((Usuario)Session["Usuario"] != null)
             {
                 lblregistrese.Visible = false;
@@ -201,7 +203,45 @@ namespace EcoMonedas
 
         protected void btnConfirmar_ServerClick(object sender, EventArgs e)
         {
+            if (ValidaContactenos())
+            {
+                return;
+            }
+            CorreoLN corr = new CorreoLN();
+            try
+            {
+               corr.EnviarContactenos(txtCorreoC.Value,txtNombreC.Value,txtAsuntoC.Value,txtMensajeC.Value);
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+           
+        }
+        public bool ValidaContactenos()
+        {
+          
+            bool error = false;
+            if (txtNombreC.Value.Equals(""))
+            {
+              
+                error = true;
+            }
+            if (txtCorreoC.Value.Equals(""))
+            {
+              
+                error = true;
+            }
+            if (txtMensajeC.Value.Equals(""))
+            {
+                error = true;
+            }
+            if (txtAsuntoC.Value.Equals(""))
+            {
+                error = true;
+            }
+            return error;
         }
 
         protected void btnPerfil_ServerClick(object sender, EventArgs e)
