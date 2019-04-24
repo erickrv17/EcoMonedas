@@ -84,7 +84,6 @@
     <Content Include="Content\checkboxes.css" />
     <Content Include="Content\formularioCanje.css" />
     <Content Include="detalleCanje.aspx" />
-    <Content Include="detalleCentroAcopio.aspx" />
     <Content Include="detalleCupon.aspx" />
     <Content Include="Error404.aspx" />
     <Content Include="ReporteClientes.aspx" />
@@ -244,13 +243,6 @@
     </Compile>
     <Compile Include="detalleCanje.aspx.designer.cs">
       <DependentUpon>detalleCanje.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="detalleCentroAcopio.aspx.cs">
-      <DependentUpon>detalleCentroAcopio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="detalleCentroAcopio.aspx.designer.cs">
-      <DependentUpon>detalleCentroAcopio.aspx</DependentUpon>
     </Compile>
     <Compile Include="detalleCupon.aspx.cs">
       <DependentUpon>detalleCupon.aspx</DependentUpon>

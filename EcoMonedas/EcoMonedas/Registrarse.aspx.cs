@@ -134,16 +134,15 @@ namespace EcoMonedas
             miUsuario.RolID = 3;
             miUsuario.Estado = true;
             miUsuario.Disponible = true;
-
             try
             {
                 UsuarioLN us = new UsuarioLN();
                 us.insertaUsuario(miUsuario);
                 lblMensajeU.Visible = true;
-                lblMensajeU.Text = "Se ha completado su registro satisfactoriamente!";
+                lblMensajeU.Text = "Bienvenido a Eco-Monedas su registro ha sido todo un exito, Verifica tu correo!";
                 lblMensajeU.CssClass = "alert alert-dismissible alert-success";
-
-
+                CorreoLN coor = new CorreoLN();
+                coor.EnviarCorreoNuevoCliente(miUsuario);
             }
             catch (Exception ex)
             {

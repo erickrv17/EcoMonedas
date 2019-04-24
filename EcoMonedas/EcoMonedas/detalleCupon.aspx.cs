@@ -36,8 +36,8 @@ namespace EcoMonedas
         {
             CorreoLN correoLogica = new CorreoLN();
             correoLogica.enviarCorreoConCupon(ConverirReportePDF(ReportViewer1.LocalReport),(Usuario)Session["Usuario"]);
-
-
+            lblMensaje.Visible = true;
+            lblMensaje.Text = "El Cupon se ha enviado por correo satisfactoriamente!";
         }
 
         public byte[] ConverirReportePDF(LocalReport localReport)

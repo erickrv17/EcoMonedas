@@ -25,13 +25,13 @@
                 </a>
             </div>
             <div class="col-xl-6 col-md-6 mb-4">
-                <a href="#">
+                <a href="listaCanjesR.aspx">
                     <div class="card border-left shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#7ed957">Reporte</div>
-                                    <div class="h5 mb-0 font-weight-bold" style="color:#000">Ecomonedas de su Centro de Acopio</div>
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#7ed957">Canjes</div>
+                                    <div class="h5 mb-0 font-weight-bold" style="color:#000">Lista de canjes en su Centro de Acopio</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-chart-area fa-2x" style="color:#7ed957"></i>
@@ -57,7 +57,7 @@
                         <p>El Usuario Administrador puede: </p>
                         <ul>
                             <li>Gestionar todos los canjes de Materiales de su Centro de Acopio</li>
-                            <li>Gestionar los reportes del propio Centro de Acopio</li>
+                            <li>Consultar la lista de canjes realizados en su Centro de Acopio</li>
                             <li>Administrar su Perfil →</li>
                         </ul>
                     </div>

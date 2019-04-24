@@ -13,19 +13,15 @@ namespace Contexto
     {
         public Usuario usuario { get; set; }
 
-        
-        public void enviarCorreoC(byte[] facturaBytes, Byte[] xml)
+
+        public void EnviarCorreoNuevoCliente(Usuario usuario)
         {
             var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
 
             correo.To.Add(new MailAddress(usuario.CorreoElectronico, usuario.Nombre));
-            correo.Body = "¡Canje realizado con exito!";
-            correo.Subject = "Comprobante de canje";
-           
-            //correo.Attachments.Add(new Attachment(new MemoryStream(facturaBytes), "Reporte.pdf"));
-            correo.Attachments.Add(new Attachment(new MemoryStream(facturaBytes), "Reporte.pdf"));
+            correo.Body = "Bienvenido! " + usuario.Nombre + ", te invitamos a que ayudes al ambiente reciclando tus materiales en nuestros distintos centros de acopio, te esperamos!!!";
+            correo.Subject = "Bienvenido a Eco-Monedas";
 
-            correo.Attachments.Add(new Attachment(new MemoryStream(xml), "xmlFactura.xml"));
             using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
             {
 
@@ -33,8 +29,7 @@ namespace Contexto
                 smtpClient.Port = 587;
 
                 smtpClient.Credentials =
-                    new System.Net.NetworkCredential("ecomonedasP2019@gmail.com", "jecc123456");
-
+                      new System.Net.NetworkCredential("ecomonedasP2019@gmail.com", "jecc123456");
                 try
                 {
                     smtpClient.Send(correo);
@@ -42,10 +37,14 @@ namespace Contexto
                 }
                 catch (Exception ex)
                 {
+
                     throw ex;
 
                 }
+
             }
+
+
         }
         public void EnviarCorreoRegistro(Usuario usuario)
         {
@@ -176,6 +175,38 @@ namespace Contexto
                 }
             }
             
+        }
+        public void EnviarCorreoCentroUsuario(Usuario usuario,String nombre ,String direccion)
+        {
+            var correo = new MailMessage { From = new MailAddress("ecomonedasP2019@gmail.com", "Eco Monedas") };
+
+            correo.To.Add(new MailAddress(usuario.CorreoElectronico, usuario.Nombre));
+            correo.Body = "Buenas Sr(a) " + usuario.Nombre + ",se le ha asignado el centro de acopio " + nombre+", ubicado en "+direccion;
+            correo.Subject = "Asignación de Centro de Acopio";
+
+            using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+            {
+
+                smtpClient.EnableSsl = true;
+                smtpClient.Port = 587;
+
+                smtpClient.Credentials =
+                      new System.Net.NetworkCredential("ecomonedasP2019@gmail.com", "jecc123456");
+                try
+                {
+                    smtpClient.Send(correo);
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+
+                }
+
+            }
+
+
         }
     }
 }

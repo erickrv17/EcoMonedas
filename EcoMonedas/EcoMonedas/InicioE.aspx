@@ -245,7 +245,8 @@
                                     <div class="text-center">
                                         <button class="btn" style="background-color: #7ed957; border-color: black; color: #000;" id="btnConfirmar" runat="server" onserverclick="btnConfirmar_ServerClick">Enviar</button>
                                     </div>
-                                    <br /><br />
+                                    <br />
+                                    <br />
                                     <asp:Label ID="lblMensajeCorreo" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
                                 </div>
                             </div>
@@ -408,12 +409,20 @@
                             <div class="modal-body">
                                 <div>
                                     <div id="icon-login-msg"><i class="fa fa-user"></i></div>
-                                    <span>Digita tus credenciales de Inicio.</span>
+                                    <span>Escribe tus credenciales de Inicio.</span>
                                     <br />
                                     <br />
                                     <label id="lblMensaje" visible="false" style="color: red;" runat="server">Usuario Incorrecto</label>
                                 </div>
                                 <asp:TextBox ID="txtCorreoLogin" class="form-control" type="text" runat="server" placeholder="Correo electrónico"></asp:TextBox>
+                                <asp:RegularExpressionValidator
+                                    ID="validateEmail"
+                                    runat="server"
+                                    ErrorMessage="El formato del correo no es valido."
+                                    ForeColor="Red" Display="Dynamic"
+                                    ControlToValidate="txtCorreoLogin"
+                                    ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" />
+
                                 <asp:TextBox ID="txtContra" class="form-control" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
                                 <br />
                             </div>

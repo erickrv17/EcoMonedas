@@ -47,20 +47,39 @@ namespace EcoMonedas
 
         protected void btnConfirmar_ServerClick(object sender, EventArgs e)
         {
+            lblMensajeCorreo.Text = "";
+            lblMensajeCorreo.Visible = false;
             if (ValidaContactenos())
             {
+                lblMensajeCorreo.Visible = true;
+                lblMensajeCorreo.Text = "Debe rellenar todos los campos para enviar un correo";
                 return;
+
             }
             CorreoLN corr = new CorreoLN();
             try
             {
                 corr.EnviarContactenos(txtCorreoC.Value, txtNombreC.Value, txtAsuntoC.Value, txtMensajeC.Value);
+                lblMensajeCorreo.Visible = true;
+                lblMensajeCorreo.Text = "Mensaje Correctamente enviado, Eco-Monedas";
+                Limpiar();
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+
+        }
+
+        public void Limpiar()
+        {
+      
+            txtNombreC.Value = "";
+            txtCorreoC.Value = "";
+
+            txtMensajeC.Value = "";
+            txtAsuntoC.Value = "";
 
         }
         public bool ValidaContactenos()

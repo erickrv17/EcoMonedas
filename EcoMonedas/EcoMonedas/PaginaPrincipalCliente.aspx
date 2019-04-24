@@ -127,6 +127,9 @@
                                 <div class="text-center">
                                      <button class="btn" style="background-color:#7ed957; border-color:black; color:#000;" id="btnConfirmar" runat="server" onserverclick="btnConfirmar_ServerClick">Enviar</button>
                                 </div>
+                                 <br /><br />
+                                    <asp:Label ID="lblMensajeCorreo" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
+                                
                             </div>
                         </div>
                     </div>

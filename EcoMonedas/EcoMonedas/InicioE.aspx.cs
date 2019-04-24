@@ -218,12 +218,24 @@ namespace EcoMonedas
                corr.EnviarContactenos(txtCorreoC.Value,txtNombreC.Value,txtAsuntoC.Value,txtMensajeC.Value);
                 lblMensajeCorreo.Visible = true;
                 lblMensajeCorreo.Text = "Mensaje Correctamente enviado, Eco-Monedas";
+                Limpiar();
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+           
+        }
+
+        public void Limpiar()
+        {
+          
+            txtNombreC.Value = "";
+            txtCorreoC.Value="";
+
+            txtMensajeC.Value = "";
+            txtAsuntoC.Value="";
            
         }
         public bool ValidaContactenos()

@@ -286,7 +286,7 @@
                             <div class="modal-body">
                                 <div>
                                     <div id="icon-login-msg"><i class="fa fa-user"></i></div>
-                                    <span>Digita tus credenciales de Inicio.</span>
+                                    <span>Escribe tus credenciales de Inicio.</span>
                                     <br />
                                     <br />
                                     <label id="lblMensaje" visible="false" style="color: red;" runat="server">Usuario Incorrecto</label>
@@ -294,7 +294,14 @@
 
                                 </div>
                                 <asp:TextBox ID="txtCorreoLogin" class="form-control" type="text" runat="server" placeholder="Correo electrónico"></asp:TextBox>
-                                <asp:TextBox ID="txtContra" class="form-control" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
+                                <asp:RegularExpressionValidator
+                                    ID="RegularExpressionValidator1"
+                                    runat="server"
+                                    ErrorMessage="El formato del correo no es valido."
+                                    ForeColor="Red" Display="Dynamic"
+                                    ControlToValidate="txtCorreoLogin"
+                                    ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" />
+                                  <asp:TextBox ID="txtContra" class="form-control" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
 
                                 <br />
                             </div>

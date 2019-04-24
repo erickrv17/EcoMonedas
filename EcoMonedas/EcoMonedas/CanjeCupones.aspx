@@ -18,7 +18,7 @@
              
             </div>
             <div class="modal-body">
-                    <a class="#">Canjear Cupon></a>
+                    <a class="#">Canjear Cupon</a>
                     <p class="pb-1 text-muted">¿Está seguro que desea adquirir el cupón?</p>
                     <p class="pb-1 text-muted"><small>Seleccione confirmar para proceder a hacer su transacción</small></p>
                    

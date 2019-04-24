@@ -42,7 +42,7 @@ namespace EcoMonedas
             if (accionProducto == "guardado")
             {
                 lblMensaje.Visible = true;
-                lblMensaje.Text = "Centro guardado satisfactoriamente!";
+                lblMensaje.Text = "Centro guardado satisfactoriamente!... Se le ha enviado un correo al usuario con la información de su Centro de Acopio";
                 lblMensaje.CssClass = "alert alert-dismissible alert-success";
             }
             if (!IsPostBack)
@@ -102,6 +102,11 @@ namespace EcoMonedas
 
                 if (confirmacion)
                 {
+
+                    CorreoLN cor = new CorreoLN();
+                    Usuario us = UsuarioLN.obtenerUsuario(DDLAdmiCentro.SelectedValue);
+                    cor.EnviarCorreoCentroUsuario(us,txtNombre.Text, txtDireccion.Text);
+
                     this.Response.Redirect("MantenimientoCentrosAcopio.aspx?accion=guardado");
                 }
                 else
