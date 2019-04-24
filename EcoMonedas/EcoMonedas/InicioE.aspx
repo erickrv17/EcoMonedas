@@ -239,7 +239,7 @@
                                         <input class="form-control" id="txtAsuntoC" type="text" runat="server" />
                                     </div>
                                     <div class="form-group">
-                                        <label><b>Mensaje:</b> </label>
+                                        <label><b>Mensaje: </b> </label>
                                         <textarea class="form-control" id="txtMensajeC" runat="server" rows="5"></textarea>
                                     </div>
                                     <div class="text-center">
@@ -431,7 +431,7 @@
                                     <button runat="server" class="btn" style="background-color: #7ed957; color: white" onserverclick="btnIngresar_Click">Iniciar Sesión</button>
                                 </div>
                                 <div>
-                                    <button id="btnPaginaRegistrarse" type="button" runat="server" onserverclick="btnPaginaRegistrarse_ServerClick" style="color: #7ed957" class="btn btn-link">Registrate aqui</button>
+                                    <button id="btnPaginaRegistrarse" type="button" runat="server" onserverclick="btnPaginaRegistrarse_ServerClick" style="color: #7ed957" class="btn btn-link">Registrate aquí</button>
                                 </div>
                             </div>
                         </div>

@@ -16,7 +16,7 @@
                        <h2> Registro de Usuarios </h2>
                      
                         <div class="form-group row">
-                             <label for="lblNombre" class="control-label">Nombre</label>
+                             <label for="lblNombre" class="control-label">Nombre: </label>
                             <asp:TextBox CssClass="form-control" ID="txtNombre" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
                                 runat="server" 
@@ -28,7 +28,7 @@
                             <asp:CustomValidator ID="cvNombre" runat="server" ErrorMessage="El nombre debe de tener almenos 15 caracteres (Customizado)" ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ></asp:CustomValidator>
                         </div>
                          <div class="form-group row">
-                             <label for="lblPrimerApellido">Primer apellido</label>
+                             <label for="lblPrimerApellido">Primer Apellido: </label>
                             <asp:TextBox ID="txtPrimerApellido"  CssClass="form-control"  runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
                                  ErrorMessage="*El primer apellido es requerido." 
@@ -38,7 +38,7 @@
                                  Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                          <div class="form-group row">
-                            <label for="exampleTextarea">Segundo Apellido</label>
+                            <label for="exampleTextarea">Segundo Apellido:</label>
                             <asp:TextBox ID="txtSegundoApellido"  CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                                 ErrorMessage="*El segundo apellido es requerido." 
@@ -48,7 +48,7 @@
                                 Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                          <div class="form-group row">
-                            <label for="exampleTextarea">Teléfono</label>
+                            <label for="exampleTextarea">Teléfono: </label>
                                <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">+506</span>
@@ -70,14 +70,14 @@
                                 ValidationExpression="^[0-9]*(\,)?[0-9]?[0-9]?$"></asp:RegularExpressionValidator>
                                     </div>
                          <div class="form-group row">
-                            <label for="exampleTextarea">Correo electronico</label>
+                            <label for="exampleTextarea">Correo electrónico: </label>
                             <asp:TextBox ID="txtCorreo"  CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*El correo es requerido." ControlToValidate="txtCorreo" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                         
                         
                          <div class="form-group row">
-                            <label for="exampleTextarea">Direccion exacta</label>
+                            <label for="exampleTextarea">Dirección exacta: </label>
                             <asp:TextBox ID="txtDireccion" TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*La dirección es requerida." ControlToValidate="txtDireccion" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
@@ -87,7 +87,7 @@
                             </asp:DropDownList>
                         </div>--%>
                          <div class="row">
-                        <label class="control-label">Disponibilidad</label>
+                        <label class="control-label">Disponibilidad: </label>
                       </div>
                         <div class="row form-group">
                             <label class="checkBoxEstado">
@@ -98,7 +98,7 @@
                         </div>
 
                       <div class="row">
-                        <label class="control-label">Estado</label>
+                        <label class="control-label">Estado: </label>
                       </div>
                         <div class="row form-group">
                             <label class="checkBoxEstado">
@@ -126,9 +126,7 @@
                  <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
                     <input class="form-control" id="system-search" name="q" placeholder="Buscar..."/>
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </span>
+                    
                 </div>
                 <div class="table-responsive">
                    <asp:GridView ID="grvListado" CssClass="table table-list-search" GridLines="Both" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="CorreoElectronico" OnSelectedIndexChanged="grvListado_SelectedIndexChanged" >  

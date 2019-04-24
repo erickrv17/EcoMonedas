@@ -16,7 +16,7 @@
                       <h2>Registro Cupones </h2>
                      
                         <div class="form-group">
-                            <label for="inputSmall">Nombre</label>
+                            <label for="inputSmall">Nombre: </label>
                             <asp:TextBox CssClass="form-control " ID="txtNombre" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                 ErrorMessage="*El nombre es requerido." 
@@ -32,7 +32,7 @@
                                 Display="Dynamic" ></asp:CustomValidator>
                         </div>
                        <div class="form-group">
-                            <label for="exampleTextarea">Precio</label>
+                            <label for="exampleTextarea">Precio: </label>
                             <asp:TextBox ID="txtPrecioCanje" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                                 ErrorMessage="*El precio es requerido." 
@@ -42,7 +42,7 @@
                                 Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group">
-                            <label for="exampleTextarea">Eco Monedas necesarias</label>
+                            <label for="exampleTextarea">Eco-Monedas necesarias:</label>
                             <asp:TextBox ID="txtEcoMonedasNecesarias" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server"
                                  ErrorMessage="*La cantidad de monedas necesarias es requerido."
@@ -52,7 +52,7 @@
                                  Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group">
-                            <label for="exampleTextarea">Descripción</label>
+                            <label for="exampleTextarea">Descripción: </label>
                             <asp:TextBox ID="txtDescripcion" TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
                                 ErrorMessage="*La dirección es requerida."
@@ -62,7 +62,7 @@
                                 Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                         <div class="row">
-                            <label class="control-label">Estado</label>
+                            <label class="control-label">Estado: </label>
                         </div>
                         <div class="row form-group">
                             <label class="checkBoxEstado">
@@ -89,9 +89,7 @@
                  <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
                     <input class="form-control" id="system-search" name="q" placeholder="Buscar..." />
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </span>
+                   
                 </div>
                 <div class="table-responsive">
                    <asp:GridView ID="grvListado" CssClass="table table-list-search" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="ID" OnSelectedIndexChanged="grvListado_SelectedIndexChanged" >  

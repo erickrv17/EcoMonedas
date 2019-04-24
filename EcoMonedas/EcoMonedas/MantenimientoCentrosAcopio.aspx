@@ -15,7 +15,7 @@
                 <h2>Registro Centros de Acopio </h2>
 
                 <div class="row form-group">
-                    <label for="inputSmall">Nombre</label>
+                    <label for="inputSmall">Nombre: </label>
                     <asp:TextBox CssClass="form-control " ID="txtNombre" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                         ErrorMessage="*El nombre es requerido."
@@ -32,14 +32,14 @@
                 </div>
 
                 <div class="row form-group">
-                    <label for="exampleSelect1">Administrador del Centro de Acopio</label>
+                    <label for="exampleSelect1">Administrador del Centro de Acopio: </label>
                     <asp:DropDownList ID="DDLAdmiCentro" CssClass="form-control" runat="server"
                         ItemType="Contexto.Usuario"
                         DataTextField="Nombre" DataValueField="CorreoElectronico">
                     </asp:DropDownList>
                 </div>
                 <div class="row form-group">
-                    <label for="exampleSelect1">Provincia</label>
+                    <label for="exampleSelect1">Provincia: </label>
                     <asp:DropDownList ID="DDLProvincia" CssClass="form-control" runat="server"
                         ItemType="Contexto.Provincia"
                         SelectMethod="listaProvincias"
@@ -47,17 +47,17 @@
                     </asp:DropDownList>
                 </div>
                 <div class="row form-group">
-                    <label for="exampleTextarea">Direccion exacta</label>
+                    <label for="exampleTextarea">Dirección exacta: </label>
                     <asp:TextBox ID="txtDireccion" TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*La dirección es requerida." ControlToValidate="txtDireccion" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="row form-group">
-                    <label for="exampleTextarea">Correo</label>
+                    <label for="exampleTextarea">Correo: </label>
                     <asp:TextBox ID="txtCorreo" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*El correo es requerido." ControlToValidate="txtCorreo" ForeColor="Red" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="row">
-                    <label class="control-label">Estado</label>
+                    <label class="control-label">Estado: </label>
                 </div>
                 <div class="row form-group">
                     <label class="checkBoxEstado">
@@ -96,9 +96,6 @@
                 <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
                     <input class="form-control" id="system-search" name="q" placeholder="Buscar..." />
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </span>
                 </div>
                 <div class="table-responsive">
                     <asp:GridView ID="grvListado" CssClass="table table-list-search" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="true" DataKeyNames="ID" OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
