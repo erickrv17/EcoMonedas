@@ -30,6 +30,13 @@
                             <asp:TextBox ID="txtCorreoCliente" CssClass="form-control input_pass" runat="server"></asp:TextBox>
                             <asp:Label ID="txtMECorreoC" runat="server" CssClass="form-text text-danger" Text=""></asp:Label>
                             <small id="clienteAyuda" class="form-text text-light">Correo del cliente al que se le aplicará el siguiente Canje</small>
+                          <asp:RegularExpressionValidator
+                            ID="validateEmail"
+                            runat="server"
+                            ErrorMessage="Correo invalido"
+                            ForeColor="Red" Display="Dynamic"
+                            ControlToValidate="txtCorreoCliente"
+                            ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" />
                     </div>
                     <hr />
                     

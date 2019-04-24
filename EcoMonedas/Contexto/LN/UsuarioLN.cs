@@ -37,7 +37,7 @@ namespace Contexto
                     {
                         if (estado == 3)
                         {
-                            query = db.Usuarios.Where(x => x.Estado == false || x.Estado == true && x.RolID == 3);
+                            query = db.Usuarios.Where(x => x.Estado == true || x.Estado == true && x.RolID == 3);
                         }
                     }
                 }
@@ -178,6 +178,13 @@ namespace Contexto
         public static IEnumerable<Usuario> obtenerUsuarioC(string correo)
         {
             IEnumerable<Usuario> listas = (IEnumerable<Usuario>)UsuarioLN.ListaUsuariosC(correo);
+            return listas;
+        }
+        public static IEnumerable<Usuario> obtenerUsuariosClientes()
+        {
+            var db = new EcoMonedasContext();
+            IQueryable query = db.Usuarios.Where(x => x.RolID == 3);
+            IEnumerable<Usuario> listas = (IEnumerable<Usuario>)query;
             return listas;
         }
 

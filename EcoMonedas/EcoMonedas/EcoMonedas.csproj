@@ -87,6 +87,7 @@
     <Content Include="detalleCentroAcopio.aspx" />
     <Content Include="detalleCupon.aspx" />
     <Content Include="Error404.aspx" />
+    <Content Include="ReporteClientes.aspx" />
     <Content Include="Imagenes\Banner3.png" />
     <Content Include="Imagenes\Banner4.png" />
     <Content Include="Imagenes\Cuenta.png" />
@@ -264,6 +265,13 @@
     </Compile>
     <Compile Include="Error404.aspx.designer.cs">
       <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClientes.aspx.cs">
+      <DependentUpon>ReporteClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteClientes.aspx.designer.cs">
+      <DependentUpon>ReporteClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioE.aspx.cs">
       <DependentUpon>InicioE.aspx</DependentUpon>
@@ -461,8 +469,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\reporteClientes.rdlc" />
     <EmbeddedResource Include="Reportes\reporteCupon.rdlc" />
     <EmbeddedResource Include="Reportes\reporteEcoMonedasPorCentroDeAcopio.rdlc" />
+    <EmbeddedResource Include="Reportes\reporteEM.rdlc" />
     <EmbeddedResource Include="Reportes\reporteMaterialNombre.rdlc" />
     <EmbeddedResource Include="Reportes\reportePrueba.rdlc" />
   </ItemGroup>

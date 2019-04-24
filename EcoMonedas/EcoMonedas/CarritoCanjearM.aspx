@@ -41,7 +41,7 @@
                                                 runat="server"
                                                 OnTextChanged="CantidadCanjear_TextChanged"
                                                 Text='<%# Eval("cantidad")%>' AutoPostBack="true"></asp:TextBox>
-
+                                            
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="subtotal" DataFormatString="&cent;{0:N2}" HeaderText="Subtotal"></asp:BoundField>
